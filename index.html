@@ -57,6 +57,48 @@
     .cta a:hover {
       background-color: #0ea5e9;
     }
+    /* Botão do WhatsApp flutuante */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      padding: 15px;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 24px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+      text-decoration: none;
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    a[title]:hover::after {
+      content: attr(title);
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      background: #1e293b;
+      color: #f8fafc;
+      padding: 8px 12px;
+      border-radius: 8px;
+      white-space: nowrap;
+      font-size: 14px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    }
   </style>
 </head>
 <body>
@@ -64,6 +106,7 @@
     <h1>MelhorTv IPTV</h1>
     <p>A melhor experiência de TV online está aqui</p>
   </header>
+  
   <section class="features">
     <div class="card">
       <h3>+12.000 Canais</h3>
@@ -101,58 +144,16 @@
       <p>R$350,00 – Promoção especial por tempo limitado!</p>
     </div>
   </section>
+  
   <section class="cta">
     <h2>Faça um teste grátis de 6h!</h2>
     <a href="#">Solicitar agora</a>
   </section>
-<!-- Botão flutuante do WhatsApp com texto e animação -->
-<a href="https://wa.me/5541995764429?text=Olá!%20Quero%20fazer%20um%20teste%20IPTV" target="_blank" class="whatsapp-float" title="Fale conosco pelo WhatsApp">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 30px; height: 30px;">
-</a>
 
-<!-- Estilos e animação -->
-<style>
-  .whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25d366;
-    color: white;
-    padding: 15px;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 24px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    z-index: 1000;
-    text-decoration: none;
-    animation: pulse 1.8s infinite;
-  }
+  <!-- Botão flutuante do WhatsApp com animação -->
+  <a href="https://wa.me/5541995764429?text=Olá!%20Quero%20fazer%20um%20teste%20IPTV" target="_blank" class="whatsapp-float" title="Fale conosco pelo WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 30px; height: 30px;">
+  </a>
 
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-
-  a[title]:hover::after {
-    content: attr(title);
-    position: fixed;
-    bottom: 80px;
-    right: 20px;
-    background: #1e293b;
-    color: #f8fafc;
-    padding: 8px 12px;
-    border-radius: 8px;
-    white-space: nowrap;
-    font-size: 14px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-  }
-</style>
 </body>
 </html>
