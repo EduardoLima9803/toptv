@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Melhor Tv IPTV</title>
+  <title>MelhorTV IPTV</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -13,33 +13,38 @@
       color: #f8fafc;
     }
     header {
-      background-color: #1e293b;
-      padding: 2rem;
       text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(to right, #38bdf8, #0ea5e9);
+      color: #0f172a;
     }
     header h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin: 0;
-      color: #38bdf8;
+    }
+    header p {
+      font-size: 1.25rem;
     }
     section {
       padding: 2rem;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
     }
-    .features, .plans {
+    .features, .plans, .gallery {
       display: grid;
       gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
     .card {
       background-color: #1e293b;
       padding: 1.5rem;
       border-radius: 1rem;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      text-align: center;
     }
     .card h3 {
-      margin-top: 0;
       color: #38bdf8;
+      margin-bottom: 1rem;
     }
     .cta {
       text-align: center;
@@ -57,112 +62,103 @@
     .cta a:hover {
       background-color: #0ea5e9;
     }
-    /* Botão do WhatsApp flutuante */
+    .gallery img {
+      width: 100%;
+      border-radius: 0.5rem;
+    }
+    footer {
+      background-color: #1e293b;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+    /* WhatsApp Button */
     .whatsapp-float {
       position: fixed;
       bottom: 20px;
       right: 20px;
       background-color: #25d366;
-      color: white;
       padding: 15px;
       border-radius: 50%;
-      text-align: center;
-      font-size: 24px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
       z-index: 1000;
-      text-decoration: none;
       animation: pulse 1.8s infinite;
     }
-
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.1);
-      }
-      100% {
-        transform: scale(1);
-      }
+    .whatsapp-float img {
+      width: 30px;
+      height: 30px;
     }
-
-    a[title]:hover::after {
-      content: attr(title);
-      position: fixed;
-      bottom: 80px;
-      right: 20px;
-      background: #1e293b;
-      color: #f8fafc;
-      padding: 8px 12px;
-      border-radius: 8px;
-      white-space: nowrap;
-      font-size: 14px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>MelhorTv IPTV</h1>
-    <p>A melhor experiência de TV online está aqui</p>
+    <h1>MelhorTV IPTV</h1>
+    <p>+12.000 canais e mais de 30.000 filmes e séries ao seu alcance</p>
   </header>
-  
+
+  <section class="cta">
+    <h2>Teste grátis por 6 horas</h2>
+    <a href="https://wa.me/5541995764429?text=Olá!%20Quero%20fazer%20um%20teste%20IPTV">Solicitar agora</a>
+  </section>
+
   <section class="features">
     <div class="card">
+      <h3>Compatível com tudo</h3>
+      <p>Funciona em Smart TVs, celulares, computadores e mais.</p>
+    </div>
+    <div class="card">
       <h3>+12.000 Canais</h3>
-      <p>Esportes, filmes, infantis, internacionais e muito mais em HD e 4K.</p>
+      <p>Esportes, filmes, infantis, religiosos, internacionais e muito mais.</p>
     </div>
     <div class="card">
-      <h3>+30.000 Filmes e Séries</h3>
-      <p>Conteúdo sob demanda atualizado diariamente, incluindo lançamentos.</p>
-    </div>
-    <div class="card">
-      <h3>Compatibilidade Total</h3>
-      <p>Assista no celular, smart TV, TV Box, computador e até no tablet.</p>
+      <h3>Filmes e Séries</h3>
+      <p>Inclui Netflix, Prime Video, HBO Max, GloboPlay, Disney+ e outros.</p>
     </div>
     <div class="card">
       <h3>Suporte 24h</h3>
-      <p>Atendimento rápido e eficiente via WhatsApp e Telegram.</p>
+      <p>Atendimento via WhatsApp e Telegram, sempre à disposição.</p>
     </div>
+  </section>
+
+  <section class="gallery">
+    <img src="https://logodownload.org/wp-content/uploads/2019/11/globo-logo-3.png" alt="Globo">
+    <img src="https://logodownload.org/wp-content/uploads/2016/10/espn-logo-6.png" alt="ESPN">
+    <img src="https://logodownload.org/wp-content/uploads/2016/10/cartoon-network-logo.png" alt="Cartoon Network">
+    <img src="https://logodownload.org/wp-content/uploads/2017/11/discovery-channel-logo.png" alt="Discovery">
   </section>
 
   <section class="plans">
     <div class="card">
-      <h3>Plano Mensal</h3>
-      <p>R$35,00/mês – Sem fidelidade</p>
+      <h3>Mensal</h3>
+      <p>R$35,00/mês – Sem compromisso</p>
     </div>
     <div class="card">
-      <h3>Plano Trimestral</h3>
-      <p>R$95,00 – Economize e aproveite 3 meses sem preocupação</p>
+      <h3>Trimestral</h3>
+      <p>R$95,00 – Economize 10%</p>
     </div>
     <div class="card">
-      <h3>Plano Semestral</h3>
-      <p>R$180,00 – Promoção especial por tempo limitado!</p>
+      <h3>Semestral</h3>
+      <p>R$180,00 – Ganhe 1 mês grátis</p>
     </div>
     <div class="card">
-      <h3>Plano Anual</h3>
-      <p>R$350,00 – Promoção especial por tempo limitado!</p>
+      <h3>Anual</h3>
+      <p>R$350,00 – Promoção especial</p>
     </div>
-  </section>
- <section class="gallery">
-  <h2 style="text-align: center; color: #38bdf8;">Alguns dos nossos canais</h2>
-  <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 1rem;">
-    <img src="https://logodownload.org/wp-content/uploads/2019/11/globo-logo-3.png" alt="Globo" width="100">
-    <img src="https://logodownload.org/wp-content/uploads/2016/10/espn-logo-6.png" alt="ESPN" width="100">
-    <img src="https://logodownload.org/wp-content/uploads/2016/10/cartoon-network-logo.png" alt="Cartoon Network" width="100">
-    <img src="https://logodownload.org/wp-content/uploads/2017/11/discovery-channel-logo.png" alt="Discovery" width="100">
-  </div>
-</section>
-  <section class="cta">
-    <h2>Faça um teste grátis de 6h!</h2>
-    <a href="#">Solicitar agora</a>
-    <a href="https://wa.me/5541995764429?text=Olá!%20Quero%20fazer%20um%20teste%20IPTV" target="_blank" class="whatsapp-float" title="Fale conosco pelo WhatsApp">
   </section>
 
-  <!-- Botão flutuante do WhatsApp com animação -->
-  <a href="https://wa.me/5541995764429?text=Olá!%20Quero%20fazer%20um%20teste%20IPTV" target="_blank" class="whatsapp-float" title="Fale conosco pelo WhatsApp">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 30px; height: 30px;">
+  <footer>
+    © 2025 MelhorTV IPTV. Todos os direitos reservados.<br>
+    Desenvolvido para atender com qualidade e rapidez.
+  </footer>
+
+  <a href="https://wa.me/5541995764429?text=Olá!%20Quero%20fazer%20um%20teste%20IPTV" target="_blank" class="whatsapp-float">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
   </a>
-
 </body>
 </html>
