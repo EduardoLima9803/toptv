@@ -12,50 +12,47 @@
       background-color: #0f172a;
       color: #f8fafc;
     }
+
     header {
       background-color: #1e293b;
       padding: 2rem;
       text-align: center;
     }
+
     header h1 {
       font-size: 2.5rem;
       margin: 0;
       color: #38bdf8;
     }
+
     section {
       padding: 2rem;
       max-width: 1000px;
       margin: auto;
     }
-    .features, .plans, .logos, .capas {
+
+    .features, .plans {
       display: grid;
       gap: 2rem;
     }
-    .logos img, .capas img {
-      width: 100%;
-      max-width: 120px;
-      border-radius: 0.5rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    }
-    .logos, .capas {
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      justify-items: center;
-      text-align: center;
-    }
+
     .card {
       background-color: #1e293b;
       padding: 1.5rem;
       border-radius: 1rem;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
+
     .card h3 {
       margin-top: 0;
       color: #38bdf8;
     }
+
     .cta {
       text-align: center;
       margin-top: 3rem;
     }
+
     .cta a {
       background-color: #38bdf8;
       color: #0f172a;
@@ -65,16 +62,39 @@
       font-weight: bold;
       transition: background-color 0.3s;
     }
+
     .cta a:hover {
       background-color: #0ea5e9;
     }
-    /* Animações */
-    .img-animada {
-      animation: pulse 2s infinite ease-in-out;
+
+    .logos, .capas {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
     }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
+
+    .logos img, .capas img {
+      width: 120px;
+      height: auto;
+      border-radius: 0.5rem;
+      animation: swing 1.5s infinite ease-in-out;
+    }
+
+    @keyframes swing {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(5deg); }
+      50% { transform: rotate(0deg); }
+      75% { transform: rotate(-5deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    .section-title {
+      text-align: center;
+      color: #38bdf8;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
     }
   </style>
 </head>
@@ -103,20 +123,6 @@
     </div>
   </section>
 
-  <section class="logos">
-    <h2>Principais Canais</h2>
-    <img src="imagens/globo.png" alt="Globo" class="img-animada">
-    <img src="imagens/sportv.png" alt="SporTV" class="img-animada">
-    <img src="imagens/telecine.png" alt="Telecine" class="img-animada">
-  </section>
-
-  <section class="capas">
-    <h2>Filmes em destaque</h2>
-    <img src="imagens/filme1.jpg" alt="Filme 1" class="img-animada">
-    <img src="imagens/filme2.jpg" alt="Filme 2" class="img-animada">
-    <img src="imagens/filme3.jpg" alt="Filme 3" class="img-animada">
-  </section>
-
   <section class="plans">
     <div class="card">
       <h3>Plano Mensal</h3>
@@ -138,15 +144,32 @@
 
   <section class="cta">
     <h2>Faça um teste grátis de 6h!</h2>
-    <a href="#">Solicitar agora</a>
+    <a href="https://wa.me/5541995764429?text=Olá!%20Quero%20fazer%20um%20teste%20IPTV" target="_blank">Solicitar agora</a>
   </section>
 
-  <!-- Botão flutuante do WhatsApp com texto e animação -->
+  <section>
+    <h2 class="section-title">Canais Disponíveis</h2>
+    <div class="logos">
+      <img src="imagens/globo.png" alt="Globo">
+      <img src="imagens/sportv.png" alt="Sportv">
+      <img src="imagens/telecine.png" alt="Telecine">
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Capas de Filmes</h2>
+    <div class="capas">
+      <img src="imagens/filme1.jpg" alt="Filme 1">
+      <img src="imagens/filme2.jpg" alt="Filme 2">
+      <img src="imagens/filme3.jpg" alt="Filme 3">
+    </div>
+  </section>
+
+  <!-- Botão flutuante do WhatsApp -->
   <a href="https://wa.me/5541995764429?text=Olá!%20Quero%20fazer%20um%20teste%20IPTV" target="_blank" class="whatsapp-float" title="Fale conosco pelo WhatsApp">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 30px; height: 30px;">
   </a>
 
-  <!-- Estilos e animação do botão -->
   <style>
     .whatsapp-float {
       position: fixed;
@@ -162,6 +185,12 @@
       z-index: 1000;
       text-decoration: none;
       animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
     }
 
     a[title]:hover::after {
