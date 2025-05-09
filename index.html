@@ -46,6 +46,23 @@
       object-fit: cover;
       border-radius: 0;
     }
+    .cards {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      max-width: 1200px;
+      margin: auto;
+    }
+    .card {
+      background-color: #1e293b;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #38bdf8;
+    }
     .cta {
       text-align: center;
       padding: 3rem;
@@ -58,12 +75,32 @@
       text-decoration: none;
       font-weight: bold;
     }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      padding: 15px;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 24px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+      text-decoration: none;
+      animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>IPTV Premium</h1>
-    <p>+12.000 Canais e +30.000 Filmes e Séries</p>
+    <p>+12.000 Canais e +30.000 Filmes e Séries com qualidade HD e 4K</p>
   </header>
 
   <section>
@@ -90,10 +127,54 @@
     </div>
   </section>
 
+  <section>
+    <h2>Vantagens do IPTV</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Compatibilidade Total</h3>
+        <p>Assista no celular, smart TV, TV Box, computador e até no tablet.</p>
+      </div>
+      <div class="card">
+        <h3>Atualizações Diárias</h3>
+        <p>Filmes e séries adicionados todos os dias, com lançamentos atualizados.</p>
+      </div>
+      <div class="card">
+        <h3>Suporte 24h</h3>
+        <p>Atendimento rápido via WhatsApp com suporte técnico dedicado.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Planos</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Mensal</h3>
+        <p>R$35,00 por mês – Sem fidelidade</p>
+      </div>
+      <div class="card">
+        <h3>Trimestral</h3>
+        <p>R$95,00 – Economize no pacote de 3 meses</p>
+      </div>
+      <div class="card">
+        <h3>Semestral</h3>
+        <p>R$180,00 – Promoção especial</p>
+      </div>
+      <div class="card">
+        <h3>Anual</h3>
+        <p>R$350,00 – O melhor custo-benefício</p>
+      </div>
+    </div>
+  </section>
+
   <section class="cta">
     <h2>Faça um teste grátis de 6h!</h2>
     <a href="https://wa.me/5541995764429?text=Olá!%20Quero%20fazer%20um%20teste%20IPTV" target="_blank">Solicitar agora</a>
   </section>
+
+  <a href="https://wa.me/5541995764429?text=Olá!%20Quero%20fazer%20um%20teste%20IPTV" class="whatsapp-float" target="_blank" title="Fale conosco pelo WhatsApp">
+    📱
+  </a>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <script>
@@ -127,4 +208,3 @@
   </script>
 </body>
 </html>
-
