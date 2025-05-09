@@ -1,17 +1,13 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IPTV Premium</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
     body {
+      margin: 0;
       font-family: 'Inter', sans-serif;
       background-color: #0f172a;
       color: #f8fafc;
@@ -25,37 +21,29 @@
       font-size: 2.8rem;
       color: #ffffff;
     }
-    .hero {
-      padding: 3rem 1rem;
-      text-align: center;
+    section {
+      padding: 2rem;
     }
-    .hero img {
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .swiper {
       width: 100%;
-      max-width: 800px;
-      animation: swing 2s infinite;
+      padding-bottom: 2rem;
     }
-    .features, .channels, .plans {
-      padding: 2rem 1rem;
-      display: grid;
-      gap: 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .card {
+    .swiper-slide {
       background: #1e293b;
-      padding: 1.5rem;
       border-radius: 1rem;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 150px;
       box-shadow: 0 0 15px rgba(0,0,0,0.3);
     }
-    .card img {
-      width: 100%;
-      max-width: 120px;
-      margin-bottom: 1rem;
-      animation: swing 2s infinite;
-    }
-    .card h3 {
-      color: #38bdf8;
+    .swiper-slide img {
+      max-height: 100px;
+      max-width: 90%;
     }
     .cta {
       text-align: center;
@@ -69,56 +57,62 @@
       text-decoration: none;
       font-weight: bold;
     }
-    @keyframes swing {
-      0% { transform: rotate(0deg); }
-      25% { transform: rotate(5deg); }
-      50% { transform: rotate(0deg); }
-      75% { transform: rotate(-5deg); }
-      100% { transform: rotate(0deg); }
-    }
   </style>
 </head>
 <body>
   <header>
     <h1>IPTV Premium</h1>
+    <p>+12.000 Canais e +30.000 Filmes e Séries</p>
   </header>
-  <section class="hero">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Banner IPTV">
-    <h2>+12.000 Canais e +30.000 Filmes e Séries</h2>
-  </section>
-  <section class="features">
-    <div class="card">
-      <h3>Compatível com todos os dispositivos</h3>
-      <p>Assista no celular, Smart TV, TV Box, computador e tablet.</p>
-    </div>
-    <div class="card">
-      <h3>Conteúdo atualizado</h3>
-      <p>Filmes, séries, desenhos e canais novos todos os dias.</p>
+
+  <section>
+    <h2>Logos de Canais</h2>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Globo_logo_2022.svg" alt="Globo"></div>
+        <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/6/61/SBT_logo_2023.svg" alt="SBT"></div>
+        <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/2/25/RecordTV_logo_2016.svg" alt="Record"></div>
+        <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/6/66/Band_logo_2017.svg" alt="Band"></div>
+      </div>
     </div>
   </section>
-  <section class="channels">
-    <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Globo_logo_2022.svg" alt="Canal 1">
-      <h3>Globo HD</h3>
-    </div>
-    <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/SBT_logo_2023.svg" alt="Canal 2">
-      <h3>SBT HD</h3>
-    </div>
-  </section>
-  <section class="plans">
-    <div class="card">
-      <h3>Plano Mensal</h3>
-      <p>R$35,00</p>
-    </div>
-    <div class="card">
-      <h3>Plano Anual</h3>
-      <p>R$350,00</p>
+
+  <section>
+    <h2>Capas de Filmes</h2>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/71niXI3lxlL._AC_UF894,1000_QL80_.jpg" alt="Filme 1"></div>
+        <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/81d8y7WYpOL._AC_UF894,1000_QL80_.jpg" alt="Filme 2"></div>
+        <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/81FNYy7MwIL._AC_UF894,1000_QL80_.jpg" alt="Filme 3"></div>
+        <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/71qJp5c9EvL._AC_UF894,1000_QL80_.jpg" alt="Filme 4"></div>
+      </div>
     </div>
   </section>
+
   <section class="cta">
     <h2>Faça um teste grátis de 6h!</h2>
     <a href="https://wa.me/5541995764429?text=Olá!%20Quero%20fazer%20um%20teste%20IPTV" target="_blank">Solicitar agora</a>
   </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script>
+    new Swiper('.swiper', {
+      slidesPerView: 2,
+      spaceBetween: 20,
+      loop: true,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 3
+        },
+        1024: {
+          slidesPerView: 4
+        }
+      }
+    });
+  </script>
 </body>
 </html>
