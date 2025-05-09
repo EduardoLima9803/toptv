@@ -3,58 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Melhor Tv IPTV</title>
+  <title>IPTV Premium</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+    body {
       font-family: 'Inter', sans-serif;
       background-color: #0f172a;
       color: #f8fafc;
     }
     header {
-      background-color: #1e293b;
+      background: linear-gradient(to right, #0ea5e9, #22d3ee);
       padding: 2rem;
       text-align: center;
     }
     header h1 {
-      font-size: 2.5rem;
-      margin: 0;
-      color: #38bdf8;
+      font-size: 2.8rem;
+      color: #ffffff;
     }
-    section {
-      padding: 2rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .features, .plans, .logos, .capas {
-      display: grid;
-      gap: 2rem;
-    }
-    .logos img, .capas img {
-      width: 100%;
-      max-width: 120px;
-      border-radius: 0.5rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    }
-    .logos, .capas {
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      justify-items: center;
+    .hero {
+      padding: 3rem 1rem;
       text-align: center;
     }
+    .hero img {
+      width: 100%;
+      max-width: 800px;
+      animation: swing 2s infinite;
+    }
+    .features, .channels, .plans {
+      padding: 2rem 1rem;
+      display: grid;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
     .card {
-      background-color: #1e293b;
+      background: #1e293b;
       padding: 1.5rem;
       border-radius: 1rem;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+    .card img {
+      width: 100%;
+      max-width: 120px;
+      margin-bottom: 1rem;
+      animation: swing 2s infinite;
     }
     .card h3 {
-      margin-top: 0;
       color: #38bdf8;
     }
     .cta {
       text-align: center;
-      margin-top: 3rem;
+      padding: 3rem;
     }
     .cta a {
       background-color: #38bdf8;
@@ -63,121 +68,57 @@
       border-radius: 1rem;
       text-decoration: none;
       font-weight: bold;
-      transition: background-color 0.3s;
     }
-    .cta a:hover {
-      background-color: #0ea5e9;
-    }
-    /* Animações */
-    .img-animada {
-      animation: pulse 2s infinite ease-in-out;
-    }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
+    @keyframes swing {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(5deg); }
+      50% { transform: rotate(0deg); }
+      75% { transform: rotate(-5deg); }
+      100% { transform: rotate(0deg); }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>MelhorTv IPTV</h1>
-    <p>A melhor experiência de TV online está aqui</p>
+    <h1>IPTV Premium</h1>
   </header>
-
+  <section class="hero">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Banner IPTV">
+    <h2>+12.000 Canais e +30.000 Filmes e Séries</h2>
+  </section>
   <section class="features">
     <div class="card">
-      <h3>+12.000 Canais</h3>
-      <p>Esportes, filmes, infantis, internacionais e muito mais em HD e 4K.</p>
+      <h3>Compatível com todos os dispositivos</h3>
+      <p>Assista no celular, Smart TV, TV Box, computador e tablet.</p>
     </div>
     <div class="card">
-      <h3>+30.000 Filmes e Séries</h3>
-      <p>Conteúdo sob demanda atualizado diariamente, incluindo lançamentos.</p>
+      <h3>Conteúdo atualizado</h3>
+      <p>Filmes, séries, desenhos e canais novos todos os dias.</p>
+    </div>
+  </section>
+  <section class="channels">
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Globo_logo_2022.svg" alt="Canal 1">
+      <h3>Globo HD</h3>
     </div>
     <div class="card">
-      <h3>Compatibilidade Total</h3>
-      <p>Assista no celular, smart TV, TV Box, computador e até no tablet.</p>
-    </div>
-    <div class="card">
-      <h3>Suporte 24h</h3>
-      <p>Atendimento rápido e eficiente via WhatsApp e Telegram.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/SBT_logo_2023.svg" alt="Canal 2">
+      <h3>SBT HD</h3>
     </div>
   </section>
-
-  <section class="logos">
-    <h2>Principais Canais</h2>
-    <img src="imagens/globo.png" alt="Globo" class="img-animada">
-    <img src="imagens/sportv.png" alt="SporTV" class="img-animada">
-    <img src="imagens/telecine.png" alt="Telecine" class="img-animada">
-  </section>
-
-  <section class="capas">
-    <h2>Filmes em destaque</h2>
-    <img src="imagens/filme1.jpg" alt="Filme 1" class="img-animada">
-    <img src="imagens/filme2.jpg" alt="Filme 2" class="img-animada">
-    <img src="imagens/filme3.jpg" alt="Filme 3" class="img-animada">
-  </section>
-
   <section class="plans">
     <div class="card">
       <h3>Plano Mensal</h3>
-      <p>R$35,00/mês – Sem fidelidade</p>
-    </div>
-    <div class="card">
-      <h3>Plano Trimestral</h3>
-      <p>R$95,00 – Economize e aproveite 3 meses sem preocupação</p>
-    </div>
-    <div class="card">
-      <h3>Plano Semestral</h3>
-      <p>R$180,00 – Promoção especial por tempo limitado!</p>
+      <p>R$35,00</p>
     </div>
     <div class="card">
       <h3>Plano Anual</h3>
-      <p>R$350,00 – Promoção especial por tempo limitado!</p>
+      <p>R$350,00</p>
     </div>
   </section>
-
   <section class="cta">
     <h2>Faça um teste grátis de 6h!</h2>
-    <a href="#">Solicitar agora</a>
+    <a href="https://wa.me/5541995764429?text=Olá!%20Quero%20fazer%20um%20teste%20IPTV" target="_blank">Solicitar agora</a>
   </section>
-
-  <!-- Botão flutuante do WhatsApp com texto e animação -->
-  <a href="https://wa.me/5541995764429?text=Olá!%20Quero%20fazer%20um%20teste%20IPTV" target="_blank" class="whatsapp-float" title="Fale conosco pelo WhatsApp">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 30px; height: 30px;">
-  </a>
-
-  <!-- Estilos e animação do botão -->
-  <style>
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25d366;
-      color: white;
-      padding: 15px;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 24px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      z-index: 1000;
-      text-decoration: none;
-      animation: pulse 1.8s infinite;
-    }
-
-    a[title]:hover::after {
-      content: attr(title);
-      position: fixed;
-      bottom: 80px;
-      right: 20px;
-      background: #1e293b;
-      color: #f8fafc;
-      padding: 8px 12px;
-      border-radius: 8px;
-      white-space: nowrap;
-      font-size: 14px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-    }
-  </style>
 </body>
 </html>
-
