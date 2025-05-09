@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -33,17 +33,18 @@
       padding-bottom: 2rem;
     }
     .swiper-slide {
-      background: #1e293b;
-      border-radius: 1rem;
+      background: none;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 150px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      height: auto;
     }
     .swiper-slide img {
-      max-height: 100px;
-      max-width: 90%;
+      width: 100%;
+      height: auto;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 0;
     }
     .cta {
       text-align: center;
@@ -67,7 +68,7 @@
 
   <section>
     <h2>Logos de Canais</h2>
-    <div class="swiper">
+    <div class="swiper canal-swiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Globo_logo_2022.svg" alt="Globo"></div>
         <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/6/61/SBT_logo_2023.svg" alt="SBT"></div>
@@ -79,7 +80,7 @@
 
   <section>
     <h2>Capas de Filmes</h2>
-    <div class="swiper">
+    <div class="swiper filmes-swiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/71niXI3lxlL._AC_UF894,1000_QL80_.jpg" alt="Filme 1"></div>
         <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/81d8y7WYpOL._AC_UF894,1000_QL80_.jpg" alt="Filme 2"></div>
@@ -96,23 +97,34 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <script>
-    new Swiper('.swiper', {
-      slidesPerView: 2,
-      spaceBetween: 20,
+    new Swiper('.canal-swiper', {
+      slidesPerView: 3,
+      spaceBetween: 10,
       loop: true,
       autoplay: {
         delay: 2000,
         disableOnInteraction: false,
       },
       breakpoints: {
-        768: {
-          slidesPerView: 3
-        },
-        1024: {
-          slidesPerView: 4
-        }
+        768: { slidesPerView: 4 },
+        1024: { slidesPerView: 5 }
+      }
+    });
+
+    new Swiper('.filmes-swiper', {
+      slidesPerView: 2,
+      spaceBetween: 10,
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        768: { slidesPerView: 3 },
+        1024: { slidesPerView: 4 }
       }
     });
   </script>
 </body>
 </html>
+
