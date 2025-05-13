@@ -44,7 +44,6 @@
       height: auto;
       max-height: 300px;
       object-fit: cover;
-      border-radius: 0;
     }
     .cards {
       display: grid;
@@ -104,29 +103,16 @@
   </header>
 
   <section>
-    <h2>Logos de Canais</h2>
-    <div class="swiper canal-swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Globo_logo_2022.svg" alt="Globo"></div>
-        <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/6/61/SBT_logo_2023.svg" alt="SBT"></div>
-        <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/2/25/RecordTV_logo_2016.svg" alt="Record"></div>
-        <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/6/66/Band_logo_2017.svg" alt="Band"></div>
-      </div>
-    </div>
-  </section>
-
-  <section>
     <h2>Capas de Filmes e Séries</h2>
     <div class="swiper filmes-swiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/71niXI3lxlL._AC_UF894,1000_QL80_.jpg" alt="Filme 1"></div>
-        <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/81d8y7WYpOL._AC_UF894,1000_QL80_.jpg" alt="Filme 2"></div>
-        <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/81FNYy7MwIL._AC_UF894,1000_QL80_.jpg" alt="Filme 3"></div>
-        <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/71qJp5c9EvL._AC_UF894,1000_QL80_.jpg" alt="Filme 4"></div>
-        <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/91VQ5cK5D2L._AC_UF894,1000_QL80_.jpg" alt="The Last of Us"></div>
-        <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/71Z5U3OqHGL._AC_UF894,1000_QL80_.jpg" alt="Stranger Things"></div>
-        <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/81MZ9GHYJLL._AC_UF894,1000_QL80_.jpg" alt="John Wick 4"></div>
-        <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/81zOOPVHJ+L._AC_UF894,1000_QL80_.jpg" alt="Velozes e Furiosos 10"></div>
+        <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/71niXI3lxlL.jpg" alt="Vingadores"></div>
+        <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/81FNYy7MwIL.jpg" alt="Top Gun Maverick"></div>
+        <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/81tLZkpgJ+L.jpg" alt="Avatar 2"></div>
+        <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/91eB+5uRbxL.jpg" alt="The Batman"></div>
+        <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/81nxDRmc0wL.jpg" alt="Homem-Aranha: Sem Volta Para Casa"></div>
+        <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/71JwHNi5yBL.jpg" alt="Stranger Things"></div>
+        <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/81cP9IvQz3L.jpg" alt="The Last of Us"></div>
       </div>
     </div>
   </section>
@@ -182,20 +168,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <script>
-    new Swiper('.canal-swiper', {
-      slidesPerView: 3,
-      spaceBetween: 10,
-      loop: true,
-      autoplay: {
-        delay: 2000,
-        disableOnInteraction: false,
-      },
-      breakpoints: {
-        768: { slidesPerView: 4 },
-        1024: { slidesPerView: 5 }
-      }
-    });
-
     new Swiper('.filmes-swiper', {
       slidesPerView: 2,
       spaceBetween: 10,
