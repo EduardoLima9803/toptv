@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MelhorTV IPTV</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <title>Melhor Tv IPTV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <!-- AOS Animation CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -13,51 +15,29 @@
       color: #f8fafc;
     }
     header {
-      background: linear-gradient(to right, #0ea5e9, #22d3ee);
+      background-color: #1e293b;
       padding: 2rem;
       text-align: center;
     }
     header h1 {
-      font-size: 2.8rem;
-      color: #ffffff;
+      font-size: 2.5rem;
+      margin: 0;
+      color: #38bdf8;
     }
     section {
       padding: 2rem;
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-    .swiper {
-      width: 100%;
-      padding-bottom: 2rem;
-    }
-    .swiper-slide {
-      background: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: auto;
-    }
-    .swiper-slide img {
-      width: 100%;
-      height: auto;
-      max-height: 300px;
-      object-fit: cover;
-      border-radius: 0;
-    }
-    .cards {
-      display: grid;
-      gap: 1.5rem;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      max-width: 1200px;
+      max-width: 1000px;
       margin: auto;
+    }
+    .features, .plans {
+      display: grid;
+      gap: 2rem;
     }
     .card {
       background-color: #1e293b;
       padding: 1.5rem;
       border-radius: 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
     .card h3 {
       margin-top: 0;
@@ -65,7 +45,7 @@
     }
     .cta {
       text-align: center;
-      padding: 3rem;
+      margin-top: 3rem;
     }
     .cta a {
       background-color: #38bdf8;
@@ -74,7 +54,67 @@
       border-radius: 1rem;
       text-decoration: none;
       font-weight: bold;
+      transition: background-color 0.3s;
     }
+    .cta a:hover {
+      background-color: #0ea5e9;
+    }
+  </style>
+</head>
+<body>
+  <header data-aos="fade-down">
+    <h1>MelhorTv IPTV</h1>
+    <p>A melhor experiência de TV online está aqui</p>
+  </header>
+  <section class="features" data-aos="fade-up">
+    <div class="card" data-aos="zoom-in">
+      <h3>+12.000 Canais</h3>
+      <p>Esportes, filmes, infantis, internacionais e muito mais em HD e 4K.</p>
+    </div>
+    <div class="card" data-aos="zoom-in">
+      <h3>+30.000 Filmes e Séries</h3>
+      <p>Conteúdo sob demanda atualizado diariamente, incluindo lançamentos.</p>
+    </div>
+    <div class="card" data-aos="zoom-in">
+      <h3>Compatibilidade Total</h3>
+      <p>Assista no celular, smart TV, TV Box, computador e até no tablet.</p>
+    </div>
+    <div class="card" data-aos="zoom-in">
+      <h3>Suporte 24h</h3>
+      <p>Atendimento rápido e eficiente via WhatsApp e Telegram.</p>
+    </div>
+  </section>
+
+  <section class="plans" data-aos="fade-right">
+    <div class="card">
+      <h3>Plano Mensal</h3>
+      <p>R$35,00/mês – Sem fidelidade</p>
+    </div>
+    <div class="card">
+      <h3>Plano Trimestral</h3>
+      <p>R$95,00 – Economize e aproveite 3 meses sem preocupação</p>
+    </div>
+    <div class="card">
+      <h3>Plano Semestral</h3>
+      <p>R$180,00 – Promoção especial por tempo limitado!</p>
+    </div>
+    <div class="card">
+      <h3>Plano Anual</h3>
+      <p>R$350,00 – Promoção especial por tempo limitado!</p>
+    </div>
+  </section>
+  <section class="cta" data-aos="zoom-in-up">
+    <h2>Faça um teste grátis de 6h!</h2>
+    <a href="https://wa.me/5541995764429?text=Olá!%20Quero%20fazer%20um%20teste%20IPTV">Solicitar agora</a>
+  </section>
+
+  <!-- Botão flutuante do WhatsApp com texto e animação -->
+  <a href="https://wa.me/5541995764429?text=Olá!%20Quero%20fazer%20um%20teste%20IPTV" target="_blank" class="whatsapp-float" title="Fale conosco pelo WhatsApp" data-aos="zoom-in-up">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 30px; height: 30px;">
+  </a>
+
+  <!-- Estilos e animação -->
+  <style>
     .whatsapp-float {
       position: fixed;
       bottom: 20px;
@@ -90,120 +130,34 @@
       text-decoration: none;
       animation: pulse 1.8s infinite;
     }
+
     @keyframes pulse {
       0% { transform: scale(1); }
       50% { transform: scale(1.1); }
       100% { transform: scale(1); }
     }
+
+    a[title]:hover::after {
+      content: attr(title);
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      background: #1e293b;
+      color: #f8fafc;
+      padding: 8px 12px;
+      border-radius: 8px;
+      white-space: nowrap;
+      font-size: 14px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    }
   </style>
-</head>
-<body>
-  <header>
-    <h1>MelhorTV IPTV</h1>
-    <p>+12.000 Canais e +30.000 Filmes e Séries com qualidade HD e 4K</p>
-  </header>
 
-  <section>
-    <h2>Logos de Canais</h2>
-    <div class="swiper canal-swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Globo_logo_2022.svg" alt="Globo"></div>
-        <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/6/61/SBT_logo_2023.svg" alt="SBT"></div>
-        <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/2/25/RecordTV_logo_2016.svg" alt="Record"></div>
-        <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/6/66/Band_logo_2017.svg" alt="Band"></div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Capas de Filmes</h2>
-    <div class="swiper filmes-swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/71niXI3lxlL._AC_UF894,1000_QL80_.jpg" alt="Filme 1"></div>
-        <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/81d8y7WYpOL._AC_UF894,1000_QL80_.jpg" alt="Filme 2"></div>
-        <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/81FNYy7MwIL._AC_UF894,1000_QL80_.jpg" alt="Filme 3"></div>
-        <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/71qJp5c9EvL._AC_UF894,1000_QL80_.jpg" alt="Filme 4"></div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Vantagens do IPTV</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Compatibilidade Total</h3>
-        <p>Assista no celular, smart TV, TV Box, computador e até no tablet.</p>
-      </div>
-      <div class="card">
-        <h3>Atualizações Diárias</h3>
-        <p>Filmes e séries adicionados todos os dias, com lançamentos atualizados.</p>
-      </div>
-      <div class="card">
-        <h3>Suporte 24h</h3>
-        <p>Atendimento rápido via WhatsApp com suporte técnico dedicado.</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Planos</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Mensal</h3>
-        <p>R$35,00 por mês – Sem fidelidade</p>
-      </div>
-      <div class="card">
-        <h3>Trimestral</h3>
-        <p>R$95,00 – Economize no pacote de 3 meses</p>
-      </div>
-      <div class="card">
-        <h3>Semestral</h3>
-        <p>R$180,00 – Promoção especial</p>
-      </div>
-      <div class="card">
-        <h3>Anual</h3>
-        <p>R$350,00 – O melhor custo-benefício</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta">
-    <h2>Faça um teste grátis de 6h!</h2>
-    <a href="https://wa.me/5541995764429?text=Olá!%20Quero%20fazer%20um%20teste%20IPTV" target="_blank">Solicitar agora</a>
-  </section>
-
-  <a href="https://wa.me/5541995764429?text=Olá!%20Quero%20fazer%20um%20teste%20IPTV" class="whatsapp-float" target="_blank" title="Fale conosco pelo WhatsApp">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 30px; height: 30px;">
-  </a>
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <!-- AOS Animation JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    new Swiper('.canal-swiper', {
-      slidesPerView: 3,
-      spaceBetween: 10,
-      loop: true,
-      autoplay: {
-        delay: 2000,
-        disableOnInteraction: false,
-      },
-      breakpoints: {
-        768: { slidesPerView: 4 },
-        1024: { slidesPerView: 5 }
-      }
-    });
-
-    new Swiper('.filmes-swiper', {
-      slidesPerView: 2,
-      spaceBetween: 10,
-      loop: true,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-      breakpoints: {
-        768: { slidesPerView: 3 },
-        1024: { slidesPerView: 4 }
-      }
+    AOS.init({
+      duration: 1000,
+      once: true
     });
   </script>
 </body>
