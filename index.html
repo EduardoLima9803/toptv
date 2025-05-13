@@ -194,4 +194,57 @@
   </section>
 
   <a href="https://wa.me/5541995764429?text=Olá!%20Quero%20fazer%20um%20teste%20IPTV" class="whatsapp-float" target="_blank" title="Fale conosco pelo WhatsApp">
-    <img src="https://upload.wikimedia
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 30px; height: 30px;">
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script>
+    new Swiper('.canal-swiper', {
+      slidesPerView: 3,
+      spaceBetween: 10,
+      loop: true,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        768: { slidesPerView: 4 },
+        1024: { slidesPerView: 5 }
+      }
+    });
+
+    new Swiper('.filmes-swiper', {
+      slidesPerView: 2,
+      spaceBetween: 10,
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        768: { slidesPerView: 3 },
+        1024: { slidesPerView: 4 }
+      }
+    });
+
+    // Contador animado
+    function animarContador() {
+      const target = 12000; // Número final do contador
+      const contador = document.getElementById("contador");
+      let current = 0;
+
+      const intervalo = setInterval(function() {
+        current += Math.ceil(target / 100);
+        if (current >= target) {
+          clearInterval(intervalo);
+          contador.textContent = target.toLocaleString();
+        } else {
+          contador.textContent = current.toLocaleString();
+        }
+      }, 50);
+    }
+
+    window.onload = animarContador;
+  </script>
+</body>
+</html>
