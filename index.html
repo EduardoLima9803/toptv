@@ -42,8 +42,8 @@
     .swiper-slide img {
       width: 100%;
       height: auto;
-      max-height: 300px;
-      object-fit: cover;
+      max-height: 120px;
+      object-fit: contain;
     }
     .cards {
       display: grid;
@@ -103,14 +103,31 @@
   </header>
 
   <section>
-    <h2>Capas de Filmes e Séries</h2>
+    <h2>Principais Canais</h2>
+    <div class="swiper canal-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Globo_logo_2022.svg" alt="Globo"></div>
+        <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/6/61/SBT_logo_2023.svg" alt="SBT"></div>
+        <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/2/25/RecordTV_logo_2016.svg" alt="Record"></div>
+        <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/6/66/Band_logo_2017.svg" alt="Band"></div>
+        <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Telecine_logo_2022.svg" alt="Telecine"></div>
+        <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/HBO_Max_Logo.svg" alt="HBO"></div>
+        <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/b/bf/FX_logo.svg" alt="FX"></div>
+        <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Discovery_Channel_-_Logo_2021.svg" alt="Discovery"></div>
+        <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/ESPN_wordmark.svg" alt="ESPN"></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Filmes e Séries</h2>
     <div class="swiper filmes-swiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/71niXI3lxlL.jpg" alt="Vingadores"></div>
         <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/81FNYy7MwIL.jpg" alt="Top Gun Maverick"></div>
         <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/81tLZkpgJ+L.jpg" alt="Avatar 2"></div>
         <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/91eB+5uRbxL.jpg" alt="The Batman"></div>
-        <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/81nxDRmc0wL.jpg" alt="Homem-Aranha: Sem Volta Para Casa"></div>
+        <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/81nxDRmc0wL.jpg" alt="Homem-Aranha"></div>
         <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/71JwHNi5yBL.jpg" alt="Stranger Things"></div>
         <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/81cP9IvQz3L.jpg" alt="The Last of Us"></div>
       </div>
@@ -168,6 +185,20 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <script>
+    new Swiper('.canal-swiper', {
+      slidesPerView: 3,
+      spaceBetween: 10,
+      loop: true,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        768: { slidesPerView: 4 },
+        1024: { slidesPerView: 5 }
+      }
+    });
+
     new Swiper('.filmes-swiper', {
       slidesPerView: 2,
       spaceBetween: 10,
