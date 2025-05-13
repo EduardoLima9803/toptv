@@ -95,12 +95,31 @@
       50% { transform: scale(1.1); }
       100% { transform: scale(1); }
     }
-    .contador {
+    .contador, .beneficios-contador {
       font-size: 3rem;
       font-weight: bold;
       color: #38bdf8;
       text-align: center;
       margin-top: 20px;
+    }
+    .depoimentos, .faq {
+      margin-top: 3rem;
+    }
+    .depoimento, .faq-item {
+      background-color: #1e293b;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .faq-item h3 {
+      color: #38bdf8;
+      cursor: pointer;
+    }
+    .faq-item p {
+      color: #f8fafc;
+      display: none;
+      padding-top: 10px;
     }
   </style>
 </head>
@@ -148,43 +167,37 @@
     <div class="contador" id="contador">0</div>
   </section>
 
+  <!-- Contador de Benefícios -->
   <section>
-    <h2>Vantagens do IPTV</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Compatibilidade Total</h3>
-        <p>Assista no celular, smart TV, TV Box, computador e até no tablet.</p>
-      </div>
-      <div class="card">
-        <h3>Atualizações Diárias</h3>
-        <p>Filmes e séries adicionados todos os dias, com lançamentos atualizados.</p>
-      </div>
-      <div class="card">
-        <h3>Suporte 24h</h3>
-        <p>Atendimento rápido via WhatsApp com suporte técnico dedicado.</p>
-      </div>
+    <h2>Benefícios</h2>
+    <div class="beneficios-contador" id="beneficios-contador">0</div>
+  </section>
+
+  <!-- Depoimentos -->
+  <section class="depoimentos">
+    <h2>Depoimentos de Clientes</h2>
+    <div class="depoimento">
+      <p>"O MelhorTV IPTV tem uma qualidade incrível. Assisto tudo com uma ótima imagem e sem travamentos. Super recomendo!" - <strong>João Silva</strong></p>
+    </div>
+    <div class="depoimento">
+      <p>"Melhor plataforma de IPTV! Sempre tem os lançamentos mais recentes e a equipe de suporte é incrível!" - <strong>Maria Souza</strong></p>
     </div>
   </section>
 
-  <section>
-    <h2>Planos</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Mensal</h3>
-        <p>R$35,00 por mês – Sem fidelidade</p>
-      </div>
-      <div class="card">
-        <h3>Trimestral</h3>
-        <p>R$95,00 – Economize no pacote de 3 meses</p>
-      </div>
-      <div class="card">
-        <h3>Semestral</h3>
-        <p>R$180,00 – Promoção especial</p>
-      </div>
-      <div class="card">
-        <h3>Anual</h3>
-        <p>R$350,00 – O melhor custo-benefício</p>
-      </div>
+  <!-- FAQ Interativo -->
+  <section class="faq">
+    <h2>Perguntas Frequentes (FAQ)</h2>
+    <div class="faq-item">
+      <h3 onclick="toggleFAQ(1)">Como faço para assinar?</h3>
+      <p id="faq-1">Você pode assinar clicando no botão de teste grátis e conversar diretamente pelo WhatsApp.</p>
+    </div>
+    <div class="faq-item">
+      <h3 onclick="toggleFAQ(2)">Quais dispositivos são compatíveis?</h3>
+      <p id="faq-2">Compatível com Smart TVs, celulares, tablets, TV Box e até computador.</p>
+    </div>
+    <div class="faq-item">
+      <h3 onclick="toggleFAQ(3)">Posso assistir filmes em 4K?</h3>
+      <p id="faq-3">Sim, oferecemos filmes e séries em qualidade 4K quando disponível.</p>
     </div>
   </section>
 
@@ -229,7 +242,7 @@
 
     // Contador animado
     function animarContador() {
-      const target = 12000; // Número final do contador
+      const target = 12000; 
       const contador = document.getElementById("contador");
       let current = 0;
 
@@ -245,6 +258,31 @@
     }
 
     window.onload = animarContador;
+
+    // Contador de Benefícios
+    function animarBeneficios() {
+      const target = 50000; // Número final
+      const contador = document.getElementById("beneficios-contador");
+      let current = 0;
+
+      const intervalo = setInterval(function() {
+        current += Math.ceil(target / 100);
+        if (current >= target) {
+          clearInterval(intervalo);
+          contador.textContent = target.toLocaleString();
+        } else {
+          contador.textContent = current.toLocaleString();
+        }
+      }, 50);
+    }
+
+    animarBeneficios();
+
+    // FAQ Interativo
+    function toggleFAQ(faqId) {
+      const faq = document.getElementById(`faq-${faqId}`);
+      faq.style.display = faq.style.display === 'block' ? 'none' : 'block';
+    }
   </script>
 </body>
 </html>
