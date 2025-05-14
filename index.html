@@ -386,10 +386,16 @@
 
     // FAQ Interativo
     function toggleFAQ(faqId) {
-      const faq = document.getElementById(`faq-${faqId}`);
-      faq.style.display = faq.style.display === 'block' ? 'none' : 'block';
+  const allFaqs = document.querySelectorAll('.faq-item p');
+  allFaqs.forEach(faq => {
+    if (faq.id !== `faq-${faqId}`) {
+      faq.style.display = 'none';
     }
-  </script>
+  });
+
+  const faq = document.getElementById(`faq-${faqId}`);
+  faq.style.display = faq.style.display === 'block' ? 'none' : 'block';
+}
     <footer style="text-align: center; padding: 2rem; background-color: #1e293b; color: #f8fafc;">
   <p>&copy; 2025 MelhorTV IPTV - Todos os direitos reservados.</p>
 </footer>
