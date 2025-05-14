@@ -155,6 +155,7 @@
       margin-bottom: 1rem;
     }
   </style>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
   <header class="hero-banner">
@@ -164,7 +165,7 @@
     </div>
   </header>
 
- <section>
+ <section data-aos="fade-up">
     <h2>Plataformas Digitais</h2>
     <div class="swiper canal-swiper">
       <div class="swiper-wrapper">
@@ -180,7 +181,7 @@
     </div>
   </section>
 
-  <section>
+  <section data-aos="zoom-in">
     <h2>Canais</h2>
     <div class="swiper canal-swiper">
       <div class="swiper-wrapper">
@@ -196,7 +197,7 @@
     </div>
   </section>
 
-  <section>
+  <div class="card" data-aos="fade-right">
     <h2>Filmes</h2>
     <div class="swiper filmes-swiper">
       <div class="swiper-wrapper">
@@ -388,4 +389,11 @@
     }
   </script>
 </body>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // duração da animação em ms
+    once: true      // anima apenas uma vez
+  });
+</script>
 </html>
