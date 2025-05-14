@@ -157,9 +157,6 @@
   </style>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
 </head>
 <body>
   <header class="hero-banner">
@@ -228,7 +225,7 @@
 
 <section data-aos="flip-left">
     <h2>Vantagens do IPTV</h2>
-    <div class="cards">
+    <div class="vantagens">
       <div class="card">
       <h3>Atualizações Diárias</h3>
       <p>Filmes e séries adicionados todos os dias, com lançamentos atualizados.</p>
@@ -245,7 +242,7 @@
 
   <section data-aos="flip-left">
     <h2>Planos de Assinatura</h2>
-    <div class="cards">
+    <div class="Planos">
       <div class="card">
       <h3>Plano Mensal</h3>
       <p>R$ 35,00 / Mês</p>
@@ -281,8 +278,7 @@
   </section>
 
   <!-- Depoimentos -->
-  <section data-aos="fade-up">
-  <section class="depoimentos">
+  <section class="depoimentos" data-aos="fade-up">
     <h2>Depoimentos de Clientes</h2>
     <div class="depoimento">
       <p>"O MelhorTV IPTV tem uma qualidade incrível. Assisto tudo com uma ótima imagem e sem travamentos. Super recomendo!" - <strong>João Silva</strong></p>
@@ -293,8 +289,7 @@
   </section>
 
   <!-- FAQ Interativo -->
-  <section class="faq">
-    <section data-aos="fade-up">
+ <section class="faq" data-aos="fade-up">
     <h2>Perguntas Frequentes (FAQ)</h2>
     <div class="faq-item">
       <h3 onclick="toggleFAQ(1)">Como faço para assinar?</h3>
@@ -386,15 +381,18 @@
         }
       }, 50);
     }
-
-    animarBeneficios();
-
     // FAQ Interativo
     function toggleFAQ(faqId) {
-      const faq = document.getElementById(`faq-${faqId}`);
-      faq.style.display = faq.style.display === 'block' ? 'none' : 'block';
+     const allFaqs = document.querySelectorAll('.faq-item p');
+   allFaqs.forEach(faq => {
+    if (faq.id !== `faq-${faqId}`) {
+      faq.style.display = 'none';
     }
-  </script>
+  });
+
+  const faq = document.getElementById(`faq-${faqId}`);
+  faq.style.display = faq.style.display === 'block' ? 'none' : 'block';
+}
 </body>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
