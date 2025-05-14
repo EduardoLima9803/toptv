@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MelhorTV IPTV</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
   <style>
     body {
       margin: 0;
@@ -12,309 +14,144 @@
       background-color: #0f172a;
       color: #f8fafc;
     }
-    header.hero-banner {
-      position: relative;
-      background-image: url('https://files.entr.ai/files/18920/blocks/0/GGNXKNW7STPYCBWYHVI110N2M0G5WI.png');
-      background-size: cover;
-      background-position: center;
-      height: 400px; /* Ajusta a altura da imagem no topo */
-      display: flex;
-      align-items: center;
-      justify-content: center;
+
+    header, section, footer {
+      padding: 2rem;
       text-align: center;
     }
-    header .overlay {
-      background-color: rgba(0, 0, 0, 0.6); /* Sobreposição escura */
-      padding: 2rem;
-      border-radius: 1rem;
-      color: white;
-    }
-    header h1 {
-      font-size: 4rem;
-      margin: 0;
-    }
-    header p {
-      font-size: 1.5rem;
-      margin-top: 1rem;
-    }
-    section {
-      padding: 2rem;
-    }
-    h2 {
-      text-align: center;
+
+    h1, h2 {
       margin-bottom: 1rem;
     }
+
     .swiper {
-      width: 100%;
-      padding-bottom: 2rem;
+      margin: 1rem auto;
     }
-    .swiper-slide {
-      background: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: auto;
-    }
-    .swiper-slide img {
-      width: 100%;
-      height: auto;
-      max-height: 300px;
-      object-fit: cover;
-      border-radius: 0;
-    }
-    .cards {
-      display: grid;
-      gap: 1.5rem;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      max-width: 1200px;
-      margin: auto;
-    }
+
     .card {
       background-color: #1e293b;
-      padding: 1.5rem;
-      border-radius: 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-    .card h3 {
-      margin-top: 0;
-      color: #38bdf8;
-    }
-    .cta {
-      text-align: center;
-      padding: 3rem;
-    }
-    .cta a {
-      background-color: #38bdf8;
-      color: #0f172a;
-      padding: 1rem 2rem;
-      border-radius: 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25d366;
-      color: white;
-      padding: 15px;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 24px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      z-index: 1000;
-      text-decoration: none;
-      animation: pulse 1.8s infinite;
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
-    }
-    .contador, .beneficios-contador {
-      font-size: 3rem;
-      font-weight: bold;
-      color: #38bdf8;
-      text-align: center;
-      margin-top: 20px;
-    }
-    .depoimentos, .faq {
-      margin-top: 3rem;
-    }
-    .depoimento, .faq-item {
-      background-color: #1e293b;
       padding: 1rem;
-      margin: 1rem 0;
-      border-radius: 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      border-radius: 0.5rem;
+      margin: 1rem auto;
+      max-width: 300px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
-    .faq-item h3 {
-      color: #38bdf8;
+
+    .card img {
+      width: 100%;
+      border-radius: 0.5rem;
+    }
+
+    .card h3 {
+      margin-top: 0.5rem;
+    }
+
+    button {
+      background-color: #22c55e;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.375rem;
       cursor: pointer;
+      font-size: 1rem;
     }
-    .faq-item p {
-      color: #f8fafc;
+
+    button:hover {
+      background-color: #16a34a;
+    }
+
+    .faq-pergunta {
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+
+    .faq-resposta {
       display: none;
-      padding-top: 10px;
-    }
-    .vantagens, .planos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .vantagem, .plano {
-      background-color: #1e293b;
-      padding: 1.5rem;
-      border-radius: 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      text-align: center;
-    }
-    .vantagem h3, .plano h3 {
-      color: #38bdf8;
-      margin-bottom: 1rem;
+      margin-top: 0.5rem;
     }
   </style>
 </head>
 <body>
-  <header class="hero-banner">
-    <div class="overlay">
-      <h1 data-aos="fade-up">MelhorTV IPTV</h1>
-      <p data-aos="fade-up" data-aos-delay="200">+12.000 Canais e +30.000 Filmes e Séries com qualidade HD e 4K</p>
-    </div>
+
+  <header data-aos="fade-down">
+    <h1>Bem-vindo à MelhorTV IPTV</h1>
+    <p>Tenha acesso aos melhores canais, filmes e séries!</p>
   </header>
 
- <section>
-    <h2 data-aos="fade-up">Plataformas Digitais</h2>
+  <section data-aos="fade-up">
+    <h2>Canais ao Vivo</h2>
     <div class="swiper canal-swiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide" data-aos="fade-left"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStKFaTjDLaPkZ7t0kJVYjZ_TuQa14SofLRvw&s" alt="Netflix"></div>
-        <div class="swiper-slide" data-aos="fade-left" data-aos-delay="100"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2je2e3aECZ953MaMDxa9pYwYXVoRM-MrWgA&s" alt="hbo max"></div>
-        <div class="swiper-slide" data-aos="fade-left" data-aos-delay="200"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmsD9lOMOsskBvBx30hU-Ui-fDyxIQsgp9JA&s" alt="Prime video"></div>
-        <div class="swiper-slide" data-aos="fade-left" data-aos-delay="300"><img src="https://cdn.pipocamoderna.com.br/storage/2018/11/disney-pluslogo.jpg?_gl=1*145eayw*_ga*NzYxODM3NjEyLjE3NDcxNzk1NDQ.*_ga_LLXTQS34L4*czE3NDcxNzk1NDQkbzEkZzAkdDE3NDcxNzk1NDQkajYwJGwwJGgw" alt="disney+"></div>
-        <div class="swiper-slide" data-aos="fade-left" data-aos-delay="400"><img src="data:image/jpeg;base64,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" alt="aple tv"></div>
-        <div class="swiper-slide" data-aos="fade-left" data-aos-delay="500"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpQmghM4qfwXh5OPKpG_u0IpU18NGK6FRgFA&s" alt="globoplay"></div>
-        <div class="swiper-slide" data-aos="fade-left" data-aos-delay="600"><img src="data:image/jpeg;base64,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" alt="paramount"></div>
-        <div class="swiper-slide" data-aos="fade-left" data-aos-delay="700"><img src="data:image/jpeg;base64,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" alt="star+"></div>
+        <div class="swiper-slide card" data-aos="zoom-in"><img src="https://via.placeholder.com/300x150" alt="Canal 1" /><h3>Canal 1</h3></div>
+        <div class="swiper-slide card" data-aos="zoom-in"><img src="https://via.placeholder.com/300x150" alt="Canal 2" /><h3>Canal 2</h3></div>
+        <div class="swiper-slide card" data-aos="zoom-in"><img src="https://via.placeholder.com/300x150" alt="Canal 3" /><h3>Canal 3</h3></div>
       </div>
     </div>
   </section>
 
-  <section>
-    <h2>Canais</h2>
-    <div class="swiper canal-swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="https://gkpb.com.br/wp-content/uploads/2020/12/novo-logo-globo-completo-8-cores-2021.jpg" alt="Globo"></div>
-        <div class="swiper-slide"><img src="https://i.imgur.com/OFoKcWc.jpg" alt="ESPN"></div>
-        <div class="swiper-slide"><img src="https://s3.glbimg.com/v1/AUTH_f486c675dfaf4c6e96c25f0c21f85eb5/prod/home-share-1b75cdaa.png" alt="Premiere"></div>
-        <div class="swiper-slide"><img src="https://cdn.pipocamoderna.com.br/storage/2018/11/disney-pluslogo.jpg?_gl=1*145eayw*_ga*NzYxODM3NjEyLjE3NDcxNzk1NDQ.*_ga_LLXTQS34L4*czE3NDcxNzk1NDQkbzEkZzAkdDE3NDcxNzk1NDQkajYwJGwwJGgw" alt="disney+"></div>
-        <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Rede_Telecine.png/640px-Rede_Telecine.png" alt="Telecine"></div>
-        <div class="swiper-slide"><img src="https://rollingstone.com.br/media/_versions/hbo_-_divulgacao_widelg.jpg" alt="HBO"></div>
-        <div class="swiper-slide"><img src="data:image/png;base64,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" alt="sportv"></div>
-        <div class="swiper-slide"><img src="https://kreafolk.com/cdn/shop/articles/discovery-channel-logo-design-history-and-evolution-kreafolk_52d6b30e-2d70-46b3-af46-c338e71d6516.jpg?crop=center&height=1200&v=1717724999&width=1200" alt="discovery"></div>
-      </div>
-    </div>
-  </section>
-
-  <section>
+  <section data-aos="fade-up">
     <h2>Filmes</h2>
     <div class="swiper filmes-swiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/71niXI3lxlL._AC_UF894,1000_QL80_.jpg" alt="Vingadores"></div>
-        <div class="swiper-slide"><img src="https://i.imgur.com/rRegFZg.jpg" alt="Capitão América"></div>
-        <div class="swiper-slide"><img src="https://i.imgur.com/JLyEuz8.jpeg" alt="Divertidamente 2"></div>
-        <div class="swiper-slide"><img src="https://i.imgur.com/VJExMnA.jpeg" alt="Deadpool"></div>
-        <div class="swiper-slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3WWPmEJ7gQ5G2mRzCKl5N-Io1aDMAKj0o2g&s" alt="sonic"></div>
+        <div class="swiper-slide card" data-aos="flip-left"><img src="https://via.placeholder.com/300x150" alt="Filme 1" /><h3>Filme 1</h3></div>
+        <div class="swiper-slide card" data-aos="flip-left"><img src="https://via.placeholder.com/300x150" alt="Filme 2" /><h3>Filme 2</h3></div>
+        <div class="swiper-slide card" data-aos="flip-left"><img src="https://via.placeholder.com/300x150" alt="Filme 3" /><h3>Filme 3</h3></div>
       </div>
     </div>
   </section>
 
-  <section>
-    <h2>Series</h2>
+  <section data-aos="fade-up">
+    <h2>Séries</h2>
     <div class="swiper filmes-swiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="https://i.imgur.com/Amqev3u.jpg" alt="Demolidor"></div>
-        <div class="swiper-slide"><img src="https://i.imgur.com/BY2n5eT.jpg" alt="The last of us"></div>
-        <div class="swiper-slide"><img src="https://i.imgur.com/5b1BVWV.jpeg" alt="a casa do dragao"></div>
-        <div class="swiper-slide"><img src="https://i.imgur.com/zuHXxen_d.jpeg?maxwidth=520&shape=thumb&fidelity=high" alt="pinguim"></div>
-        <div class="swiper-slide"><img src="https://i.imgur.com/7CJxXI6_d.png?maxwidth=520&shape=thumb&fidelity=high" alt="la casa de papel"></div>
+        <div class="swiper-slide card" data-aos="zoom-in-up"><img src="https://via.placeholder.com/300x150" alt="Série 1" /><h3>Série 1</h3></div>
+        <div class="swiper-slide card" data-aos="zoom-in-up"><img src="https://via.placeholder.com/300x150" alt="Série 2" /><h3>Série 2</h3></div>
+        <div class="swiper-slide card" data-aos="zoom-in-up"><img src="https://via.placeholder.com/300x150" alt="Série 3" /><h3>Série 3</h3></div>
       </div>
     </div>
   </section>
 
-<section>
-    <h2>Vantagens do IPTV</h2>
-    <div class="cards">
-      <div class="card">
-      <h3>Atualizações Diárias</h3>
-      <p>Filmes e séries adicionados todos os dias, com lançamentos atualizados.</p>
-    </div>
-    <div class="card">
-      <h3>Qualidade HD e 4K</h3>
-      <p>Assista seus canais e filmes com qualidade de imagem superior em HD e 4K.</p>
-    </div>
-    <div class="card">
-      <h3>Multi-dispositivos</h3>
-      <p>Assista onde quiser! O MelhorTV IPTV é compatível com Smart TVs, celulares, tablets e muito mais.</p>
-    </div>
-  </section>
-
-  <section>
-    <h2>Planos de Assinatura</h2>
-    <div class="cards">
-      <div class="card">
+  <section data-aos="fade-up">
+    <h2>Planos</h2>
+    <div class="card" data-aos="fade-right">
       <h3>Plano Mensal</h3>
-      <p>R$ 35,00 / Mês</p>
-      <p>Acesso completo a todos os canais, filmes e séries por um mês.</p>
+      <p>R$ 29,90</p>
+      <button>Assinar</button>
     </div>
-    <div class="card">
-      <h3>Plano Trimestral</h3>
-      <p>R$ 95,00 / 3 Meses</p>
-      <p>Acesso completo com um desconto exclusivo para 3 meses.</p>
-    </div>
-    <div class="card">
-      <h3>Plano Semestral</h3>
-      <p>R$ 180,00 / 6 Meses</p>
-      <p>Acesso completo com um desconto exclusivo para 6 meses.</p>
-    </div>
-    <div class="card">
+    <div class="card" data-aos="fade-left">
       <h3>Plano Anual</h3>
-      <p>R$ 350,00 / Ano</p>
-      <p>Acesso completo e o melhor custo-benefício, com um ano de serviço.</p>
+      <p>R$ 299,90</p>
+      <button>Assinar</button>
     </div>
   </section>
 
-  <!-- Contador animado -->
-  <section>
-    <h2>Quantidade de Canais</h2>
-    <div class="contador" id="contador">0</div>
+  <section data-aos="fade-up">
+    <h2>+ de <span id="contador">0</span> Canais disponíveis</h2>
   </section>
 
-  <!-- Contador de Benefícios -->
-  <section>
-    <h2>Benefícios</h2>
-    <div class="beneficios-contador" id="beneficios-contador">0</div>
+  <section data-aos="fade-up">
+    <h2>Por que escolher a MelhorTV IPTV?</h2>
+    <p>+ de <span id="beneficios-contador">0</span> Clientes satisfeitos</p>
   </section>
 
-  <!-- Depoimentos -->
-  <section class="depoimentos">
-    <h2>Depoimentos de Clientes</h2>
-    <div class="depoimento">
-      <p>"O MelhorTV IPTV tem uma qualidade incrível. Assisto tudo com uma ótima imagem e sem travamentos. Super recomendo!" - <strong>João Silva</strong></p>
-    </div>
-    <div class="depoimento">
-      <p>"Melhor plataforma de IPTV! Sempre tem os lançamentos mais recentes e a equipe de suporte é incrível!" - <strong>Maria Souza</strong></p>
-    </div>
+  <section data-aos="fade-up">
+    <h2>Perguntas Frequentes</h2>
+    <div class="faq-pergunta" onclick="toggleFAQ(1)">1. Como faço para assinar?</div>
+    <div class="faq-resposta" id="faq-1">Você pode clicar em "Assinar" e seguir o processo de pagamento.</div>
+    <div class="faq-pergunta" onclick="toggleFAQ(2)">2. Quais dispositivos são compatíveis?</div>
+    <div class="faq-resposta" id="faq-2">Funciona em Smart TVs, celulares, tablets, e computadores.</div>
   </section>
 
-  <!-- FAQ Interativo -->
-  <section class="faq">
-    <h2>Perguntas Frequentes (FAQ)</h2>
-    <div class="faq-item">
-      <h3 onclick="toggleFAQ(1)">Como faço para assinar?</h3>
-      <p id="faq-1">Você pode assinar clicando no botão de teste grátis e conversar diretamente pelo WhatsApp.</p>
-    </div>
-    <div class="faq-item">
-      <h3 onclick="toggleFAQ(2)">Quais dispositivos são compatíveis?</h3>
-      <p id="faq-2">Compatível com Smart TVs, celulares, tablets, TV Box e até computador.</p>
-    </div>
-    <div class="faq-item">
-      <h3 onclick="toggleFAQ(3)">Posso assistir filmes em 4K?</h3>
-      <p id="faq-3">Sim, oferecemos filmes e séries em qualidade 4K quando disponível.</p>
-    </div>
-  </section>
-
-  <section class="cta">
-    <h2>Faça um teste grátis de 6h!</h2>
-    <a href="https://wa.me/5541995764429?text=Olá!%20Quero%20fazer%20um%20teste%20IPTV" target="_blank">Solicitar agora</a>
-  </section>
-
-  <a href="https://wa.me/5541995764429?text=Olá!%20Quero%20fazer%20um%20teste%20IPTV" class="whatsapp-float" target="_blank" title="Fale conosco pelo WhatsApp">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 30px; height: 30px;">
-  </a>
+  <footer data-aos="fade-up">
+    <p>&copy; 2025 MelhorTV IPTV - Todos os direitos reservados.</p>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
+    AOS.init();
+
     new Swiper('.canal-swiper', {
       slidesPerView: 3,
       spaceBetween: 10,
@@ -343,13 +180,12 @@
       }
     });
 
-    // Contador animado
     function animarContador() {
-      const target = 12000; 
+      const target = 12000;
       const contador = document.getElementById("contador");
       let current = 0;
 
-      const intervalo = setInterval(function() {
+      const intervalo = setInterval(() => {
         current += Math.ceil(target / 100);
         if (current >= target) {
           clearInterval(intervalo);
@@ -360,15 +196,12 @@
       }, 50);
     }
 
-    window.onload = animarContador;
-
-    // Contador de Benefícios
     function animarBeneficios() {
-      const target = 50000; // Número final
+      const target = 50000;
       const contador = document.getElementById("beneficios-contador");
       let current = 0;
 
-      const intervalo = setInterval(function() {
+      const intervalo = setInterval(() => {
         current += Math.ceil(target / 100);
         if (current >= target) {
           clearInterval(intervalo);
@@ -379,12 +212,14 @@
       }, 50);
     }
 
-    animarBeneficios();
+    window.onload = () => {
+      animarContador();
+      animarBeneficios();
+    }
 
-    // FAQ Interativo
-    function toggleFAQ(faqId) {
-      const faq = document.getElementById(`faq-${faqId}`);
-      faq.style.display = faq.style.display === 'block' ? 'none' : 'block';
+    function toggleFAQ(id) {
+      const resposta = document.getElementById(`faq-${id}`);
+      resposta.style.display = resposta.style.display === "block" ? "none" : "block";
     }
   </script>
 </body>
