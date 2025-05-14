@@ -156,7 +156,6 @@
     }
   </style>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <body>
   <header class="hero-banner">
@@ -166,7 +165,7 @@
     </div>
   </header>
 
- <section data-aos="fade-up">
+  <section data-aos="fade-up">
     <h2>Plataformas Digitais</h2>
     <div class="swiper canal-swiper">
       <div class="swiper-wrapper">
@@ -182,7 +181,7 @@
     </div>
   </section>
 
-  <section data-aos="fade-left">
+   <section data-aos="fade-left">
     <h2>Canais</h2>
     <div class="swiper canal-swiper">
       <div class="swiper-wrapper">
@@ -211,6 +210,7 @@
     </div>
   </section>
 
+  <section>
     <section data-aos="fade-right">
     <div class="swiper filmes-swiper">
       <div class="swiper-wrapper">
@@ -225,7 +225,7 @@
 
 <section data-aos="flip-left">
     <h2>Vantagens do IPTV</h2>
-    <div class="vantagens">
+    <div class="cards">
       <div class="card">
       <h3>Atualizações Diárias</h3>
       <p>Filmes e séries adicionados todos os dias, com lançamentos atualizados.</p>
@@ -242,7 +242,7 @@
 
   <section data-aos="flip-left">
     <h2>Planos de Assinatura</h2>
-    <div class="Planos">
+    <div class="cards">
       <div class="card">
       <h3>Plano Mensal</h3>
       <p>R$ 35,00 / Mês</p>
@@ -278,7 +278,8 @@
   </section>
 
   <!-- Depoimentos -->
-  <section class="depoimentos" data-aos="fade-up">
+  <section data-aos="fade-up">
+  <section class="depoimentos">
     <h2>Depoimentos de Clientes</h2>
     <div class="depoimento">
       <p>"O MelhorTV IPTV tem uma qualidade incrível. Assisto tudo com uma ótima imagem e sem travamentos. Super recomendo!" - <strong>João Silva</strong></p>
@@ -289,7 +290,8 @@
   </section>
 
   <!-- FAQ Interativo -->
- <section class="faq" data-aos="fade-up">
+  <section class="faq">
+    <section data-aos="fade-up">
     <h2>Perguntas Frequentes (FAQ)</h2>
     <div class="faq-item">
       <h3 onclick="toggleFAQ(1)">Como faço para assinar?</h3>
@@ -353,18 +355,16 @@
       const intervalo = setInterval(function() {
         current += Math.ceil(target / 100);
         if (current >= target) {
-        clearInterval(intervalo);
-        contador.textContent = target.toLocaleString();
-      } else {
-        contador.textContent = current.toLocaleString();
-      }
-    }, 50);
-  }
+          clearInterval(intervalo);
+          contador.textContent = target.toLocaleString();
+        } else {
+          contador.textContent = current.toLocaleString();
+        }
+      }, 50);
+    }
 
-  window.onload = () => {
-    animarContador();
-    animarBeneficios();
-  };
+    window.onload = animarContador;
+
     // Contador de Benefícios
     function animarBeneficios() {
       const target = 50000; // Número final
@@ -381,18 +381,13 @@
         }
       }, 50);
     }
+
     // FAQ Interativo
     function toggleFAQ(faqId) {
-     const allFaqs = document.querySelectorAll('.faq-item p');
-   allFaqs.forEach(faq => {
-    if (faq.id !== `faq-${faqId}`) {
-      faq.style.display = 'none';
+      const faq = document.getElementById(`faq-${faqId}`);
+      faq.style.display = faq.style.display === 'block' ? 'none' : 'block';
     }
-  });
-
-  const faq = document.getElementById(`faq-${faqId}`);
-  faq.style.display = faq.style.display === 'block' ? 'none' : 'block';
-}
+  </script>
 </body>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
