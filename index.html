@@ -363,8 +363,10 @@
       }, 50);
     }
 
-    window.onload = animarContador;
-
+    window.onload = () => {
+  animarContador();
+  animarBeneficios();
+};
     // Contador de Benefícios
     function animarBeneficios() {
       const target = 50000; // Número final
