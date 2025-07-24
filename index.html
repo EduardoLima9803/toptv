@@ -21,7 +21,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0f172a; /* slate-900 */
+            background-color: rgb(26, 32, 44); /* Cor de fundo mais próxima do site de referência */
             color: #f8fafc; /* slate-50 */
         }
         .hero-banner {
@@ -61,6 +61,22 @@
             .hero-banner p {
                 font-size: 1.75rem;
             }
+        }
+
+        /* Estilo do botão CTA principal no Hero para corresponder ao site de referência */
+        .hero-cta-button {
+            background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 5px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 9999px; /* Full rounded */
+            padding: 0.75rem 2rem; /* py-3 px-8 */
+            font-weight: bold;
+            color: white;
+            transition: all 0.3s ease-in-out;
+            display: inline-block;
+        }
+        .hero-cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 7px 14px rgba(0, 0, 0, 0.3);
         }
 
         .swiper-slide img {
@@ -127,24 +143,42 @@
             text-decoration: none;
             cursor: pointer;
         }
+        /* Estilo dos cartões para corresponder ao site de referência */
+        .custom-card {
+            background-color: rgb(26, 32, 44); /* Cor de fundo mais escura para os cartões */
+            border-radius: 1rem; /* rounded-xl */
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra mais definida */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .custom-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 7px 14px rgba(0, 0, 0, 0.3); /* Sombra ao passar o mouse */
+        }
+
+        /* Estilo para os títulos das seções */
+        .section-title {
+            color: #00c6ff; /* Azul mais vibrante para títulos */
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Sombra de texto sutil */
+        }
+
+        /* Estilo para a navegação fixa */
+        .sticky-nav {
+            background-color: rgba(26, 32, 44, 0.9); /* Fundo semi-transparente mais escuro */
+        }
+        .sticky-nav a {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2); /* Sombra de texto para links da navegação */
+        }
+
         @keyframes fadeInScale {
             from { opacity: 0; transform: scale(0.9); }
             to { opacity: 1; transform: scale(1); }
-        }
-        /* Custom styles for card hover effects and shadows */
-        .card-hover-effect {
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-        .card-hover-effect:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
         }
     </style>
 </head>
 <body class="antialiased">
 
     <!-- Fixed Navigation Bar -->
-    <nav class="sticky top-0 z-50 bg-slate-900 bg-opacity-90 shadow-lg py-4 px-4 md:px-8 lg:px-16">
+    <nav class="sticky top-0 z-50 sticky-nav shadow-lg py-4 px-4 md:px-8 lg:px-16">
         <div class="container mx-auto flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-blue-400">MelhorTV IPTV</a>
             <div class="hidden md:flex space-x-8">
@@ -185,15 +219,15 @@
                 +12.000 Canais e +30.000 Filmes e Séries com qualidade HD e 4K
             </p>
             <a href="https://wa.me/5541995764429?text=Olá!%20Quero%20fazer%20um%20teste%20IPTV" target="_blank"
-               class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full text-xl transition duration-300 ease-in-out transform hover:scale-105 shadow-lg">
+               class="hero-cta-button text-xl">
                 Faça um teste grátis de 6h!
             </a>
         </div>
     </header>
 
     <!-- Sobre Nós Section -->
-    <section id="sobre-nos" class="py-16 px-4 md:px-8 lg:px-16 bg-slate-800 text-center rounded-xl m-8 shadow-2xl" data-aos="fade-up">
-        <h2 class="text-4xl font-bold mb-6 text-blue-400">Sobre Nós</h2>
+    <section id="sobre-nos" class="py-16 px-4 md:px-8 lg:px-16 bg-slate-800 text-center rounded-xl m-8 shadow-2xl custom-card" data-aos="fade-up">
+        <h2 class="text-4xl font-bold mb-6 section-title">Sobre Nós</h2>
         <p class="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-slate-200">
             A MelhorTV IPTV oferece a melhor experiência de entretenimento digital, com uma vasta biblioteca de conteúdo e canais de alta qualidade. Nosso compromisso é levar a você uma programação completa, sem travamentos e com suporte dedicado, para que sua diversão seja garantida a qualquer momento e em qualquer lugar. Junte-se a milhares de clientes satisfeitos!
         </p>
@@ -201,7 +235,7 @@
 
     <!-- Plataformas Digitais Section -->
     <section id="plataformas" class="py-12 px-4 md:px-8 lg:px-16" data-aos="fade-up">
-        <h2 class="text-4xl font-bold text-center mb-10 text-blue-400">Plataformas Digitais</h2>
+        <h2 class="text-4xl font-bold text-center mb-10 section-title">Plataformas Digitais</h2>
         <div class="swiper canal-swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png" alt="Logo da Netflix - Plataforma de streaming"></div>
@@ -218,7 +252,7 @@
 
     <!-- Canais Section -->
     <section id="canais" class="py-12 px-4 md:px-8 lg:px-16" data-aos="fade-left">
-        <h2 class="text-4xl font-bold text-center mb-10 text-blue-400">Canais</h2>
+        <h2 class="text-4xl font-bold text-center mb-10 section-title">Canais</h2>
         <div class="swiper canal-swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Globo_2021.svg/1200px-Globo_2021.svg.png" alt="Globo"></div>
@@ -235,7 +269,7 @@
 
     <!-- Filmes Section -->
     <section id="filmes" class="py-12 px-4 md:px-8 lg:px-16" data-aos="fade-down">
-        <h2 class="text-4xl font-bold text-center mb-10 text-blue-400">Filmes</h2>
+        <h2 class="text-4xl font-bold text-center mb-10 section-title">Filmes</h2>
         <div class="swiper filmes-swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide"><img src="https://m.media-amazon.com/images/I/71niXI3lxlL._AC_UF894,1000_QL80_.jpg" alt="Vingadores"></div>
@@ -249,7 +283,7 @@
 
     <!-- Series Section -->
     <section id="series" class="py-12 px-4 md:px-8 lg:px-16" data-aos="fade-right">
-        <h2 class="text-4xl font-bold text-center mb-10 text-blue-400">Séries</h2>
+        <h2 class="text-4xl font-bold text-center mb-10 section-title">Séries</h2>
         <div class="swiper filmes-swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f6/Daredevil_season_1_poster.jpg/220px-Daredevil_season_1_poster.jpg" alt="Demolidor"></div>
@@ -262,33 +296,33 @@
     </section>
 
     <!-- Compatibilidade Section -->
-    <section id="compatibilidade" class="py-12 px-4 md:px-8 lg:px-16 bg-slate-800 text-center rounded-xl m-8 shadow-2xl" data-aos="fade-up">
-        <h2 class="text-4xl font-bold mb-10 text-blue-400">Compatibilidade</h2>
+    <section id="compatibilidade" class="py-12 px-4 md:px-8 lg:px-16 bg-slate-800 text-center rounded-xl m-8 shadow-2xl custom-card" data-aos="fade-up">
+        <h2 class="text-4xl font-bold mb-10 section-title">Compatibilidade</h2>
         <p class="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-slate-200 mb-8">
             Assista em seus dispositivos favoritos! Nossa IPTV é compatível com uma ampla gama de aparelhos.
         </p>
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 max-w-4xl mx-auto">
-            <div class="flex flex-col items-center p-4 bg-slate-900 rounded-lg shadow-md card-hover-effect">
+            <div class="flex flex-col items-center p-4 bg-slate-900 rounded-lg shadow-md custom-card">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Smart_TV_icon.svg/1200px-Smart_TV_icon.svg.png" alt="Smart TV" class="w-20 h-20 mb-2 object-contain">
                 <p class="text-slate-200 text-lg font-semibold">Smart TV</p>
             </div>
-            <div class="flex flex-col items-center p-4 bg-slate-900 rounded-lg shadow-md card-hover-effect">
+            <div class="flex flex-col items-center p-4 bg-slate-900 rounded-lg shadow-md custom-card">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Smartphone_icon.svg/1200px-Smartphone_icon.svg.png" alt="Celular" class="w-20 h-20 mb-2 object-contain">
                 <p class="text-slate-200 text-lg font-semibold">Celular</p>
             </div>
-            <div class="flex flex-col items-center p-4 bg-slate-900 rounded-lg shadow-md card-hover-effect">
+            <div class="flex flex-col items-center p-4 bg-slate-900 rounded-lg shadow-md custom-card">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Tablet_icon.svg/1200px-Tablet_icon.svg.png" alt="Tablet" class="w-20 h-20 mb-2 object-contain">
                 <p class="text-slate-200 text-lg font-semibold">Tablet</p>
             </div>
-            <div class="flex flex-col items-center p-4 bg-slate-900 rounded-lg shadow-md card-hover-effect">
+            <div class="flex flex-col items-center p-4 bg-slate-900 rounded-lg shadow-md custom-card">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Computer_icon.svg/1200px-Computer_icon.svg.png" alt="Computador" class="w-20 h-20 mb-2 object-contain">
                 <p class="text-slate-200 text-lg font-semibold">Computador</p>
             </div>
-            <div class="flex flex-col items-center p-4 bg-slate-900 rounded-lg shadow-md card-hover-effect">
+            <div class="flex flex-col items-center p-4 bg-slate-900 rounded-lg shadow-md custom-card">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Amazon_Fire_TV_Stick_logo.svg/1200px-Amazon_Fire_TV_Stick_logo.svg.png" alt="Fire TV Stick" class="w-20 h-20 mb-2 object-contain">
                 <p class="text-slate-200 text-lg font-semibold">Fire TV Stick</p>
             </div>
-            <div class="flex flex-col items-center p-4 bg-slate-900 rounded-lg shadow-md card-hover-effect">
+            <div class="flex flex-col items-center p-4 bg-slate-900 rounded-lg shadow-md custom-card">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Android_TV_logo.svg/1200px-Android_TV_logo.svg.png" alt="TV Box Android" class="w-20 h-20 mb-2 object-contain">
                 <p class="text-slate-200 text-lg font-semibold">TV Box Android</p>
             </div>
@@ -297,17 +331,17 @@
 
     <!-- Vantagens do IPTV Section -->
     <section id="vantagens" class="py-12 px-4 md:px-8 lg:px-16" data-aos="flip-left">
-        <h2 class="text-4xl font-bold text-center mb-10 text-blue-400">Vantagens do IPTV</h2>
+        <h2 class="text-4xl font-bold text-center mb-10 section-title">Vantagens do IPTV</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            <div class="bg-slate-800 p-6 rounded-2xl shadow-xl card-hover-effect">
+            <div class="bg-slate-800 p-6 rounded-2xl shadow-xl custom-card">
                 <h3 class="text-2xl font-semibold mb-3 text-blue-400">Atualizações Diárias</h3>
                 <p class="text-slate-200">Filmes e séries adicionados todos os dias, com lançamentos atualizados.</p>
             </div>
-            <div class="bg-slate-800 p-6 rounded-2xl shadow-xl card-hover-effect">
+            <div class="bg-slate-800 p-6 rounded-2xl shadow-xl custom-card">
                 <h3 class="text-2xl font-semibold mb-3 text-blue-400">Qualidade HD e 4K</h3>
                 <p class="text-slate-200">Assista seus canais e filmes com qualidade de imagem superior em HD e 4K.</p>
             </div>
-            <div class="bg-slate-800 p-6 rounded-2xl shadow-xl card-hover-effect">
+            <div class="bg-slate-800 p-6 rounded-2xl shadow-xl custom-card">
                 <h3 class="text-2xl font-semibold mb-3 text-blue-400">Multi-dispositivos</h3>
                 <p class="text-slate-200">Assista onde quiser! O MelhorTV IPTV é compatível com Smart TVs, celulares, tablets e muito mais.</p>
             </div>
@@ -316,17 +350,17 @@
 
     <!-- Por que nos escolher? Section -->
     <section class="py-12 px-4 md:px-8 lg:px-16" data-aos="fade-up">
-        <h2 class="text-4xl font-bold text-center mb-10 text-blue-400">Por que escolher MelhorTV IPTV?</h2>
+        <h2 class="text-4xl font-bold text-center mb-10 section-title">Por que escolher MelhorTV IPTV?</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            <div class="bg-slate-800 p-6 rounded-2xl shadow-xl card-hover-effect">
+            <div class="bg-slate-800 p-6 rounded-2xl shadow-xl custom-card">
                 <h3 class="text-2xl font-semibold mb-3 text-blue-400">Suporte 24/7</h3>
                 <p class="text-slate-200">Nossa equipe está sempre disponível para ajudar, a qualquer hora do dia ou da noite.</p>
             </div>
-            <div class="bg-slate-800 p-6 rounded-2xl shadow-xl card-hover-effect">
+            <div class="bg-slate-800 p-6 rounded-2xl shadow-xl custom-card">
                 <h3 class="text-2xl font-semibold mb-3 text-blue-400">Conexão Estável</h3>
                 <p class="text-slate-200">Desfrute de uma transmissão sem interrupções, mesmo em horários de pico.</p>
             </div>
-            <div class="bg-slate-800 p-6 rounded-2xl shadow-xl card-hover-effect">
+            <div class="bg-slate-800 p-6 rounded-2xl shadow-xl custom-card">
                 <h3 class="text-2xl font-semibold mb-3 text-blue-400">Preços Imbatíveis</h3>
                 <p class="text-slate-200">Qualidade superior com os melhores preços do mercado.</p>
             </div>
@@ -335,24 +369,24 @@
 
     <!-- Planos de Assinatura Section -->
     <section id="planos" class="py-12 px-4 md:px-8 lg:px-16" data-aos="flip-left">
-        <h2 class="text-4xl font-bold text-center mb-10 text-blue-400">Planos de Assinatura</h2>
+        <h2 class="text-4xl font-bold text-center mb-10 section-title">Planos de Assinatura</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            <div class="bg-slate-800 p-6 rounded-2xl shadow-xl text-center card-hover-effect">
+            <div class="bg-slate-800 p-6 rounded-2xl shadow-xl text-center custom-card">
                 <h3 class="text-2xl font-semibold mb-3 text-blue-400">Plano Mensal</h3>
                 <p class="text-3xl font-bold mb-2 text-white">R$ 35,00 <span class="text-xl font-normal">/ Mês</span></p>
                 <p class="text-slate-200">Acesso completo a todos os canais, filmes e séries por um mês.</p>
             </div>
-            <div class="bg-slate-800 p-6 rounded-2xl shadow-xl text-center card-hover-effect">
+            <div class="bg-slate-800 p-6 rounded-2xl shadow-xl text-center custom-card">
                 <h3 class="text-2xl font-semibold mb-3 text-blue-400">Plano Trimestral</h3>
                 <p class="text-3xl font-bold mb-2 text-white">R$ 95,00 <span class="text-xl font-normal">/ 3 Meses</span></p>
                 <p class="text-slate-200">Acesso completo com um desconto exclusivo para 3 meses.</p>
             </div>
-            <div class="bg-slate-800 p-6 rounded-2xl shadow-xl text-center card-hover-effect">
+            <div class="bg-slate-800 p-6 rounded-2xl shadow-xl text-center custom-card">
                 <h3 class="text-2xl font-semibold mb-3 text-blue-400">Plano Semestral</h3>
                 <p class="text-3xl font-bold mb-2 text-white">R$ 180,00 <span class="text-xl font-normal">/ 6 Meses</span></p>
                 <p class="text-slate-200">Acesso completo com um desconto exclusivo para 6 meses.</p>
             </div>
-            <div class="bg-slate-800 p-6 rounded-2xl shadow-xl text-center card-hover-effect">
+            <div class="bg-slate-800 p-6 rounded-2xl shadow-xl text-center custom-card">
                 <h3 class="text-2xl font-semibold mb-3 text-blue-400">Plano Anual</h3>
                 <p class="text-3xl font-bold mb-2 text-white">R$ 350,00 <span class="text-xl font-normal">/ Ano</span></p>
                 <p class="text-slate-200">Acesso completo e o melhor custo-benefício, com um ano de serviço.</p>
@@ -362,28 +396,28 @@
 
     <!-- Contador de Canais Section -->
     <section class="py-12 px-4 md:px-8 lg:px-16 text-center" data-aos="fade-up">
-        <h2 class="text-4xl font-bold mb-6 text-blue-400">Quantidade de Canais</h2>
+        <h2 class="text-4xl font-bold mb-6 section-title">Quantidade de Canais</h2>
         <div class="text-6xl font-extrabold text-blue-400" id="contador">0</div>
     </section>
 
     <!-- Contador de Benefícios Section -->
     <section class="py-12 px-4 md:px-8 lg:px-16 text-center" data-aos="fade-up">
-        <h2 class="text-4xl font-bold mb-6 text-blue-400">Benefícios</h2>
+        <h2 class="text-4xl font-bold mb-6 section-title">Benefícios</h2>
         <div class="text-6xl font-extrabold text-blue-400" id="beneficios-contador">0</div>
     </section>
 
     <!-- Depoimentos Section -->
     <section id="depoimentos" class="py-12 px-4 md:px-8 lg:px-16" data-aos="fade-up">
-        <h2 class="text-4xl font-bold text-center mb-10 text-blue-400">Depoimentos de Clientes</h2>
+        <h2 class="text-4xl font-bold text-center mb-10 section-title">Depoimentos de Clientes</h2>
         <div class="max-w-3xl mx-auto">
-            <div class="bg-slate-800 p-6 rounded-2xl shadow-xl card-hover-effect mb-6 flex items-start">
+            <div class="bg-slate-800 p-6 rounded-2xl shadow-xl custom-card mb-6 flex items-start">
                 <img src="https://placehold.co/60x60/38bdf8/0f172a?text=JS" alt="Avatar João Silva" class="rounded-full mr-4">
                 <div>
                     <p class="text-slate-200 italic mb-2">"O MelhorTV IPTV tem uma qualidade incrível. Assisto tudo com uma ótima imagem e sem travamentos. Super recomendo!"</p>
                     <p class="text-blue-300 font-semibold text-right">- João Silva</p>
                 </div>
             </div>
-            <div class="bg-slate-800 p-6 rounded-2xl shadow-xl card-hover-effect flex items-start">
+            <div class="bg-slate-800 p-6 rounded-2xl shadow-xl custom-card flex items-start">
                 <img src="https://placehold.co/60x60/38bdf8/0f172a?text=MS" alt="Avatar Maria Souza" class="rounded-full mr-4">
                 <div>
                     <p class="text-slate-200 italic mb-2">"Melhor plataforma de IPTV! Sempre tem os lançamentos mais recentes e a equipe de suporte é incrível!"</p>
@@ -395,23 +429,23 @@
 
     <!-- FAQ Section -->
     <section id="faq" class="py-12 px-4 md:px-8 lg:px-16" data-aos="fade-up">
-        <h2 class="text-4xl font-bold text-center mb-10 text-blue-400">Perguntas Frequentes (FAQ)</h2>
+        <h2 class="text-4xl font-bold text-center mb-10 section-title">Perguntas Frequentes (FAQ)</h2>
         <div class="max-w-3xl mx-auto">
-            <div class="bg-slate-800 p-6 rounded-2xl shadow-xl card-hover-effect mb-4">
+            <div class="bg-slate-800 p-6 rounded-2xl shadow-xl custom-card mb-4">
                 <h3 class="text-2xl font-semibold text-blue-400 cursor-pointer flex justify-between items-center" onclick="toggleFAQ(1)">
                     Como faço para assinar?
                     <span class="faq-icon text-blue-400 text-3xl">+</span>
                 </h3>
                 <p id="faq-1" class="accordion-content text-slate-200 mt-3">Você pode assinar clicando no botão de teste grátis e conversar diretamente pelo WhatsApp.</p>
             </div>
-            <div class="bg-slate-800 p-6 rounded-2xl shadow-xl card-hover-effect mb-4">
+            <div class="bg-slate-800 p-6 rounded-2xl shadow-xl custom-card mb-4">
                 <h3 class="text-2xl font-semibold text-blue-400 cursor-pointer flex justify-between items-center" onclick="toggleFAQ(2)">
                     Quais dispositivos são compatíveis?
                     <span class="faq-icon text-blue-400 text-3xl">+</span>
                 </h3>
                 <p id="faq-2" class="accordion-content text-slate-200 mt-3">Compatível com Smart TVs, celulares, tablets, TV Box e até computador.</p>
             </div>
-            <div class="bg-slate-800 p-6 rounded-2xl shadow-xl card-hover-effect">
+            <div class="bg-slate-800 p-6 rounded-2xl shadow-xl custom-card">
                 <h3 class="text-2xl font-semibold text-blue-400 cursor-pointer flex justify-between items-center" onclick="toggleFAQ(3)">
                     Posso assistir filmes em 4K?
                     <span class="faq-icon text-blue-400 text-3xl">+</span>
@@ -422,8 +456,8 @@
     </section>
 
     <!-- Contact Form Section -->
-    <section id="contato" class="py-12 px-4 md:px-8 lg:px-16 bg-slate-800 rounded-xl m-8 shadow-2xl" data-aos="zoom-in">
-        <h2 class="text-4xl font-bold text-center mb-10 text-blue-400">Entre em Contato</h2>
+    <section id="contato" class="py-12 px-4 md:px-8 lg:px-16 bg-slate-800 rounded-xl m-8 shadow-2xl custom-card" data-aos="zoom-in">
+        <h2 class="text-4xl font-bold text-center mb-10 section-title">Entre em Contato</h2>
         <div class="max-w-xl mx-auto p-8 bg-slate-900 rounded-2xl shadow-xl">
             <form action="#" method="POST" class="space-y-6">
                 <div>
@@ -450,8 +484,8 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-12 px-4 md:px-8 lg:px-16 text-center bg-slate-800 rounded-xl m-8 shadow-2xl" data-aos="zoom-in">
-        <h2 class="text-4xl font-bold mb-8 text-blue-400">Faça um teste grátis de 6h!</h2>
+    <section class="py-12 px-4 md:px-8 lg:px-16 text-center bg-slate-800 rounded-xl m-8 shadow-2xl custom-card" data-aos="zoom-in">
+        <h2 class="text-4xl font-bold mb-8 section-title">Faça um teste grátis de 6h!</h2>
         <a href="https://wa.me/5541995764429?text=Olá!%20Quero%20fazer%20um%20teste%20IPTV" target="_blank"
            class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-8 rounded-full text-xl transition duration-300 ease-in-out transform hover:scale-105 shadow-lg">
             Solicitar agora
