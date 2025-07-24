@@ -15,7 +15,7 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Inter Font from Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
@@ -169,6 +169,75 @@
             text-shadow: 0 1px 2px rgba(0,0,0,0.2); /* Sombra de texto para links da navegação */
         }
 
+        /* Styling for the plan cards to match toptvdigital.com/planos */
+        .plan-card {
+            background-color: rgb(20, 25, 30); /* Darker background */
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 3px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Distribute space */
+        }
+        .plan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5), 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+        .plan-card h3 {
+            color: #00c6ff; /* Blue accent for title */
+            font-size: 2.25rem; /* text-3xl */
+            font-weight: 700; /* font-bold */
+            margin-bottom: 1rem;
+        }
+        .plan-card .price {
+            font-size: 4rem; /* text-6xl */
+            font-weight: 800; /* font-extrabold */
+            color: white;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        .plan-card .price span {
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: 400; /* font-normal */
+            color: #cbd5e1; /* slate-300 */
+        }
+        .plan-card ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: left; /* Align features to left */
+        }
+        .plan-card ul li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            color: #cbd5e1; /* slate-300 */
+            font-size: 1.1rem;
+        }
+        .plan-card ul li svg {
+            color: #25d366; /* Green checkmark */
+            margin-right: 0.75rem;
+            flex-shrink: 0; /* Prevent icon from shrinking */
+        }
+        .plan-card .cta-button {
+            background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 9999px;
+            padding: 0.75rem 2rem;
+            font-weight: bold;
+            color: white;
+            transition: all 0.3s ease-in-out;
+            display: inline-block;
+            width: 100%; /* Full width button */
+        }
+        .plan-card .cta-button:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
         @keyframes fadeInScale {
             from { opacity: 0; transform: scale(0.9); }
             to { opacity: 1; transform: scale(1); }
@@ -186,7 +255,7 @@
                 <a href="#plataformas" class="text-slate-200 hover:text-blue-400 transition duration-300">Conteúdo</a>
                 <a href="#compatibilidade" class="text-slate-200 hover:text-blue-400 transition duration-300">Compatibilidade</a>
                 <a href="#vantagens" class="text-slate-200 hover:text-blue-400 transition duration-300">Vantagens</a>
-                <a href="planos.html" class="text-slate-200 hover:text-blue-400 transition duration-300" target="_blank">Planos</a>
+                <a href="#planos-section" class="text-slate-200 hover:text-blue-400 transition duration-300">Planos</a>
                 <a href="#depoimentos" class="text-slate-200 hover:text-blue-400 transition duration-300">Depoimentos</a>
                 <a href="#faq" class="text-slate-200 hover:text-blue-400 transition duration-300">FAQ</a>
                 <a href="#contato" class="text-slate-200 hover:text-blue-400 transition duration-300">Contato</a>
@@ -204,7 +273,7 @@
             <a href="#plataformas" class="block text-slate-200 hover:text-blue-400 transition duration-300 py-2">Conteúdo</a>
             <a href="#compatibilidade" class="block text-slate-200 hover:text-blue-400 transition duration-300 py-2">Compatibilidade</a>
             <a href="#vantagens" class="block text-slate-200 hover:text-blue-400 transition duration-300 py-2">Vantagens</a>
-            <a href="planos.html" class="block text-slate-200 hover:text-blue-400 transition duration-300 py-2" target="_blank">Planos</a>
+            <a href="#planos-section" class="block text-slate-200 hover:text-blue-400 transition duration-300 py-2">Planos</a>
             <a href="#depoimentos" class="block text-slate-200 hover:text-blue-400 transition duration-300 py-2">Depoimentos</a>
             <a href="#faq" class="block text-slate-200 hover:text-blue-400 transition duration-300 py-2">FAQ</a>
             <a href="#contato" class="block text-slate-200 hover:text-blue-400 transition duration-300 py-2">Contato</a>
@@ -367,16 +436,81 @@
         </div>
     </section>
 
-    <!-- Call to Action for Plans Page -->
-    <section class="py-12 px-4 md:px-8 lg:px-16 text-center bg-slate-800 rounded-xl m-8 shadow-2xl custom-card" data-aos="zoom-in">
-        <h2 class="text-4xl font-bold mb-8 section-title">Confira Nossos Planos de Assinatura!</h2>
-        <p class="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-slate-200 mb-8">
-            Descubra a variedade de opções que temos para si e escolha o plano que melhor se adapta às suas necessidades.
-        </p>
-        <a href="planos.html" target="_blank"
-           class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-8 rounded-full text-xl transition duration-300 ease-in-out transform hover:scale-105 shadow-lg">
-            Ver Planos
-        </a>
+    <!-- Planos de Assinatura Section - Integrada -->
+    <section id="planos-section" class="py-12 px-4 md:px-8 lg:px-16">
+        <h2 class="text-4xl font-bold text-center mb-12 section-title">Nossos Planos de Assinatura</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            <div class="plan-card">
+                <div>
+                    <h3>Plano Mensal</h3>
+                    <p class="price">R$ 35,00 <span class="duration">/ Mês</span></p>
+                    <ul>
+                        <li><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Acesso completo a canais</li>
+                        <li><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Filmes e séries atualizados</li>
+                        <li><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Qualidade HD e 4K</li>
+                        <li><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Suporte 24/7</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/5541995764429?text=Olá!%20Quero%20assinar%20o%20Plano%20Mensal!" target="_blank"
+                   class="cta-button">
+                    Assinar Agora
+                </a>
+            </div>
+            <div class="plan-card">
+                <div>
+                    <h3>Plano Trimestral</h3>
+                    <p class="price">R$ 95,00 <span class="duration">/ 3 Meses</span></p>
+                    <ul>
+                        <li><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Acesso completo a canais</li>
+                        <li><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Filmes e séries atualizados</li>
+                        <li><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Qualidade HD e 4K</li>
+                        <li><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Suporte 24/7</li>
+                        <li><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Desconto exclusivo</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/5541995764429?text=Olá!%20Quero%20assinar%20o%20Plano%20Trimestral!" target="_blank"
+                   class="cta-button">
+                    Assinar Agora
+                </a>
+            </div>
+            <div class="plan-card">
+                <div>
+                    <h3>Plano Semestral</h3>
+                    <p class="price">R$ 180,00 <span class="duration">/ 6 Meses</span></p>
+                    <ul>
+                        <li><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Acesso completo a canais</li>
+                        <li><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Filmes e séries atualizados</li>
+                        <li><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Qualidade HD e 4K</li>
+                        <li><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Suporte 24/7</li>
+                        <li><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Maior economia</li>
+                        <li><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Semestral</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/5541995764429?text=Olá!%20Quero%20assinar%20o%20Plano%20Semestral!" target="_blank"
+                   class="cta-button">
+                    Assinar Agora
+                </a>
+            </div>
+            <div class="plan-card">
+                <div>
+                    <h3>Plano Anual</h3>
+                    <p class="price">R$ 350,00 <span class="duration">/ Ano</span></p>
+                    <ul>
+                        <li><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Acesso completo a canais</li>
+                        <li><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Filmes e séries atualizados</li>
+                        <li><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Qualidade HD e 4K</li>
+                        <li><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Suporte 24/7</li>
+                        <li><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Melhor custo-benefício</li>
+                        <li><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Anual</li>
+                        <li><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Semestral</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/5541995764429?text=Olá!%20Quero%20assinar%20o%20Plano%20Anual!" target="_blank"
+                   class="cta-button">
+                    Assinar Agora
+                </a>
+            </div>
+        </div>
     </section>
 
     <!-- Contador de Canais Section -->
