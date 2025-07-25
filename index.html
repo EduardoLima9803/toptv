@@ -581,7 +581,7 @@
     <section id="contato" class="py-12 px-4 md:px-8 lg:px-16 bg-slate-800 rounded-xl m-8 shadow-2xl custom-card" data-aos="zoom-in">
         <h2 class="text-4xl font-bold text-center mb-10 section-title">Entre em Contato</h2>
         <div class="max-w-xl mx-auto p-8 bg-slate-900 rounded-2xl shadow-xl">
-            <form id="contact-form" class="space-y-6">
+            <form action="#" method="POST" class="space-y-6">
                 <div>
                     <label for="name" class="block text-slate-300 text-lg font-semibold mb-2">Nome</label>
                     <input type="text" id="name" name="name" placeholder="Seu nome completo"
@@ -602,7 +602,6 @@
                     Enviar Mensagem
                 </button>
             </form>
-            <div id="form-message" class="mt-4 p-3 rounded-lg text-center text-white hidden"></div>
         </div>
     </section>
 
@@ -628,6 +627,19 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
         </svg>
     </button>
+
+    <!-- Pop-up Modal for Free Trial -->
+    <div id="free-trial-modal" class="modal fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-[1000]">
+        <div class="modal-content bg-slate-800 p-8 rounded-2xl shadow-2xl text-center relative max-w-lg mx-auto transform scale-95 opacity-0 transition-all duration-300 ease-in-out">
+            <span class="close-button text-slate-400 hover:text-white" onclick="closeModal()">&times;</span>
+            <h3 class="text-3xl font-bold text-blue-400 mb-6">Não perca! Teste Grátis de 6h!</h3>
+            <p class="text-slate-200 text-lg mb-8">Experimente o MelhorTV IPTV sem compromisso e tenha acesso a milhares de canais, filmes e séries.</p>
+            <a href="https://wa.me/5541995764429?text=Olá!%20Quero%20fazer%20um%20teste%20IPTV" target="_blank"
+               class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full text-xl transition duration-300 ease-in-out transform hover:scale-105 shadow-lg">
+                Quero meu Teste Grátis!
+            </a>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="text-center py-8 bg-slate-800 text-slate-300 rounded-t-xl mt-12">
@@ -794,25 +806,6 @@
 
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
-        });
-
-        // Handle contact form submission
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
-
-            const formMessage = document.getElementById('form-message');
-            formMessage.classList.remove('hidden', 'bg-red-500', 'bg-green-500');
-            formMessage.classList.add('bg-green-500');
-            formMessage.textContent = 'Mensagem enviada com sucesso! (Funcionalidade de envio para demonstração)';
-
-            // Clear form fields
-            document.getElementById('name').value = '';
-            document.getElementById('email').value = '';
-            document.getElementById('message').value = '';
-
-            setTimeout(() => {
-                formMessage.classList.add('hidden');
-            }, 5000); // Hide message after 5 seconds
         });
 
         // Initialize counters on window load
