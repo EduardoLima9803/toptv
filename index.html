@@ -19,131 +19,229 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-:root {
-  --bg-dark: #050505;
-  --bg-card: #0b0b0b;
-  --red: #ef1111;
-  --red-dark: #8b0000;
-  --yellow: #ffd400;
-  --white: #ffffff;
-  --muted: #cbd5e1;
-}
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: rgb(10, 15, 20); /* Cor de fundo mais próxima do site de referência */
+            color: #f8fafc; /* slate-50 */
+        }
+        .hero-banner {
+            background-image: url('https://files.entr.ai/files/18920/blocks/0/GGNXKNW7STPYCBWYHVI110N2M0G5WI.png');
+            background-size: cover;
+            background-position: center;
+            height: 580px; /* Increased height for hero section */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 1rem;
+        }
+        .hero-banner .overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 3rem 2.5rem; /* Increased padding */
+            border-radius: 1.5rem; /* More rounded */
+            color: white;
+            max-width: 700px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+        .hero-banner h1 {
+            font-size: 3.5rem; /* Slightly smaller for better fit */
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+        .hero-banner p {
+            font-size: 1.3rem;
+            margin-top: 0.5rem;
+            margin-bottom: 2.5rem; /* Space before button */
+        }
+        @media (min-width: 768px) {
+            .hero-banner h1 {
+                font-size: 4.5rem;
+            }
+            .hero-banner p {
+                font-size: 1.75rem;
+            }
+        }
 
-body {
-  background:
-    radial-gradient(circle at top right, rgba(239, 17, 17, 0.18), transparent 35%),
-    linear-gradient(180deg, #050505 0%, #0b0b0b 45%, #050505 100%);
-  color: var(--white);
-}
+        /* Estilo do botão CTA principal no Hero para corresponder ao site de referência */
+        .hero-cta-button {
+            background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 5px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 9999px; /* Full rounded */
+            padding: 1rem 2.5rem; /* py-4 px-10 */
+            font-weight: bold;
+            color: white;
+            transition: all 0.3s ease-in-out;
+            display: inline-block;
+        }
+        .hero-cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 7px 14px rgba(0, 0, 0, 0.3);
+        }
 
-.sticky-nav {
-  background-color: rgba(5, 5, 5, 0.96) !important;
-  border-bottom: 1px solid rgba(239, 17, 17, 0.45);
-  box-shadow: 0 0 25px rgba(239, 17, 17, 0.2);
-}
+        .swiper-slide img {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 0.5rem;
+        }
+        .whatsapp-float {
+            animation: pulse 1.8s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-content.active {
+            max-height: 200px; /* Adjust as needed */
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background-color: #1e293b;
+            margin: auto;
+            padding: 2.5rem;
+            border-radius: 1rem;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            animation: fadeInScale 0.3s ease-out;
+        }
+        .close-button {
+            color: #aaa;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close-button:hover,
+        .close-button:focus {
+            color: #f8fafc;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* Estilo dos cartões para corresponder ao site de referência */
+        .custom-card {
+            background-color: rgb(20, 25, 30); /* Cor de fundo mais escura para os cartões */
+            border-radius: 1rem; /* rounded-xl */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 3px 6px rgba(0, 0, 0, 0.2); /* Sombra mais definida */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .custom-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5), 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra ao passar o mouse */
+        }
 
-.sticky-nav a,
-#mobile-menu a {
-  color: #ffffff !important;
-}
+        /* Estilo para os títulos das seções */
+        .section-title {
+            color: #00c6ff; /* Azul mais vibrante para títulos */
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Sombra de texto sutil */
+        }
 
-.sticky-nav a:hover,
-#mobile-menu a:hover {
-  color: var(--red) !important;
-}
+        /* Estilo para a navegação fixa */
+        .sticky-nav {
+            background-color: rgba(10, 15, 20, 0.9); /* Fundo semi-transparente mais escuro */
+        }
+        .sticky-nav a {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2); /* Sombra de texto para links da navegação */
+        }
 
-.sticky-nav .text-blue-400 {
-  color: var(--red) !important;
-}
+        /* Styling for the plan cards to match toptvdigital.com/planos */
+        .plan-card {
+            background-color: rgb(20, 25, 30); /* Darker background */
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 3px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Distribute space */
+        }
+        .plan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5), 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+        .plan-card h3 {
+            color: #00c6ff; /* Blue accent for title */
+            font-size: 2.25rem; /* text-3xl */
+            font-weight: 700; /* font-bold */
+            margin-bottom: 1rem;
+        }
+        .plan-card .price {
+            font-size: 3.5rem; /* Adjusted from 4rem to 3.5rem for visual balance */
+            font-weight: 800; /* font-extrabold */
+            color: white;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        .plan-card .price span {
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: 400; /* font-normal */
+            color: #cbd5e1; /* slate-300 */
+        }
+        .plan-card ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: left; /* Align features to left */
+        }
+        .plan-card ul li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            color: #cbd5e1; /* slate-300 */
+            font-size: 1.1rem;
+        }
+        .plan-card ul li svg {
+            color: #25d366; /* Green checkmark */
+            margin-right: 0.75rem;
+            flex-shrink: 0; /* Prevent icon from shrinking */
+        }
+        .plan-card .cta-button {
+            background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 9999px;
+            padding: 0.75rem 2rem;
+            font-weight: bold;
+            color: white;
+            transition: all 0.3s ease-in-out;
+            display: inline-block;
+            width: 100%; /* Full width button */
+        }
+        .plan-card .cta-button:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
 
-.hero-banner .overlay {
-  background: rgba(0, 0, 0, 0.72) !important;
-  border: 1px solid rgba(239, 17, 17, 0.65);
-  box-shadow: 0 0 35px rgba(239, 17, 17, 0.35);
-}
-
-.hero-banner h1 {
-  color: #ffffff;
-  text-shadow: 0 0 18px rgba(239, 17, 17, 0.55);
-}
-
-.hero-banner h1::after {
-  content: "TV";
-  color: var(--red);
-}
-
-.hero-cta-button,
-.plan-card .cta-button,
-button,
-input[type="submit"] {
-  background: linear-gradient(90deg, var(--red-dark), var(--red)) !important;
-  color: #ffffff !important;
-  box-shadow: 0 0 22px rgba(239, 17, 17, 0.55) !important;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.hero-cta-button:hover,
-.plan-card .cta-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 35px rgba(239, 17, 17, 0.8) !important;
-}
-
-.section-title,
-.text-blue-400,
-.text-blue-300 {
-  color: var(--red) !important;
-  text-shadow: 0 0 12px rgba(239, 17, 17, 0.45);
-}
-
-.custom-card,
-.plan-card,
-.bg-slate-800 {
-  background: linear-gradient(180deg, #101010 0%, #050505 100%) !important;
-  border: 1px solid rgba(239, 17, 17, 0.5);
-  box-shadow: 0 0 20px rgba(239, 17, 17, 0.18), 0 12px 30px rgba(0,0,0,0.65) !important;
-}
-
-.custom-card:hover,
-.plan-card:hover {
-  border-color: var(--red);
-  box-shadow: 0 0 35px rgba(239, 17, 17, 0.45), 0 16px 35px rgba(0,0,0,0.75) !important;
-}
-
-.plan-card h3 {
-  color: var(--red) !important;
-}
-
-.plan-card .price {
-  color: #ffffff !important;
-}
-
-.plan-card .price span,
-.text-slate-200,
-.text-slate-300 {
-  color: #e5e7eb !important;
-}
-
-.plan-card ul li svg {
-  color: var(--red) !important;
-}
-
-.whatsapp-float {
-  background-color: #25d366 !important;
-  box-shadow: 0 0 25px rgba(37, 211, 102, 0.65) !important;
-}
-
-.swiper-slide img {
-  border: 1px solid rgba(239, 17, 17, 0.35);
-  box-shadow: 0 0 18px rgba(239, 17, 17, 0.25);
-}
-
-.accordion-content.active {
-  border-top: 1px solid rgba(239, 17, 17, 0.35);
-}
-
-.faq-icon {
-  color: var(--red) !important;
-}
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
     </style>
 </head>
 <body class="antialiased">
