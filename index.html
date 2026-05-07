@@ -189,8 +189,22 @@
     }
 
 /* logo Melhor tv */
-        .logo img{
-    height: 42px;
+       .logo img{
+    height: 62px;
+    width: auto;
+
+    object-fit: contain;
+
+    transition: .3s ease;
+}
+
+.logo img:hover{
+    transform: scale(1.03);
+    }
+
+/* Reduz o padding do header */
+        header{
+    padding: 12px 40px;
 }
 
 /* mobile */
@@ -328,6 +342,26 @@ nav a:hover {
         .custom-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5), 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra ao passar o mouse */
+             }
+
+        /* somente o texto MELHORTV estilizado */
+        .logo-text{
+    font-size: 2rem;
+    font-weight: 900;
+    text-decoration: none;
+    letter-spacing: -1px;
+}
+
+.logo-text .white{
+    color: white;
+}
+
+.logo-text .red{
+    color: #ff1a1a;
+
+    text-shadow:
+    0 0 10px rgba(255,0,0,.8),
+    0 0 20px rgba(255,0,0,.6);
         }
 
         /* animação leve no botao */
@@ -444,8 +478,8 @@ nav a:hover {
     <!-- Fixed Navigation Bar -->
     <nav class="sticky top-0 z-50 sticky-nav shadow-lg py-4 px-4 md:px-8 lg:px-16">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="/" class="logo">
-            <img src="logo-melhortv.png" alt="MelhorTV">
+            <a href="/" class="logo-text">
+            <span class="white">Melhor</span><span class="red">TV</span>
             </a>
             <div class="hidden md:flex space-x-8">
                 <a href="#sobre-nos" class="text-slate-200 hover:text-blue-400 transition duration-300">Sobre Nós</a>
