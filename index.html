@@ -224,12 +224,6 @@
     flex-wrap:wrap;
 }
 
-.streamings span{
-    color:white;
-    opacity:.75;
-    font-size:.95rem;
-    
-}
         /* Navbar link */
 nav a {
     color: rgba(255,255,255,0.75);
@@ -390,10 +384,13 @@ nav a:hover {
         }
 
         /* Estilo para os títulos das seções */
-        .section-title {
-            color: #00c6ff; /* Azul mais vibrante para títulos */
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Sombra de texto sutil */
-        }
+        .section-title,
+h2 {
+    background: linear-gradient(90deg, #ffffff, #ff2a2a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
 
         /* Estilo para a navegação fixa */
         .sticky-nav {
