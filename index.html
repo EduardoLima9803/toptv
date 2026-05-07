@@ -148,8 +148,12 @@
 
     border-radius: 60px;
 
-   background: linear-gradient(90deg, #ff0000, #ff3c3c);
-};
+    background:
+        linear-gradient(
+            135deg,
+            #ff0000,
+            #ff3c3c
+        );
 
     color: white;
     font-size: 1.2rem;
@@ -208,7 +212,24 @@
     .hero-banner h1{
         font-size: 3.5rem;
     }
+}
 
+/* Streamgs */
+        .streamings{
+    margin-top: 30px;
+
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.streamings span{
+    color:white;
+    opacity:.75;
+    font-size:.95rem;
+    
+}
         /* Navbar link */
 nav a {
     color: rgba(255,255,255,0.75);
@@ -321,7 +342,8 @@ nav a:hover {
         .custom-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5), 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra ao passar o mouse */
-}
+             }
+
         /* somente o texto MELHORTV estilizado */
         .logo-text{
     font-size: 2rem;
@@ -363,44 +385,15 @@ nav a:hover {
 
     100%{
         box-shadow: 0 0 0 rgba(255,0,0,.4);
-          }
-
-        /* Estilo para os títulos das seções */
-        .section-title,
-h2 {
-    background: linear-gradient(90deg, #ffffff, #ff2a2a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 800;
-}
 
 }
+        }
+
         /* Estilo para os títulos das seções */
         .section-title {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 50px;
-}
-
-.section-title::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -12px;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    border-radius: 10px;
-    background: linear-gradient(90deg, #ff0000, #ff4d4d);
-    }
-
-        /* Card Blur */
-        .card {
-   background: rgba(255,255,255,0.04);
-   backdrop-filter: blur(10px);
-   border: 1px solid rgba(255,255,255,0.08);
-}
-}
+            color: #00c6ff; /* Azul mais vibrante para títulos */
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Sombra de texto sutil */
+        }
 
         /* Estilo para a navegação fixa */
         .sticky-nav {
@@ -422,10 +415,10 @@ h2 {
             flex-direction: column;
             justify-content: space-between; /* Distribute space */
         }
-        .plan-card:.card:hover {
-   transform: translateY(-8px);
-   box-shadow: 0 0 25px rgba(255,0,0,0.25);
-}
+        .plan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5), 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
         .plan-card h3 {
             color: #00c6ff; /* Blue accent for title */
             font-size: 2.25rem; /* text-3xl */
@@ -464,7 +457,7 @@ h2 {
             flex-shrink: 0; /* Prevent icon from shrinking */
         }
         .plan-card .cta-button {
-            background: linear-gradient(90deg, ##fa5a5a 0%, #ff1a1a 100%);
+            background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             border-radius: 9999px;
             padding: 0.75rem 2rem;
@@ -780,7 +773,6 @@ h2 {
                 </a>
             </div>
             <div class="plan-card">
-                <span class="badge">MAIS VENDIDO</span>
                 <div>
                     <h3>Plano Anual</h3>
                     <p class="price">R$ 350,00 <span class="duration">/ Ano</span></p>
