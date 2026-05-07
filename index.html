@@ -27,141 +27,119 @@
             background-color: rgb(10, 15, 20); /* Cor de fundo mais próxima do site de referência */
             color: #f8fafc; /* slate-50 */
         }
-       .hero-banner {
-    background:
-    linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.90)),
-    url('banner-premium.png');
-
+    .hero-banner {
+    position: relative;
+    background-image: url('banner-premium.png');
     background-size: cover;
     background-position: center;
-    height: 650px;
+    height: 580px;
 
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-
     padding: 0 1rem;
-    position: relative;
+
     overflow: hidden;
 }
 
-/* efeito glow no fundo */
+/* Overlay mais leve e premium */
 .hero-banner::before {
-    content: '';
+    content: "";
     position: absolute;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(255,0,0,0.18), transparent 70%);
-    top: -200px;
-    right: -150px;
-    z-index: 0;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to right,
+            rgba(0,0,0,0.75),
+            rgba(0,0,0,0.45),
+            rgba(255,0,0,0.10)
+        );
+
+    backdrop-filter: blur(2px);
 }
 
+/* Card central */
 .hero-banner .overlay {
     position: relative;
     z-index: 2;
 
     background: rgba(0,0,0,0.45);
-    backdrop-filter: blur(6px);
-
-    padding: 3rem;
-    border-radius: 24px;
-
     border: 1px solid rgba(255,255,255,0.08);
 
-    max-width: 750px;
+    backdrop-filter: blur(10px);
+
+    padding: 3rem 2.5rem;
+    border-radius: 28px;
+
+    max-width: 760px;
+    color: white;
 
     box-shadow:
-    0 0 30px rgba(0,0,0,0.5),
-    0 0 60px rgba(255,0,0,0.08);
+        0 0 40px rgba(255,0,0,0.18),
+        0 10px 30px rgba(0,0,0,0.55);
 }
 
-/* TITULO */
+/* Título MelhorTV */
 .hero-banner h1 {
-    font-size: 5rem;
+    font-size: 4.5rem;
     font-weight: 900;
-    line-height: 1;
-
     margin-bottom: 1rem;
     letter-spacing: -2px;
 }
 
-/* MELHOR */
+/* MELHOR branco metálico */
 .hero-banner h1 .white {
-    color: #f5f5f5;
+    color: #ffffff;
 
     text-shadow:
-    0 0 10px rgba(255,255,255,0.15),
-    0 0 20px rgba(255,255,255,0.08);
+        0 0 10px rgba(255,255,255,0.35),
+        0 0 30px rgba(255,255,255,0.10);
 }
 
-/* TV */
+/* TV vermelho neon */
 .hero-banner h1 .red {
     color: #ff1a1a;
 
     text-shadow:
-    0 0 10px rgba(255,0,0,0.7),
-    0 0 25px rgba(255,0,0,0.6),
-    0 0 45px rgba(255,0,0,0.5);
+        0 0 10px rgba(255,0,0,0.8),
+        0 0 25px rgba(255,0,0,0.7),
+        0 0 45px rgba(255,0,0,0.5);
 }
 
 .hero-banner p {
     font-size: 1.5rem;
-    color: rgba(255,255,255,0.9);
-
-    margin-top: 1rem;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.92);
     margin-bottom: 2rem;
-
-    line-height: 1.5;
 }
 
-/* BOTÃO */
-.hero-banner .btn {
+/* Botão premium */
+.hero-banner .btn-hero {
     display: inline-block;
+    padding: 18px 42px;
 
-    background: linear-gradient(135deg, #ff0000, #ff3c3c);
+    background: linear-gradient(135deg, #ff0000, #ff3b3b);
 
     color: white;
     font-size: 1.2rem;
     font-weight: 700;
 
-    padding: 1rem 2.5rem;
     border-radius: 50px;
-
     text-decoration: none;
 
     transition: 0.3s ease;
 
     box-shadow:
-    0 0 20px rgba(255,0,0,0.4);
+        0 0 20px rgba(255,0,0,0.45);
 }
 
-.hero-banner .btn:hover {
-    transform: scale(1.05);
+.hero-banner .btn-hero:hover {
+    transform: translateY(-3px) scale(1.03);
 
     box-shadow:
-    0 0 30px rgba(255,0,0,0.7);
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-
-    .hero-banner {
-        height: 560px;
-    }
-
-    .hero-banner .overlay {
-        padding: 2rem;
-    }
-
-    .hero-banner h1 {
-        font-size: 3rem;
-    }
-
-    .hero-banner p {
-        font-size: 1.1rem;
-    }
+        0 0 35px rgba(255,0,0,0.65);
 }
 
         /* Estilo do botão CTA principal no Hero para corresponder ao site de referência */
@@ -381,20 +359,24 @@
     </nav>
 
     <!-- Header Section (Hero) -->
-    <header class="hero-banner relative">
-        <div class="overlay">
-            <h1>
-    <span class="white">Melhor</span><span class="red">TV</span>
-</h1>
-            <p class="font-light">
-                +12.000 Canais e +30.000 Filmes e Séries com qualidade HD e 4K
-            </p>
-            <a href="https://wa.me/5541995764429?text=Olá!%20Quero%20fazer%20um%20teste%20IPTV" target="_blank"
-               class="hero-cta-button text-xl">
-                Faça um teste grátis de 6h!
-            </a>
-        </div>
-    </header>
+    <section class="hero-banner">
+    <div class="overlay">
+
+        <h1>
+            <span class="white">Melhor</span><span class="red">TV</span>
+        </h1>
+
+        <p>
+            +12.000 canais e +30.000 filmes e séries<br>
+            com qualidade HD e 4K
+        </p>
+
+        <a href="https://wa.me/5541995764429?text=Olá!%20Quero%20fazer%20um%20teste%20IPTV" class="btn-hero">
+            Faça um teste grátis de 6h!
+        </a>
+
+    </div>
+</section>
 
     <!-- Sobre Nós Section -->
     <section id="sobre-nos" class="py-16 px-4 md:px-8 lg:px-16 bg-slate-800 text-center rounded-xl m-8 shadow-2xl custom-card" data-aos="fade-up">
