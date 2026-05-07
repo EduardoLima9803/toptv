@@ -390,6 +390,25 @@ h2 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 800;
+    }
+
+        /* Estilo para os títulos das seções */
+        .section-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 50px;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -12px;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #ff0000, #ff4d4d);
 }
 
         /* Estilo para a navegação fixa */
