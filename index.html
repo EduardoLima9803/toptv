@@ -59,6 +59,29 @@
         );
 
     backdrop-filter: blur(1px);
+ }
+
+/* DEIXAR O FUNDO “VIVO */
+    .hero-banner{
+    animation: zoomBg 18s ease-in-out infinite alternate;
+}
+
+@keyframes zoomBg{
+    from{
+        background-size:100%;
+    }
+
+    to{
+        background-size:110%;
+    }
+}
+
+/* mini texto */
+.mini-info{
+    margin-top: 18px;
+    color: rgba(255,255,255,.65);
+    font-size: .95rem;
+    letter-spacing: 1px;
 }
 
 /* Card central */
@@ -72,7 +95,7 @@
 
     background: rgba(5,5,5,0.55);
 
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(8px);
 
     border: 1px solid rgba(255,255,255,0.06);
 
@@ -149,6 +172,25 @@
 
     box-shadow:
         0 0 45px rgba(255,0,0,0.7);
+    }
+
+/* EFEITO CINEMATOGRÁFICO NO HERO */
+        .hero-banner::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle at center,
+        transparent 20%,
+        rgba(0,0,0,.55) 100%
+    );
+    }
+
+/* logo Melhor tv */
+        .logo img{
+    height: 42px;
 }
 
 /* mobile */
@@ -172,6 +214,29 @@
     color:white;
     opacity:.75;
     font-size:.95rem;
+    
+}
+        /* Navbar link */
+nav a {
+    color: rgba(255,255,255,0.75);
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #ff2b2b;
+}
+        /* Navbar */
+        header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
         /* Estilo do botão CTA principal no Hero para corresponder ao site de referência */
         .hero-cta-button {
@@ -263,6 +328,26 @@
         .custom-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5), 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra ao passar o mouse */
+        }
+
+        /* animação leve no botao */
+        .btn-hero{
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%{
+        box-shadow: 0 0 0 rgba(255,0,0,.4);
+    }
+
+    50%{
+        box-shadow: 0 0 25px rgba(255,0,0,.75);
+    }
+
+    100%{
+        box-shadow: 0 0 0 rgba(255,0,0,.4);
+
+}
         }
 
         /* Estilo para os títulos das seções */
@@ -359,7 +444,9 @@
     <!-- Fixed Navigation Bar -->
     <nav class="sticky top-0 z-50 sticky-nav shadow-lg py-4 px-4 md:px-8 lg:px-16">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-blue-400">MelhorTV</a>
+            <a href="/" class="logo">
+            <img src="logo-melhortv.png" alt="MelhorTV">
+            </a>
             <div class="hidden md:flex space-x-8">
                 <a href="#sobre-nos" class="text-slate-200 hover:text-blue-400 transition duration-300">Sobre Nós</a>
                 <a href="#plataformas" class="text-slate-200 hover:text-blue-400 transition duration-300">Conteúdo</a>
@@ -396,6 +483,10 @@
         <h1>
             <span class="white">Melhor</span><span class="red">TV</span>
         </h1>
+        
+        <p class="mini-info">
+             ✔ Canais • Filmes • Séries • Futebol • 4K
+        </p>
 
         <p>
             +12.000 canais e +30.000 filmes e séries<br>
