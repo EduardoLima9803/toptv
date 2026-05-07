@@ -27,44 +27,142 @@
             background-color: rgb(10, 15, 20); /* Cor de fundo mais próxima do site de referência */
             color: #f8fafc; /* slate-50 */
         }
-        .hero-banner {
-            background-image: url('https://files.entr.ai/files/18920/blocks/0/GGNXKNW7STPYCBWYHVI110N2M0G5WI.png');
-            background-size: cover;
-            background-position: center;
-            height: 580px; /* Increased height for hero section */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 1rem;
-        }
-        .hero-banner .overlay {
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 3rem 2.5rem; /* Increased padding */
-            border-radius: 1.5rem; /* More rounded */
-            color: white;
-            max-width: 700px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-        }
-        .hero-banner h1 {
-            font-size: 3.5rem; /* Slightly smaller for better fit */
-            line-height: 1.1;
-            margin-bottom: 1rem;
-        }
-        .hero-banner p {
-            font-size: 1.3rem;
-            margin-top: 0.5rem;
-            margin-bottom: 2.5rem; /* Space before button */
-        }
-        @media (min-width: 768px) {
-            .hero-banner h1 {
-                font-size: 4.5rem;
-            }
-            .hero-banner p {
-                font-size: 1.75rem;
-            }
-        }
+       .hero-banner {
+    background:
+    linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.90)),
+    url('banner-premium.png');
+
+    background-size: cover;
+    background-position: center;
+    height: 650px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 0 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* efeito glow no fundo */
+.hero-banner::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,0,0,0.18), transparent 70%);
+    top: -200px;
+    right: -150px;
+    z-index: 0;
+}
+
+.hero-banner .overlay {
+    position: relative;
+    z-index: 2;
+
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(6px);
+
+    padding: 3rem;
+    border-radius: 24px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    max-width: 750px;
+
+    box-shadow:
+    0 0 30px rgba(0,0,0,0.5),
+    0 0 60px rgba(255,0,0,0.08);
+}
+
+/* TITULO */
+.hero-banner h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 1;
+
+    margin-bottom: 1rem;
+    letter-spacing: -2px;
+}
+
+/* MELHOR */
+.hero-banner h1 .white {
+    color: #f5f5f5;
+
+    text-shadow:
+    0 0 10px rgba(255,255,255,0.15),
+    0 0 20px rgba(255,255,255,0.08);
+}
+
+/* TV */
+.hero-banner h1 .red {
+    color: #ff1a1a;
+
+    text-shadow:
+    0 0 10px rgba(255,0,0,0.7),
+    0 0 25px rgba(255,0,0,0.6),
+    0 0 45px rgba(255,0,0,0.5);
+}
+
+.hero-banner p {
+    font-size: 1.5rem;
+    color: rgba(255,255,255,0.9);
+
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+
+    line-height: 1.5;
+}
+
+/* BOTÃO */
+.hero-banner .btn {
+    display: inline-block;
+
+    background: linear-gradient(135deg, #ff0000, #ff3c3c);
+
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    transition: 0.3s ease;
+
+    box-shadow:
+    0 0 20px rgba(255,0,0,0.4);
+}
+
+.hero-banner .btn:hover {
+    transform: scale(1.05);
+
+    box-shadow:
+    0 0 30px rgba(255,0,0,0.7);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .hero-banner {
+        height: 560px;
+    }
+
+    .hero-banner .overlay {
+        padding: 2rem;
+    }
+
+    .hero-banner h1 {
+        font-size: 3rem;
+    }
+
+    .hero-banner p {
+        font-size: 1.1rem;
+    }
+}
 
         /* Estilo do botão CTA principal no Hero para corresponder ao site de referência */
         .hero-cta-button {
@@ -285,7 +383,9 @@
     <!-- Header Section (Hero) -->
     <header class="hero-banner relative">
         <div class="overlay">
-            <h1 class="font-extrabold animate-fade-in">MelhorTV</h1>
+            <h1>
+    <span class="white">Melhor</span><span class="red">TV</span>
+</h1>
             <p class="font-light">
                 +12.000 Canais e +30.000 Filmes e Séries com qualidade HD e 4K
             </p>
