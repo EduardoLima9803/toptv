@@ -872,7 +872,7 @@ nav a:hover {
     </a>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-6 left-6 bg-red-500 text-white p-3 rounded-full shadow-lg z-50 hidden transition-opacity duration-300 hover:bg-red-600">
+    <button id="back-to-top" class="fixed bottom-6 left-6 bg-blue-500 text-white p-3 rounded-full shadow-lg z-50 hidden transition-opacity duration-300 hover:bg-blue-600">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
         </svg>
@@ -909,53 +909,31 @@ nav a:hover {
 
         // Swiper for Plataformas Digitais and Canais
         new Swiper('.canal-swiper', {
-            slidesPerView: 2,
-            spaceBetween: 20,
+            slidesPerView: 3,
+            spaceBetween: 10,
             loop: true,
             autoplay: {
                 delay: 2000,
                 disableOnInteraction: false,
             },
             breakpoints: {
-                640: { slidesPerView: 3 },
+                768: { slidesPerView: 4 },
                 1024: { slidesPerView: 5 }
             }
-        });
-        /* Container do slide para manter o alinhamento */
-.canal-swiper .swiper-slide {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 120px; /* Defina uma altura fixa para a linha de canais */
-    background-color: #1a1a1a; /* Um fundo escuro caso a imagem seja menor */
-    border-radius: 8px;
-    overflow: hidden;
-    padding: 10px;
-}
-
-/* Ajuste das imagens */
-.canal-swiper .swiper-slide img {
-    width: 100%;
-    height: 100%;
-    /* O 'contain' garante que a logo apareça inteira sem cortar */
-    object-fit: contain; 
-    /* Garante que imagens muito pequenas não fiquem gigantes e percam qualidade */
-    max-width: 150px; 
-}
         });
 
         // Swiper for Filmes and Séries
         new Swiper('.filmes-swiper', {
             slidesPerView: 2,
-            spaceBetween: 20,
+            spaceBetween: 10,
             loop: true,
             autoplay: {
                 delay: 2500,
                 disableOnInteraction: false,
             },
             breakpoints: {
-                640: { slidesPerView: 3 },
-                1024: { slidesPerView: 5 }
+                768: { slidesPerView: 3 },
+                1024: { slidesPerView: 4 }
             }
         });
 
