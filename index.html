@@ -148,12 +148,8 @@
 
     border-radius: 60px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #ff0000,
-            #ff3c3c
-        );
+   background: linear-gradient(90deg, #ff0000, #ff3c3c);
+};
 
     color: white;
     font-size: 1.2rem;
@@ -388,7 +384,7 @@ h2 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 800;
-    }
+}
 
 }
         /* Estilo para os títulos das seções */
@@ -408,6 +404,14 @@ h2 {
     height: 4px;
     border-radius: 10px;
     background: linear-gradient(90deg, #ff0000, #ff4d4d);
+    }
+
+        /* Card Blur */
+        .card {
+   background: rgba(255,255,255,0.04);
+   backdrop-filter: blur(10px);
+   border: 1px solid rgba(255,255,255,0.08);
+}
 }
 
         /* Estilo para a navegação fixa */
@@ -430,10 +434,10 @@ h2 {
             flex-direction: column;
             justify-content: space-between; /* Distribute space */
         }
-        .plan-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5), 0 6px 12px rgba(0, 0, 0, 0.4);
-        }
+        .plan-card:.card:hover {
+   transform: translateY(-8px);
+   box-shadow: 0 0 25px rgba(255,0,0,0.25);
+}
         .plan-card h3 {
             color: #00c6ff; /* Blue accent for title */
             font-size: 2.25rem; /* text-3xl */
