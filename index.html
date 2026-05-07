@@ -909,31 +909,53 @@ nav a:hover {
 
         // Swiper for Plataformas Digitais and Canais
         new Swiper('.canal-swiper', {
-            slidesPerView: 3,
-            spaceBetween: 10,
+            slidesPerView: 2,
+            spaceBetween: 20,
             loop: true,
             autoplay: {
                 delay: 2000,
                 disableOnInteraction: false,
             },
             breakpoints: {
-                768: { slidesPerView: 4 },
+                640: { slidesPerView: 3 },
                 1024: { slidesPerView: 5 }
             }
+        });
+        /* Container do slide para manter o alinhamento */
+.canal-swiper .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px; /* Defina uma altura fixa para a linha de canais */
+    background-color: #1a1a1a; /* Um fundo escuro caso a imagem seja menor */
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 10px;
+}
+
+/* Ajuste das imagens */
+.canal-swiper .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    /* O 'contain' garante que a logo apareça inteira sem cortar */
+    object-fit: contain; 
+    /* Garante que imagens muito pequenas não fiquem gigantes e percam qualidade */
+    max-width: 150px; 
+}
         });
 
         // Swiper for Filmes and Séries
         new Swiper('.filmes-swiper', {
             slidesPerView: 2,
-            spaceBetween: 10,
+            spaceBetween: 20,
             loop: true,
             autoplay: {
                 delay: 2500,
                 disableOnInteraction: false,
             },
             breakpoints: {
-                768: { slidesPerView: 3 },
-                1024: { slidesPerView: 4 }
+                640: { slidesPerView: 3 },
+                1024: { slidesPerView: 5 }
             }
         });
 
