@@ -173,11 +173,6 @@
     box-shadow:
         0 0 45px rgba(255,0,0,0.7);
     }
-.btn-hero {
-    /* ... seu código atual ... */
-    position: relative; /* Garante que o z-index funcione */
-    z-index: 10;        /* Joga o botão para a camada mais alta */
-}
 
 /* EFEITO CINEMATOGRÁFICO NO HERO */
         .hero-banner::after{
@@ -191,6 +186,7 @@
         transparent 20%,
         rgba(0,0,0,.55) 100%
     );
+    pointer-events: none;
     }
 
 /* logo Melhor tv */
@@ -532,7 +528,12 @@ nav a:hover {
              ✔ Canais • Filmes • Séries • Futebol
         </p>
 
-        <a href="https://wa.me/5541995764429?text=Olá!%20Quero%20fazer%20um%20teste%20IPTV" class="btn-hero" target="_blank">
+        <p>
+            +12.000 canais e +30.000 filmes e séries<br>
+            com qualidade HD e 4K
+        </p>
+
+        <a href="https://wa.me/5541995764429?text=Olá!%20Quero%20fazer%20um%20teste%20IPTV" class="btn-hero">
             Faça um teste grátis de 6h!
         </a>
 
