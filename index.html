@@ -940,27 +940,20 @@ nav a:hover {
             }
         });
 
-     new Swiper('.filmes-swiper', {
-    slidesPerView: 2.2,
-    spaceBetween: 12,
-    loop: true,
-
-    autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-    },
-
-    breakpoints: {
-
-        768: {
-            slidesPerView: 3
-        },
-
-        1024: {
-            slidesPerView: 5
-        }
-    }
-});
+        // Swiper for Filmes and Séries
+        new Swiper('.filmes-swiper', {
+            slidesPerView: 2,
+            spaceBetween: 10,
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                768: { slidesPerView: 3 },
+                1024: { slidesPerView: 4 }
+            }
+        });
 
         // Animated Counter for Canais
         function animateCounter(elementId, target) {
