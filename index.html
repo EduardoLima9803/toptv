@@ -273,8 +273,8 @@ nav a:hover {
 .series-swiper .swiper-slide {
     border-radius: 14px;
     overflow: hidden;
-    height: 420px;
     background: #111;
+    height: 320px;
 }
 
 .filmes-swiper .swiper-slide img,
@@ -285,10 +285,13 @@ nav a:hover {
     transition: 0.3s ease;
 }
 
-.filmes-swiper .swiper-slide img:hover,
-.series-swiper .swiper-slide img:hover {
-    transform: scale(1.05);
-}
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .filmes-swiper .swiper-slide,
+    .series-swiper .swiper-slide {
+        height: 240px;
+    }
         .whatsapp-float {
             animation: pulse 1.8s infinite;
         }
@@ -937,9 +940,9 @@ nav a:hover {
             }
         });
 
-      new Swiper('.filmes-swiper', {
-    slidesPerView: 2,
-    spaceBetween: 15,
+     new Swiper('.filmes-swiper', {
+    slidesPerView: 2.2,
+    spaceBetween: 12,
     loop: true,
 
     autoplay: {
@@ -948,6 +951,7 @@ nav a:hover {
     },
 
     breakpoints: {
+
         768: {
             slidesPerView: 3
         },
