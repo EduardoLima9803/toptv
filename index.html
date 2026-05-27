@@ -269,13 +269,26 @@ nav a:hover {
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 7px 14px rgba(0, 0, 0, 0.3);
         }
 
-        .swiper-slide img {
-            width: 100%;
-            height: auto;
-            max-height: 300px;
-            object-fit: cover;
-            border-radius: 0.5rem;
-        }
+      .filmes-swiper .swiper-slide,
+.series-swiper .swiper-slide {
+    border-radius: 14px;
+    overflow: hidden;
+    height: 420px;
+    background: #111;
+}
+
+.filmes-swiper .swiper-slide img,
+.series-swiper .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s ease;
+}
+
+.filmes-swiper .swiper-slide img:hover,
+.series-swiper .swiper-slide img:hover {
+    transform: scale(1.05);
+}
         .whatsapp-float {
             animation: pulse 1.8s infinite;
         }
@@ -924,20 +937,26 @@ nav a:hover {
             }
         });
 
-        // Swiper for Filmes and Séries
-        new Swiper('.filmes-swiper', {
-            slidesPerView: 2,
-            spaceBetween: 10,
-            loop: true,
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
-            breakpoints: {
-                768: { slidesPerView: 3 },
-                1024: { slidesPerView: 4 }
-            }
-        });
+      new Swiper('.filmes-swiper', {
+    slidesPerView: 2,
+    spaceBetween: 15,
+    loop: true,
+
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+
+    breakpoints: {
+        768: {
+            slidesPerView: 3
+        },
+
+        1024: {
+            slidesPerView: 5
+        }
+    }
+});
 
         // Animated Counter for Canais
         function animateCounter(elementId, target) {
