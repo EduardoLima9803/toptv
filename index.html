@@ -278,6 +278,8 @@ nav a:hover {
     border-radius: 0.75rem;
     transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
     will-change: transform, box-shadow;
+    -webkit-user-drag: none; /* Impede o navegador de tentar "arrastar" a imagem pura */
+    user-select: none;
 }
 
 /* --- 2. CONFIGURAÇÃO APENAS PARA PLATAFORMAS E CANAIS (Proporção Original) --- */
