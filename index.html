@@ -630,7 +630,7 @@ nav a:hover {
 
     <!-- Series Section -->
     <section id="series" class="py-12 px-4 md:px-8 lg:px-16" data-aos="fade-right">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mt-6 mb-4 section-title">Sériess</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-center mt-6 mb-4 section-title">Séries</h2>
         <div class="swiper filmes-swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide"><img src="https://i.imgur.com/Amqev3u.jpg" alt="Demolidor"></div>
@@ -954,17 +954,17 @@ nav a:hover {
 
         // Swiper for Filmes and Séries
         new Swiper('.filmes-swiper', {
-            slidesPerView: 2,
-            spaceBetween: 10,
+            slidesPerView: 2.3,
+            spaceBetween: 12,
             loop: true,
             autoplay: {
                 delay: 2500,
                 disableOnInteraction: false,
             },
             breakpoints: {
-                768: { slidesPerView: 3 },
-                1024: { slidesPerView: 4 }
-            }
+        768: { slidesPerView: 3, spaceBetween: 15 },
+        1024: { slidesPerView: 4, spaceBetween: 20 }
+    }
         });
 
         // Animated Counter for Canais
