@@ -270,12 +270,33 @@ nav a:hover {
         }
 
         .swiper-slide img {
-            width: 100%;
-            height: auto;
-            max-height: 300px;
-            object-fit: cover;
-            border-radius: 0.5rem;
-        }
+    width: 100%;
+    height: auto;
+    /* Define uma proporção ideal de pôster de filme (vertical) */
+    aspect-ratio: 2 / 3; 
+    /* Garante que a imagem preencha o espaço sem distorcer e sem cortes agressivos */
+    object-fit: fill; 
+    border-radius: 0.75rem;
+    /* Transição suave para os efeitos que vamos adicionar abaixo */
+    transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+    will-change: transform, box-shadow;
+}
+        /* Efeito ao passar o mouse (Desktop) e ao tocar (Mobile) */
+.swiper-slide:hover img,
+.swiper-slide:active img {
+    transform: scale(1.06); /* Expande levemente a imagem */
+    filter: brightness(1.1); /* Dá um leve ganho de iluminação */
+    /* Sombra vermelha estilo Neon/Cinema */
+    box-shadow: 0 10px 25px rgba(255, 26, 26, 0.5), 
+                0 0 15px rgba(255, 26, 26, 0.3);
+    z-index: 10;
+}
+
+/* Garante que o container do slide não corte o efeito de expansão */
+.swiper-slide {
+    overflow: visible !important;
+    padding: 10px 0; /* Espaço para a sombra não ser cortada pelo carrossel */
+}
         .whatsapp-float {
             animation: pulse 1.8s infinite;
         }
