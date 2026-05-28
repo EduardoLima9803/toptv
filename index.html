@@ -282,11 +282,21 @@ html, body {
 }
         /* Garante que o cabeçalho fique sempre visível e com fundo escuro ao rolar no mobile */
 @media (max-width: 768px) {
-    header, .sticky-nav, nav.sticky {
-        background-color: rgba(10, 15, 20, 0.95) !important; /* Fundo sólido escuro */
+    /* Força a barra do topo a ignorar travas do body e ficar sempre visível */
+    header, .sticky-nav, nav {
+        position: fixed !important; /* Muda de sticky para fixed para garantir ancoragem no mobile */
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        background-color: rgba(10, 15, 20, 0.98) !important; /* Fundo escuro sólido */
         backdrop-filter: blur(12px) !important;
+        z-index: 99999 !important; /* Garante que fique por cima de tudo, inclusive dos swipers */
         border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-        padding: 10px 16px !important; /* Deixa a barra mais fina no celular */
+    }
+
+    /* Como mudamos a barra para 'fixed', precisamos garantir que o topo do site não fique cortado */
+    .hero-banner {
+        padding-top: 80px !important;
     }
 }
         @media (max-width: 768px) {
