@@ -282,27 +282,14 @@ nav a:hover {
     user-select: none;
 }
 
-/* --- 2. CONFIGURAÇÃO APENAS PARA PLATAFORMAS E CANAIS (Proporção Original) --- */
 .canal-swiper .swiper-slide img {
     width: 100%;
-    /* Substitui a altura fixa ou automática por uma proporção horizontal estável (estilo tela widescreen) */
-    aspect-ratio: 16 / 9; 
-    /* Garante que logos horizontais fiquem totalmente visíveis e centralizadas sem sumir ou quebrar */
-    object-fit: contain; 
-    /* Adiciona um fundo levemente escuro para destacar logos que possuem fundo transparente */
-    background-color: rgba(20, 25, 30, 0.6); 
-    padding: 12px; /* Margem interna para a logo não encostar nas bordas do card */
-    border-radius: 0.75rem;
+    height: auto;
+    max-height: 300px; /* Mantém o limite original do seu projeto */
+    object-fit: cover; /* Mantém o preenchimento correto para logos/marcas */
+    border-radius: 0.5rem;
     transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
     will-change: transform, box-shadow;
-}
-
-/* --- AJUSTE COMPLEMENTAR PARA O CARROSSEL DE LOGOS --- */
-.canal-swiper .swiper-slide {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
 }
 /* --- 3. EFEITO HOVER E TOUCH PARA TODOS OS CARROSSEIS --- */
 .swiper-slide:hover img,
