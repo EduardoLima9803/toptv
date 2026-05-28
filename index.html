@@ -247,14 +247,31 @@
     }
 }
         @media (max-width: 768px) {
+    /* Força o botão do WhatsApp a ficar fixo na base direita */
     .whatsapp-float {
         bottom: 16px !important;
         right: 16px !important;
-        padding: 12px !important; /* Diminui levemente o estofamento */
+        left: auto !important; /* Previne qualquer bug que o jogue para a esquerda */
+        width: 60px !important;
+        height: 60px !important;
     }
-    .whatsapp-float img {
-        width: 24px !important;   /* Ícone um pouco menor para não obstruir o layout */
-        height: 24px !important;
+
+    /* Força o botão de subir a ficar exatamente acima do WhatsApp */
+    #back-to-top {
+        bottom: 88px !important; /* 16px de base + 60px do whats + 12px de espaço */
+        right: 16px !important;
+        left: auto !important;
+        width: 60px !important;
+        height: 60px !important;
+    }
+}
+        /* Garante que o cabeçalho fique sempre visível e com fundo escuro ao rolar no mobile */
+@media (max-width: 768px) {
+    header, .sticky-nav, nav.sticky {
+        background-color: rgba(10, 15, 20, 0.95) !important; /* Fundo sólido escuro */
+        backdrop-filter: blur(12px) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+        padding: 10px 16px !important; /* Deixa a barra mais fina no celular */
     }
 }
 
