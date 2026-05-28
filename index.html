@@ -228,7 +228,18 @@ html, body {
         font-size: 2.8rem !important;
         letter-spacing: -2px !important;
         margin-bottom: 1rem !important;
+        background-size: 250% auto !important;
+        background-position: center center !important;
+        animation: zoomBgMobile 20s ease-in-out infinite alternate !important;
     }
+            @keyframes zoomBgMobile {
+    from {
+        background-size: 250% auto;
+    }
+    to {
+        background-size: 275% auto;
+    }
+}
 
     /* 2. Ajusta o card central para ocupar melhor o espaço horizontal no mobile */
     .hero-banner .overlay {
