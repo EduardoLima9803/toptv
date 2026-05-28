@@ -75,6 +75,19 @@
         background-size:110%;
     }
 }
+        /* Bloqueia o vazamento e a rolagem para os lados em todo o site */
+html, body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    /* Ajuste para iOS não quebrar o momentum do scroll */
+    position: relative;
+}
+
+/* Aplica a mesma trava de segurança no container principal do topo */
+.hero-banner {
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
 
 /* mini texto */
 .mini-info{
@@ -274,6 +287,13 @@
         backdrop-filter: blur(12px) !important;
         border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
         padding: 10px 16px !important; /* Deixa a barra mais fina no celular */
+    }
+}
+        @media (max-width: 768px) {
+    /* Adicione isso na sua media query mobile existente */
+    .swiper, .swiper-container {
+        max-width: 100% !important;
+        overflow: hidden !important;
     }
 }
 
