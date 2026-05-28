@@ -29,19 +29,26 @@
         }
     .hero-banner {
     position: relative;
-    background-image: url('banner-premium.png');
-    background-size: cover;
-    background-position: center;
     min-height: 92vh;
     padding-top: 90px;
-
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 0 1rem;
-
     overflow: hidden;
+}
+
+/* Criamos uma camada exclusiva para a imagem de fundo */
+.hero-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('banner-premium.png');
+    background-size: cover;
+    background-position: center;
+    z-index: -2; /* Fica atrás de tudo */
+    animation: zoomBg 18s ease-in-out infinite alternate;
 }
 
 /* Overlay mais leve e premium */
@@ -232,12 +239,20 @@ html, body {
         background-position: center center !important;
         animation: zoomBgMobile 20s ease-in-out infinite alternate !important;
     }
-            @keyframes zoomBgMobile {
+        .hero-banner::after {
+        transform: scale(2.2) !important; /* Dá um zoom de 2.2x apenas nas capas */
+        transform-origin: center center;
+        animation: zoomBgMobile 20s ease-in-out infinite alternate !important;
+    }
+}
+
+/* Animação de movimento sutil para o fundo do mobile já ampliado */
+@keyframes zoomBgMobile {
     from {
-        background-size: 250% auto;
+        transform: scale(2.2);
     }
     to {
-        background-size: 275% auto;
+        transform: scale(2.4);
     }
 }
 
