@@ -209,9 +209,41 @@
 }
 
 /* mobile */
-@media(max-width:768px){
-    .hero-banner h1{
-        font-size: 3.5rem;
+        @media(max-width:768px){
+    /* 1. Reduz o tamanho do título principal para caber em uma linha */
+    .hero-banner h1 {
+        font-size: 2.8rem !important;
+        letter-spacing: -2px !important;
+        margin-bottom: 1rem !important;
+    }
+
+    /* 2. Ajusta o card central para ocupar melhor o espaço horizontal no mobile */
+    .hero-banner .overlay {
+        padding: 2rem 1.2rem !important; /* Diminui o espaçamento interno interno */
+        width: 92% !important; /* Deixa uma margem sutil nas bordas da tela */
+        border-radius: 20px !important;
+    }
+
+    /* 3. Reduz o tamanho dos textos para evitar quebras excessivas */
+    .hero-banner p {
+        font-size: 1.1rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    /* 4. Ajusta o tamanho do mini texto de tópicos */
+    .mini-info {
+        font-size: 0.85rem !important;
+        letter-spacing: 0px !important;
+        margin-top: 10px !important;
+    }
+
+    /* 5. Compacta o botão de CTA para garantir que ele apareça inteiro na tela */
+    .btn-hero {
+        padding: 14px 28px !important;
+        font-size: 1rem !important;
+        width: 100%; /* Faz o botão ocupar a largura do card, facilitando o clique */
+        max-width: 280px;
     }
 }
 
@@ -583,9 +615,8 @@ nav a:hover {
              ✔ Canais • Filmes • Séries • Futebol
         </p>
 
-        <p>
-            +12.000 canais e +30.000 filmes e séries<br>
-            com qualidade HD e 4K
+        <p class="px-2">
+          +12.000 canais e +30.000 filmes e séries com qualidade HD e 4K
         </p>
 
         <a href="https://wa.me/5541995764429?text=Olá!%20Quero%20fazer%20um%20teste%20IPTV" class="btn-hero" target="_blank">
