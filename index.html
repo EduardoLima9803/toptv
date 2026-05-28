@@ -1225,10 +1225,25 @@ nav a:hover {
         });
 
         // Initialize counters on window load
-        window.onload = () => {
-            animateCounter("contador", 12000);
-            animateBenefits("beneficios-contador", 50000);
-        };
+       const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            if (entry.target.id === 'contador') {
+                animateCounter("contador", 12000);[cite: 1]
+            } else if (entry.target.id === 'beneficios-contador') {
+                animateBenefits("beneficios-contador", 50000);[cite: 1]
+            }
+            observer.unobserve(entry.target); // Roda a animação apenas uma vez
+        }
+    });
+}, { threshold: 0.5 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const elContador = document.getElementById("contador");
+    const elBeneficios = document.getElementById("beneficios-contador");
+    if(elContador) observer.observe(elContador);
+    if(elBeneficios) observer.observe(elBeneficios);
+});
     </script>
 </body>
 </html>
