@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MelhorTV – Canais, filmes e séries em HD e 4K | Teste grátis de 6h</title>
 <meta name="description" content="MelhorTV: mais de 12.000 canais e 30.000 filmes e séries em HD e 4K. Planos a partir de R$ 35,00. Peça seu teste grátis de 6 horas pelo WhatsApp.">
-<meta name="theme-color" content="#060d1f">
+<meta name="theme-color" content="#0a0f14">
 <link rel="canonical" href="https://melhortv.netlify.app/">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
 <meta property="og:title" content="MelhorTV – Canais, filmes e séries em HD e 4K">
 <meta property="og:description" content="Mais de 12.000 canais e 30.000 filmes e séries. Teste grátis de 6h.">
 <meta property="og:image" content="https://melhortv.netlify.app/banner-premium.png?v=2">
@@ -17,281 +18,243 @@
 <link rel="apple-touch-icon" href="favicon2.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#060d1f;--bg2:#0b1630;--card:#0e1b3a;--line:rgba(148,197,255,.14);--tx:#eaf1ff;--mu:#9fb0cf;--cy:#22d3ee;--bl:#2563eb;--red:#ff2d3d;--r:16px}
+:root{--bg:#0a0f14;--card:#14191e;--card2:#0f151b;--line:rgba(255,255,255,.08);--tx:#f8fafc;--mu:#aab4c3;--red:#ff1a1a;--red2:#f20000;--red3:#bd0202;--ok:#25d366;--r:18px}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth;scroll-padding-top:76px}
-body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-img{display:block;max-width:100%}
-a{color:inherit;text-decoration:none}
-:focus-visible{outline:2px solid var(--cy);outline-offset:3px;border-radius:6px}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:6px}
 .wrap{width:min(1120px,100% - 2rem);margin-inline:auto}
-section{padding:4.5rem 0}
-h2{font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.15;letter-spacing:-.02em;font-weight:800}
+section{padding:5rem 0;position:relative}
+h2{font-size:clamp(1.8rem,4.4vw,2.7rem);line-height:1.1;letter-spacing:-.03em;font-weight:900}
 .sub{color:var(--mu);max-width:56ch;margin-top:.7rem}
-.logo{font-weight:800;font-size:1.5rem;letter-spacing:-.04em}
-.logo b{color:var(--red);text-shadow:0 0 18px rgba(255,45,61,.55)}
-/* header */
-header{position:fixed;inset:0 0 auto;z-index:50;background:rgba(6,13,31,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.logo{font-weight:900;font-size:1.6rem;letter-spacing:-.05em}
+.logo b,h1 b{color:var(--red);text-shadow:0 0 12px rgba(255,0,0,.8),0 0 30px rgba(255,0,0,.55)}
+header{position:fixed;inset:0 0 auto;z-index:50;background:rgba(0,0,0,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .bar{display:flex;align-items:center;justify-content:space-between;height:68px}
-nav ul{display:flex;gap:1.7rem;list-style:none;padding:0}
-nav a{color:var(--mu);font-weight:500;font-size:.95rem;transition:color .2s}
-nav a:hover{color:var(--tx)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.85rem 1.6rem;border-radius:999px;font-weight:700;border:1px solid transparent;transition:transform .2s,box-shadow .2s,background .2s;cursor:pointer;font:inherit;font-weight:700}
-.btn-p{background:linear-gradient(135deg,var(--cy),var(--bl));color:#031024;box-shadow:0 8px 24px rgba(34,211,238,.22)}
-.btn-p:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(34,211,238,.35)}
-.btn-g{border-color:var(--line);color:var(--tx);background:rgba(255,255,255,.03)}
-.btn-g:hover{background:rgba(255,255,255,.08);transform:translateY(-2px)}
-.sm{padding:.55rem 1.1rem;font-size:.9rem}
-.burger{display:none;background:none;border:0;color:var(--tx);padding:.5rem;cursor:pointer}
-@media(max-width:860px){
- .burger{display:block}
- nav{position:absolute;inset:68px 0 auto;background:var(--bg2);border-bottom:1px solid var(--line);display:none;padding:1rem}
- nav.open{display:block}
- nav ul{flex-direction:column;gap:0}
- nav a{display:block;padding:.9rem .5rem;font-size:1.05rem}
- .hd-cta{display:none}
-}
-/* hero */
-.hero{min-height:92vh;display:grid;align-items:center;padding:7rem 0 4rem;position:relative;isolation:isolate;
- background:linear-gradient(180deg,rgba(6,13,31,.55),var(--bg) 96%),radial-gradient(60% 50% at 80% 10%,rgba(37,99,235,.35),transparent),url(banner-premium.png) center/cover}
-.hero h1{font-size:clamp(2.4rem,6.5vw,4.6rem);line-height:1.04;letter-spacing:-.035em;font-weight:800;max-width:15ch}
-.hero p.lead{font-size:clamp(1.05rem,2vw,1.25rem);color:#c5d3ee;max-width:48ch;margin:1.3rem 0 2rem}
-.cta-row{display:flex;flex-wrap:wrap;gap:.8rem}
-.stats{display:flex;flex-wrap:wrap;gap:.6rem 2rem;margin-top:2.6rem;color:var(--mu);font-size:.95rem}
-.stats strong{color:var(--tx);font-size:1.25rem;display:block;line-height:1.2}
-/* posters */
-.row{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:1.6rem 1rem 1rem;margin-inline:calc((100vw - min(1120px,100vw - 2rem))/-2);scrollbar-width:thin;scrollbar-color:#24407a transparent}
-.row::before{content:"";flex:0 0 calc((100vw - min(1120px,100vw - 2rem))/2 - 1rem)}
-.p{flex:0 0 clamp(138px,19vw,190px);scroll-snap-align:start;position:relative;border-radius:12px;overflow:hidden;background:var(--card);aspect-ratio:2/3;transition:transform .25s,box-shadow .25s}
+nav ul{display:flex;gap:1.8rem;list-style:none;padding:0}
+nav a{color:rgba(255,255,255,.75);font-weight:500;font-size:.95rem;transition:color .2s}
+nav a:hover{color:var(--red)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:.95rem 1.9rem;border-radius:999px;font:inherit;font-weight:700;border:1px solid transparent;cursor:pointer;transition:transform .25s,box-shadow .25s,background .25s}
+.btn-p{background:linear-gradient(135deg,var(--red2),#ff3c3c);color:#fff;box-shadow:0 0 28px rgba(255,0,0,.4)}
+.btn-p:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 0 44px rgba(255,0,0,.65)}
+.btn-g{border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.04)}
+.btn-g:hover{background:rgba(255,255,255,.1);transform:translateY(-3px)}
+.sm{padding:.55rem 1.2rem;font-size:.9rem}
+.burger{display:none;background:none;border:0;color:#fff;padding:.5rem;cursor:pointer}
+@media(max-width:860px){.burger{display:block}.hd-cta{display:none}
+ nav{position:absolute;inset:68px 0 auto;background:rgba(10,15,20,.98);border-bottom:1px solid var(--line);display:none;padding:1rem}
+ nav.open{display:block}nav ul{flex-direction:column;gap:0}nav a{display:block;padding:.95rem .5rem;font-size:1.05rem}}
+/* HERO */
+.hero{min-height:94vh;display:grid;place-items:center;text-align:center;padding:7rem 0 6rem;isolation:isolate;overflow:hidden;
+ background:radial-gradient(circle at center,transparent 15%,rgba(0,0,0,.7)),linear-gradient(90deg,rgba(0,0,0,.6),rgba(0,0,0,.4),rgba(255,0,0,.12)),url(banner-premium.png) center/cover}
+.hero::before{content:"";position:absolute;width:70vmax;height:70vmax;left:50%;top:55%;translate:-50% -50%;background:radial-gradient(closest-side,rgba(255,0,0,.2),transparent);z-index:-1;animation:breathe 7s ease-in-out infinite alternate}
+.hero::after{content:"";position:absolute;inset:auto 0 0;height:180px;background:linear-gradient(transparent,var(--bg));z-index:-1}
+@keyframes breathe{to{opacity:.45;scale:1.12}}
+.card-hero{max-width:860px;padding:3.2rem 2rem;border-radius:32px;background:rgba(5,5,5,.55);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.08);box-shadow:0 0 60px rgba(255,0,0,.16),0 24px 70px rgba(0,0,0,.6);animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rise{from{opacity:0;translate:0 24px}}
+h1{font-size:clamp(3.3rem,12vw,7rem);line-height:.95;letter-spacing:-.06em;font-weight:900}
+.tag-line{font-weight:700;letter-spacing:.02em;color:#ffd5d5;margin:1.2rem 0 .6rem;font-size:clamp(1rem,2.4vw,1.3rem)}
+.lead{color:rgba(255,255,255,.88);font-size:clamp(1.05rem,2.3vw,1.4rem);max-width:40ch;margin:0 auto 2rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center}
+.stats{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 2.2rem;margin-top:2.2rem;color:var(--mu);font-size:.9rem}
+.stats strong{display:block;color:#fff;font-size:1.3rem;line-height:1.2}
+/* CARROSSEL AUTOMATICO */
+.cat{background:radial-gradient(60% 40% at 50% 0,rgba(255,0,0,.1),transparent)}
+.mq{overflow:hidden;margin-top:1.6rem;-webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);padding:14px 0}
+.track{display:flex;gap:14px;width:max-content;animation:mqL var(--d,70s) linear infinite;will-change:transform}
+.mq.rev .track{animation-name:mqR}
+.mq:hover .track,.mq:focus-within .track{animation-play-state:paused}
+@keyframes mqL{to{transform:translateX(calc(-50% - 7px))}}
+@keyframes mqR{from{transform:translateX(calc(-50% - 7px))}to{transform:translateX(0)}}
+.p{flex:0 0 clamp(130px,17vw,178px);aspect-ratio:2/3;border-radius:12px;overflow:hidden;position:relative;background:var(--card);border:1px solid var(--line);transition:transform .35s,box-shadow .35s,border-color .35s}
 .p img{width:100%;height:100%;object-fit:cover}
-.p:hover{transform:translateY(-5px);box-shadow:0 14px 34px rgba(34,211,238,.18)}
-.p span{position:absolute;inset:auto 0 0;padding:1.8rem .7rem .6rem;font-size:.8rem;font-weight:700;background:linear-gradient(transparent,rgba(3,8,20,.95))}
-.note{font-size:.8rem;color:var(--mu);margin-top:.4rem}
-/* chips / cards */
-.chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.6rem}
-.chip{padding:.55rem 1.1rem;border:1px solid var(--line);border-radius:999px;background:var(--card);font-weight:500;font-size:.95rem}
-.grid{display:grid;gap:1rem;margin-top:2rem}
-.g3{grid-template-columns:repeat(3,1fr)}.g6{grid-template-columns:repeat(6,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
-@media(max-width:900px){.g3{grid-template-columns:1fr 1fr}.g4{grid-template-columns:1fr 1fr}.g6{grid-template-columns:repeat(3,1fr)}}
+.p::after{content:attr(data-t);position:absolute;inset:auto 0 0;padding:2rem .7rem .6rem;font-size:.78rem;font-weight:700;background:linear-gradient(transparent,rgba(0,0,0,.95));opacity:0;transition:opacity .3s}
+.p:hover{transform:scale(1.07);z-index:3;border-color:var(--red);box-shadow:0 12px 30px rgba(255,26,26,.4)}
+.p:hover::after{opacity:1}
+.note{font-size:.8rem;color:var(--mu);margin-top:.5rem}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.4rem}
+.chip{padding:.5rem 1.1rem;border:1px solid rgba(255,26,26,.35);border-radius:999px;background:rgba(255,26,26,.07);font-weight:500;font-size:.92rem}
+@media(prefers-reduced-motion:reduce){.track{animation:none}.mq{overflow-x:auto;mask:none;-webkit-mask:none}.hero::before,.card-hero{animation:none}html{scroll-behavior:auto}*{transition:none!important}}
+/* GRIDS */
+.grid{display:grid;gap:1.1rem;margin-top:2.2rem}
+.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g6{grid-template-columns:repeat(6,1fr)}
+@media(max-width:1000px){.g4{grid-template-columns:1fr 1fr}.g6{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:820px){.g3{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.g3,.g4{grid-template-columns:1fr}.g6{grid-template-columns:1fr 1fr}}
-.card{background:linear-gradient(180deg,var(--card),var(--bg2));border:1px solid var(--line);border-radius:var(--r);padding:1.5rem}
-.card h3{font-size:1.1rem;margin:.9rem 0 .35rem}
-.card p{color:var(--mu);font-size:.95rem}
-.ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(34,211,238,.1);color:var(--cy)}
-.ic svg,.dev svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.dev{text-align:center;padding:1.3rem .5rem;font-weight:500;font-size:.95rem}
-.dev svg{width:32px;height:32px;color:var(--cy);margin:0 auto .6rem}
-.alt{background:var(--bg2);border-block:1px solid var(--line)}
-/* plans */
-.plans{align-items:stretch}
+.card{background:linear-gradient(180deg,var(--card),var(--card2));border:1px solid var(--line);border-radius:var(--r);padding:1.6rem;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:transform .3s,border-color .3s,box-shadow .3s}
+.card:hover{transform:translateY(-5px);border-color:rgba(255,26,26,.45);box-shadow:0 16px 40px rgba(0,0,0,.5),0 0 24px rgba(255,26,26,.12)}
+.card h3{font-size:1.1rem;margin:.9rem 0 .3rem}.card p{color:var(--mu);font-size:.95rem}
+.ic svg,.dev svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.ic{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;color:var(--red);background:rgba(255,26,26,.1);box-shadow:inset 0 0 0 1px rgba(255,26,26,.25)}
+.dev{text-align:center;font-weight:500;font-size:.95rem;padding:1.4rem .5rem}.dev svg{width:34px;height:34px;color:var(--red);margin:0 auto .6rem}
+.alt{background:linear-gradient(180deg,#0d1319,var(--bg));border-block:1px solid var(--line)}
+/* PLANOS */
+#planos{background:radial-gradient(50% 45% at 50% 40%,rgba(255,0,0,.13),transparent),var(--bg)}
 .plan{display:flex;flex-direction:column;position:relative}
-.plan h3{margin:0;font-size:1.05rem;color:var(--mu)}
-.price{font-size:2.5rem;font-weight:800;letter-spacing:-.03em;line-height:1.1;margin:.6rem 0 .1rem}
-.per{color:var(--mu);font-size:.9rem;min-height:1.4em}
-.plan ul{list-style:none;padding:0;margin:1.3rem 0 1.6rem;display:grid;gap:.6rem;font-size:.95rem;color:#c5d3ee;flex:1}
+.plan h3{margin:0;font-size:1.5rem;color:var(--red);font-weight:800}
+.price{font-size:2.8rem;font-weight:900;letter-spacing:-.04em;line-height:1.1;margin:.7rem 0 .1rem;color:#fff}
+.per{color:var(--mu);font-size:.9rem}
+.save{display:inline-block;margin-top:.8rem;padding:.3rem .7rem;border-radius:8px;background:rgba(37,211,102,.12);color:#5be28f;font-size:.82rem;font-weight:700;align-self:flex-start}
+.save.none{background:rgba(255,255,255,.06);color:var(--mu)}
+.plan ul{list-style:none;padding:0;margin:1.3rem 0 1.6rem;display:grid;gap:.6rem;color:#d3dae6;font-size:.95rem;flex:1}
 .plan li{display:flex;gap:.6rem}
-.plan li::before{content:"";flex:0 0 18px;height:18px;margin-top:3px;background:var(--cy);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E") center/contain no-repeat}
-.plan.hot{border-color:var(--cy);box-shadow:0 0 0 1px var(--cy),0 20px 50px rgba(34,211,238,.14)}
-.tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--cy);color:#031024;font-size:.75rem;font-weight:800;padding:.25rem .9rem;border-radius:999px;white-space:nowrap}
-/* steps / faq */
+.plan li::before{content:"✓";color:var(--ok);font-weight:900}
+.plan .btn{width:100%}
+.plan.hot{border:2px solid var(--red);box-shadow:0 0 36px rgba(255,26,26,.28),0 16px 50px rgba(0,0,0,.5);transform:translateY(-8px)}
+.plan.hot:hover{transform:translateY(-12px)}
+.tag{position:absolute;top:-14px;left:50%;translate:-50% 0;background:var(--red);color:#fff;font-size:.72rem;font-weight:900;padding:.3rem 1rem;border-radius:999px;white-space:nowrap;text-transform:uppercase;letter-spacing:.05em}
+@media(max-width:1000px){.plan.hot{transform:none}}
+.fine{text-align:center;color:var(--mu);font-size:.82rem;margin-top:1.6rem}
 .steps{counter-reset:s}
-.steps .card::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--bl);font-weight:800}
-details{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:.8rem}
-summary{cursor:pointer;list-style:none;padding:1.1rem 1.3rem;font-weight:700;display:flex;justify-content:space-between;gap:1rem;align-items:center}
+.steps .card::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--red2),var(--red3));font-weight:900;box-shadow:0 0 18px rgba(255,0,0,.4)}
+/* FAQ */
+.faq{max-width:780px;margin-top:2rem}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:.8rem;transition:border-color .3s}
+details[open]{border-color:rgba(255,26,26,.5)}
+summary{cursor:pointer;list-style:none;padding:1.15rem 1.3rem;font-weight:700;display:flex;justify-content:space-between;gap:1rem;align-items:center}
 summary::-webkit-details-marker{display:none}
-summary::after{content:"+";font-size:1.5rem;color:var(--cy);transition:transform .2s;line-height:1}
+summary::after{content:"+";font-size:1.6rem;color:var(--red);line-height:1;transition:transform .3s}
 details[open] summary::after{transform:rotate(45deg)}
-details p{padding:0 1.3rem 1.2rem;color:var(--mu)}
-.faq{max-width:760px;margin-top:2rem}
-/* final cta / footer */
-.final{text-align:center;border-radius:24px;padding:3.5rem 1.5rem;background:radial-gradient(70% 120% at 50% 0,rgba(37,99,235,.45),transparent),var(--card);border:1px solid var(--line)}
-.final p{color:var(--mu);margin:.8rem auto 1.8rem;max-width:46ch}
-footer{border-top:1px solid var(--line);padding:2.5rem 0 5.5rem;color:var(--mu);font-size:.85rem}
+.ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s}
+details[open] .ans{grid-template-rows:1fr}
+.ans>div{overflow:hidden}.ans p{padding:0 1.3rem 1.2rem;color:var(--mu)}
+/* CTA FINAL */
+.final{text-align:center;border-radius:28px;padding:4rem 1.5rem;background:radial-gradient(80% 140% at 50% 0,rgba(255,0,0,.4),transparent),linear-gradient(180deg,#1a0a0c,var(--card));border:1px solid rgba(255,26,26,.35);box-shadow:0 0 60px rgba(255,0,0,.15)}
+.final p{color:#e3c9c9;margin:.8rem auto 2rem;max-width:44ch}
+footer{border-top:1px solid var(--line);padding:2.5rem 0 6rem;color:var(--mu);font-size:.88rem;background:#070a0e}
 .ft{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem}
-footer nav{position:static;display:block;background:none;border:0;padding:0}
-footer ul{flex-wrap:wrap;gap:1rem}
-.legal{margin-top:1.5rem;max-width:80ch;font-size:.78rem;opacity:.8}
-.wa{position:fixed;right:18px;bottom:18px;z-index:40;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.45);transition:transform .2s}
-.wa:hover{transform:scale(1.07)}
-.wa svg{width:30px;height:30px;fill:#fff}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+footer ul{display:flex;flex-wrap:wrap;gap:1.2rem;list-style:none;padding:0}footer a:hover{color:var(--red)}
+.legal{margin-top:1.5rem;max-width:80ch;font-size:.78rem;opacity:.75}
+.wa{position:fixed;right:18px;bottom:18px;z-index:40;width:60px;height:60px;border-radius:50%;background:var(--ok);display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.5);transition:transform .2s}
+.wa:hover{transform:scale(1.08)}.wa svg{width:30px;height:30px;fill:#fff}
 </style>
 </head>
 <body>
-<header>
- <div class="wrap bar">
-  <a href="#topo" class="logo" aria-label="MelhorTV – início">Melhor<b>TV</b></a>
-  <nav id="menu" aria-label="Principal">
-   <ul>
-    <li><a href="#conteudo">Conteúdo</a></li>
-    <li><a href="#vantagens">Vantagens</a></li>
-    <li><a href="#planos">Planos</a></li>
-    <li><a href="#como-funciona">Como funciona</a></li>
-    <li><a href="#faq">Dúvidas</a></li>
-   </ul>
-  </nav>
-  <div style="display:flex;gap:.5rem;align-items:center">
-   <a class="btn btn-p sm hd-cta" href="#" data-wa="Olá! Quero fazer um teste IPTV">Teste grátis</a>
-   <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
-  </div>
- </div>
-</header>
+<header><div class="wrap bar">
+ <a href="#topo" class="logo" aria-label="MelhorTV – início">Melhor<b>TV</b></a>
+ <nav id="menu" aria-label="Principal"><ul>
+  <li><a href="#conteudo">Conteúdo</a></li><li><a href="#vantagens">Vantagens</a></li><li><a href="#planos">Planos</a></li><li><a href="#como-funciona">Como funciona</a></li><li><a href="#faq">Dúvidas</a></li></ul></nav>
+ <div style="display:flex;gap:.5rem;align-items:center">
+  <a class="btn btn-p sm hd-cta" href="#" data-wa="Olá! Quero fazer um teste IPTV">Teste grátis</a>
+  <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+ </div></div></header>
 
 <main id="topo">
- <section class="hero">
-  <div class="wrap">
-   <h1>Canais, filmes e séries em HD e 4K no mesmo lugar.</h1>
-   <p class="lead">Mais de 12.000 canais e 30.000 filmes e séries para assistir na TV, no celular ou no computador. Peça seu teste de 6 horas, sem compromisso.</p>
-   <div class="cta-row">
-    <a class="btn btn-p" href="#" data-wa="Olá! Quero fazer um teste IPTV">Quero meu teste grátis de 6h</a>
-    <a class="btn btn-g" href="#planos">Ver planos</a>
-   </div>
-   <div class="stats">
-    <div><strong>+12.000</strong>canais</div>
-    <div><strong>+30.000</strong>filmes e séries</div>
-    <div><strong>HD e 4K</strong>quando disponível</div>
-    <div><strong>6 horas</strong>de teste grátis</div>
-   </div>
-  </div>
- </section>
+<section class="hero"><div class="wrap"><div class="card-hero">
+ <h1>Melhor<b>TV</b></h1>
+ <p class="tag-line">Canais • Filmes • Séries • Futebol</p>
+ <p class="lead">+12.000 canais e +30.000 filmes e séries em HD e 4K, na TV, no celular ou no computador.</p>
+ <div class="cta-row">
+  <a class="btn btn-p" href="#" data-wa="Olá! Quero fazer um teste IPTV">Faça um teste grátis de 6h!</a>
+  <a class="btn btn-g" href="#planos">Conhecer os planos</a>
+ </div>
+ <div class="stats"><div><strong>+12.000</strong>canais</div><div><strong>+30.000</strong>filmes e séries</div><div><strong>HD e 4K</strong>quando disponível</div></div>
+</div></div></section>
 
- <section id="conteudo">
-  <div class="wrap">
-   <h2>Filmes</h2>
-   <p class="sub">Alguns títulos que fazem parte do catálogo. A lista é atualizada com frequência.</p>
-  </div>
-  <div class="wrap"><div class="row" id="filmes" tabindex="0" aria-label="Carrossel de filmes"></div></div>
-  <div class="wrap" style="margin-top:2.5rem">
-   <h2>Séries</h2>
-  </div>
-  <div class="wrap"><div class="row" id="series" tabindex="0" aria-label="Carrossel de séries"></div>
-   <p class="note">Capas ilustrativas. Os títulos disponíveis podem variar.</p>
-  </div>
-  <div class="wrap" style="margin-top:2rem">
-   <h2>E também canais ao vivo</h2>
-   <div class="chips">
-    <span class="chip">Esportes e futebol</span><span class="chip">Filmes</span><span class="chip">Séries</span><span class="chip">Infantil</span><span class="chip">Notícias</span><span class="chip">Documentários</span><span class="chip">Variedades</span>
-   </div>
-  </div>
- </section>
+<section class="cat" id="conteudo">
+ <div class="wrap"><h2>Filmes</h2><p class="sub">Alguns títulos do catálogo. A lista é atualizada com frequência.</p></div>
+ <div class="mq" id="filmes" role="region" aria-label="Capas de filmes"><div class="track" style="--d:75s"></div></div>
+ <div class="wrap" style="margin-top:2.5rem"><h2>Séries</h2></div>
+ <div class="mq rev" id="series" role="region" aria-label="Capas de séries"><div class="track" style="--d:85s"></div></div>
+ <div class="wrap"><p class="note">Capas ilustrativas. Os títulos disponíveis podem variar.</p>
+  <h2 style="margin-top:3rem">E canais ao vivo</h2>
+  <div class="chips"><span class="chip">Esportes e futebol</span><span class="chip">Filmes</span><span class="chip">Séries</span><span class="chip">Infantil</span><span class="chip">Notícias</span><span class="chip">Documentários</span><span class="chip">Variedades</span></div></div>
+</section>
 
- <section class="alt" id="compat">
-  <div class="wrap">
-   <h2>Assista no aparelho que você já tem</h2>
-   <p class="sub">Compatível com Smart TVs, celulares, tablets, computadores, Fire TV e TV Box.</p>
-   <div class="grid g6">
-    <div class="card dev"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>Smart TV</div>
-    <div class="card dev"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>Celular</div>
-    <div class="card dev"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M11 18h2"/></svg>Tablet</div>
-    <div class="card dev"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/></svg>Computador</div>
-    <div class="card dev"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="10" rx="2"/><path d="M7 20h10"/></svg>Fire TV</div>
-    <div class="card dev"><svg viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="9" rx="2"/><circle cx="8" cy="12.5" r="1"/><circle cx="12" cy="12.5" r="1"/></svg>TV Box</div>
-   </div>
-  </div>
- </section>
+<section class="alt"><div class="wrap">
+ <h2>Assista no aparelho que você já tem</h2>
+ <p class="sub">Compatível com Smart TVs, celulares, tablets, computadores, Fire TV e TV Box.</p>
+ <div class="grid g6">
+  <div class="card dev"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>Smart TV</div>
+  <div class="card dev"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>Celular</div>
+  <div class="card dev"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M11 18h2"/></svg>Tablet</div>
+  <div class="card dev"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/></svg>Computador</div>
+  <div class="card dev"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="10" rx="2"/><path d="M7 20h10"/></svg>Fire TV</div>
+  <div class="card dev"><svg viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="9" rx="2"/><circle cx="8" cy="12.5" r="1"/><circle cx="12" cy="12.5" r="1"/></svg>TV Box</div>
+ </div></div></section>
 
- <section id="vantagens">
-  <div class="wrap">
-   <h2>Por que escolher a MelhorTV</h2>
-   <div class="grid g3">
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 11-3-6.7M21 4v5h-5"/></svg></div><h3>Atualizações diárias</h3><p>Filmes e séries novos todos os dias, com lançamentos.</p></div>
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M7 15V9l3 4 3-4v6M17 9v6"/></svg></div><h3>Qualidade HD e 4K</h3><p>Imagem nítida em canais, filmes e séries, quando o título está disponível.</p></div>
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="14" height="10" rx="2"/><rect x="14" y="10" width="7" height="10" rx="1.5"/></svg></div><h3>Vários dispositivos</h3><p>TV, celular, tablet e computador, do jeito que for melhor para você.</p></div>
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 13v-1a8 8 0 0116 0v1M4 13h3v5H4zM17 13h3v5h-3z"/></svg></div><h3>Suporte 24/7</h3><p>Atendimento pelo WhatsApp a qualquer hora.</p></div>
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M2 9a15 15 0 0120 0M5 13a10 10 0 0114 0M8.5 16.5a5 5 0 017 0M12 20h.01"/></svg></div><h3>Transmissão estável</h3><p>Pensada para rodar bem, inclusive em horários de pico.</p></div>
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 6H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><h3>Preço justo</h3><p>Planos a partir de R$ 35,00, com desconto nos períodos maiores.</p></div>
-   </div>
-  </div>
- </section>
+<section id="vantagens"><div class="wrap">
+ <h2>Por que escolher a MelhorTV</h2>
+ <div class="grid g3">
+  <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 11-3-6.7M21 4v5h-5"/></svg></div><h3>Atualizações diárias</h3><p>Filmes e séries novos todos os dias, com lançamentos.</p></div>
+  <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M7 15V9l3 4 3-4v6M17 9v6"/></svg></div><h3>Qualidade HD e 4K</h3><p>Imagem nítida em canais, filmes e séries, quando o título está disponível.</p></div>
+  <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="14" height="10" rx="2"/><rect x="14" y="10" width="7" height="10" rx="1.5"/></svg></div><h3>Vários dispositivos</h3><p>TV, celular, tablet e computador, do jeito que for melhor para você.</p></div>
+  <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 13v-1a8 8 0 0116 0v1M4 13h3v5H4zM17 13h3v5h-3z"/></svg></div><h3>Suporte 24/7</h3><p>Atendimento pelo WhatsApp a qualquer hora.</p></div>
+  <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M2 9a15 15 0 0120 0M5 13a10 10 0 0114 0M8.5 16.5a5 5 0 017 0M12 20h.01"/></svg></div><h3>Conexão estável</h3><p>Transmissão pensada para rodar bem, inclusive em horários de pico.</p></div>
+  <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 6H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><h3>Preço justo</h3><p>A partir de R$ 35,00 por mês, e quanto maior o plano, menor o valor mensal.</p></div>
+ </div></div></section>
 
- <section class="alt" id="planos">
-  <div class="wrap">
-   <h2>Escolha seu plano</h2>
-   <p class="sub">Todos os planos incluem o mesmo acesso. Quanto maior o período, menor o valor por mês.</p>
-   <div class="grid g4 plans" style="margin-top:2.5rem">
-    <div class="card plan"><h3>Mensal</h3><p class="price">R$ 35,00</p><p class="per">por mês</p>
-     <ul><li>Acesso completo aos canais</li><li>Filmes e séries atualizados</li><li>Qualidade HD e 4K</li><li>Suporte 24/7</li></ul>
-     <a class="btn btn-g" href="#" data-wa="Olá! Quero assinar o Plano Mensal!">Assinar mensal</a></div>
-    <div class="card plan"><h3>Trimestral</h3><p class="price">R$ 95,00</p><p class="per">3 meses · ≈ R$ 31,67/mês</p>
-     <ul><li>Acesso completo aos canais</li><li>Filmes e séries atualizados</li><li>Qualidade HD e 4K</li><li>Suporte 24/7</li></ul>
-     <a class="btn btn-g" href="#" data-wa="Olá! Quero assinar o Plano Trimestral!">Assinar trimestral</a></div>
-    <div class="card plan hot"><span class="tag">Mais vendido</span><h3>Semestral</h3><p class="price">R$ 180,00</p><p class="per">6 meses · R$ 30,00/mês</p>
-     <ul><li>Acesso completo aos canais</li><li>Filmes e séries atualizados</li><li>Qualidade HD e 4K</li><li>Suporte 24/7</li></ul>
-     <a class="btn btn-p" href="#" data-wa="Olá! Quero assinar o Plano Semestral!">Assinar semestral</a></div>
-    <div class="card plan"><h3>Anual</h3><p class="price">R$ 350,00</p><p class="per">12 meses · ≈ R$ 29,17/mês</p>
-     <ul><li>Acesso completo aos canais</li><li>Filmes e séries atualizados</li><li>Qualidade HD e 4K</li><li>Suporte 24/7</li></ul>
-     <a class="btn btn-g" href="#" data-wa="Olá! Quero assinar o Plano Anual!">Assinar anual</a></div>
-   </div>
-   <p class="note" style="text-align:center;margin-top:1.5rem">Ainda em dúvida? Peça o teste grátis de 6h antes de assinar.</p>
-  </div>
- </section>
+<section id="planos"><div class="wrap">
+ <h2>Escolha seu plano</h2>
+ <p class="sub">Todos os planos têm o mesmo acesso. Mudam só o período e o valor por mês.</p>
+ <div class="grid g4" style="margin-top:3rem;align-items:stretch">
+  <div class="card plan"><h3>Mensal</h3><p class="price">R$ 35,00</p><p class="per">por mês</p><span class="save none">Valor de referência</span>
+   <ul><li>Acesso completo aos canais</li><li>Filmes e séries atualizados</li><li>Qualidade HD e 4K</li><li>Suporte 24/7</li></ul>
+   <a class="btn btn-g" href="#" data-wa="Olá! Quero assinar o Plano Mensal!">Assinar mensal</a></div>
+  <div class="card plan"><h3>Trimestral</h3><p class="price">R$ 95,00</p><p class="per">3 meses · ≈ R$ 31,67 por mês</p><span class="save">Economize R$ 10,00 (9,52%)</span>
+   <ul><li>Acesso completo aos canais</li><li>Filmes e séries atualizados</li><li>Qualidade HD e 4K</li><li>Suporte 24/7</li></ul>
+   <a class="btn btn-g" href="#" data-wa="Olá! Quero assinar o Plano Trimestral!">Assinar trimestral</a></div>
+  <div class="card plan hot"><span class="tag">Mais vendido</span><h3>Semestral</h3><p class="price">R$ 180,00</p><p class="per">6 meses · R$ 30,00 por mês</p><span class="save">Economize R$ 30,00 (14,29%)</span>
+   <ul><li>Acesso completo aos canais</li><li>Filmes e séries atualizados</li><li>Qualidade HD e 4K</li><li>Suporte 24/7</li></ul>
+   <a class="btn btn-p" href="#" data-wa="Olá! Quero assinar o Plano Semestral!">Assinar semestral</a></div>
+  <div class="card plan"><h3>Anual</h3><p class="price">R$ 350,00</p><p class="per">12 meses · ≈ R$ 29,17 por mês</p><span class="save">Economize R$ 70,00 (16,67%)</span>
+   <ul><li>Acesso completo aos canais</li><li>Filmes e séries atualizados</li><li>Qualidade HD e 4K</li><li>Suporte 24/7</li></ul>
+   <a class="btn btn-g" href="#" data-wa="Olá! Quero assinar o Plano Anual!">Assinar anual</a></div>
+ </div>
+ <p class="fine">Economia calculada em relação a pagar o plano mensal (R$ 35,00) durante o mesmo período. Em dúvida? Peça o teste grátis de 6h antes de assinar.</p>
+</div></section>
 
- <section id="como-funciona">
-  <div class="wrap">
-   <h2>Como começar</h2>
-   <div class="grid g3 steps">
-    <div class="card"><h3>Chame no WhatsApp</h3><p>Toque no botão e envie a mensagem que já deixamos pronta.</p></div>
-    <div class="card"><h3>Teste por 6 horas</h3><p>Você recebe o acesso de teste para ver tudo funcionando no seu aparelho.</p></div>
-    <div class="card"><h3>Escolha seu plano</h3><p>Gostou? Assine o plano que combina com você, direto pelo atendimento.</p></div>
-   </div>
-  </div>
- </section>
+<section class="alt" id="como-funciona"><div class="wrap">
+ <h2>Como começar</h2>
+ <div class="grid g3 steps">
+  <div class="card"><h3>Chame no WhatsApp</h3><p>Toque no botão e envie a mensagem que já deixamos pronta.</p></div>
+  <div class="card"><h3>Teste por 6 horas</h3><p>Receba o acesso de teste e veja tudo funcionando no seu aparelho.</p></div>
+  <div class="card"><h3>Escolha seu plano</h3><p>Gostou? Assine o plano que combina com você, direto pelo atendimento.</p></div>
+ </div></div></section>
 
- <section class="alt" id="faq">
-  <div class="wrap">
-   <h2>Perguntas frequentes</h2>
-   <div class="faq">
-    <details><summary>Como faço para assinar?</summary><p>Clique em qualquer botão de teste ou assinatura e converse com a gente pelo WhatsApp. Lá você recebe o teste e finaliza o plano.</p></details>
-    <details><summary>Quais dispositivos são compatíveis?</summary><p>Smart TVs, celulares, tablets, TV Box, Fire TV e computadores.</p></details>
-    <details><summary>Posso assistir em 4K?</summary><p>Sim. Oferecemos filmes e séries em 4K quando o título está disponível nessa qualidade.</p></details>
-    <details><summary>O teste grátis tem custo?</summary><p>Não. O teste dura 6 horas e é gratuito, sem compromisso de assinatura.</p></details>
-   </div>
-  </div>
- </section>
+<section id="faq"><div class="wrap">
+ <h2>Perguntas frequentes</h2>
+ <div class="faq">
+  <details><summary>Como faço para assinar?</summary><div class="ans"><div><p>Clique em qualquer botão de teste ou assinatura e converse com a gente pelo WhatsApp. Lá você recebe o teste e finaliza o plano.</p></div></div></details>
+  <details><summary>Quais dispositivos são compatíveis?</summary><div class="ans"><div><p>Smart TVs, celulares, tablets, TV Box, Fire TV e computadores.</p></div></div></details>
+  <details><summary>Posso assistir filmes em 4K?</summary><div class="ans"><div><p>Sim. Oferecemos filmes e séries em 4K quando o título está disponível nessa qualidade.</p></div></div></details>
+  <details><summary>O teste grátis tem custo?</summary><div class="ans"><div><p>Não. O teste dura 6 horas e é gratuito, sem compromisso de assinatura.</p></div></div></details>
+ </div></div></section>
 
- <section>
-  <div class="wrap">
-   <div class="final">
-    <h2>Teste a MelhorTV por 6 horas</h2>
-    <p>Veja a qualidade na sua TV ou no seu celular antes de decidir.</p>
-    <a class="btn btn-p" href="#" data-wa="Olá! Quero fazer um teste IPTV">Pedir teste grátis</a>
-   </div>
-  </div>
- </section>
+<section style="padding-top:0"><div class="wrap"><div class="final">
+ <h2>Faça um teste grátis de 6h!</h2>
+ <p>Veja a qualidade na sua TV ou no seu celular antes de decidir.</p>
+ <a class="btn btn-p" href="#" data-wa="Olá! Quero fazer um teste IPTV">Solicitar agora</a>
+</div></div></section>
 </main>
 
-<footer>
- <div class="wrap">
-  <div class="ft">
-   <div><div class="logo">Melhor<b>TV</b></div><p style="margin-top:.4rem">&copy; 2026 MelhorTV. Todos os direitos reservados.</p></div>
-   <nav aria-label="Rodapé"><ul style="display:flex;list-style:none;padding:0">
-    <li><a href="#conteudo">Conteúdo</a></li><li><a href="#planos">Planos</a></li><li><a href="#faq">Dúvidas</a></li><li><a href="#" data-wa="Olá! Preciso de suporte">Suporte no WhatsApp</a></li></ul></nav>
-  </div>
-  <p class="legal">Marcas, nomes e imagens de capas pertencem aos seus respectivos proprietários e aparecem apenas para ilustrar o catálogo. A MelhorTV não possui afiliação com essas marcas.</p>
- </div>
-</footer>
+<footer><div class="wrap">
+ <div class="ft"><div><div class="logo">Melhor<b>TV</b></div><p style="margin-top:.4rem">&copy; 2026 MelhorTV. Todos os direitos reservados.</p></div>
+ <nav aria-label="Rodapé"><ul><li><a href="#conteudo">Conteúdo</a></li><li><a href="#planos">Planos</a></li><li><a href="#faq">Dúvidas</a></li><li><a href="#" data-wa="Olá! Preciso de suporte">Suporte no WhatsApp</a></li></ul></nav></div>
+ <p class="legal">Marcas, nomes e capas pertencem aos seus respectivos proprietários e aparecem apenas para ilustrar o catálogo. A MelhorTV não possui afiliação com essas marcas.</p>
+</div></footer>
 
-<a class="wa" href="#" data-wa="Olá! Quero fazer um teste IPTV" aria-label="Falar pelo WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.5A10 10 0 1012 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800s.7-2 1-2.300c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 2c.1.200.1.400 0 .5l-.4.600c-.1.200-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.200 1 2.100 1.300 2.400 1.500.3.100.5.100.7-.1l.9-1.100c.2-.3.400-.2.700-.1l1.900.9c.3.1.5.2.5.3.1.100.1.700-.1 1.300z"/></svg></a>
+<a class="wa" href="#" data-wa="Olá! Quero fazer um teste IPTV" aria-label="Falar pelo WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.5A10 10 0 1012 2zm0 1.8a8.2 8.2 0 11-4.2 15.3l-.3-.2-2.900.9.9-2.800-.2-.3A8.200 8.200 0 0112 3.800zm-3 3.700c-.2 0-.5.100-.7.400-.3.300-1 1-1 2.400s1 2.800 1.200 3c.1.200 2 3.100 4.900 4.300 2.400 1 2.900.8 3.400.7.500-.1 1.700-.7 1.900-1.400.2-.7.200-1.200.2-1.400-.1-.1-.3-.2-.6-.4l-1.800-.9c-.3-.1-.5-.1-.7.100l-.8 1c-.2.200-.3.200-.6.100-.3-.1-1.200-.4-2.200-1.400-.8-.7-1.400-1.600-1.500-1.900-.2-.3 0-.4.100-.6l.4-.5c.1-.2.200-.3.300-.5.100-.2 0-.4 0-.5l-.8-2c-.2-.5-.4-.5-.6-.5z"/></svg></a>
 
 <script>
 const WA="5541995764429";
-document.querySelectorAll("[data-wa]").forEach(a=>{
- a.href="https://wa.me/"+WA+"?text="+encodeURIComponent(a.dataset.wa);
- a.target="_blank";a.rel="noopener";
-});
-const burger=document.getElementById("burger"),menu=document.getElementById("menu");
-burger.onclick=()=>{const o=menu.classList.toggle("open");burger.setAttribute("aria-expanded",o)};
-menu.querySelectorAll("a").forEach(a=>a.onclick=()=>{menu.classList.remove("open");burger.setAttribute("aria-expanded","false")});
+document.querySelectorAll("[data-wa]").forEach(a=>{a.href="https://wa.me/"+WA+"?text="+encodeURIComponent(a.dataset.wa);a.target="_blank";a.rel="noopener"});
+const b=document.getElementById("burger"),m=document.getElementById("menu");
+b.onclick=()=>b.setAttribute("aria-expanded",m.classList.toggle("open"));
+m.querySelectorAll("a").forEach(a=>a.onclick=()=>{m.classList.remove("open");b.setAttribute("aria-expanded","false")});
 const A="assets/img/";
 const filmes=[["filmes/ComoTreinarSeuDragao.webp","Como Treinar Seu Dragão"],["https://ingresso-a.akamaihd.net/b2b/production/uploads/articles-content/86c404b7-4d7e-4db6-ab2e-37394e7be7db.png","Lilo & Stitch"],["https://m.media-amazon.com/images/I/71niXI3lxlL._AC_UF894,1000_QL80_.jpg","Os Vingadores"],["filmes/Aempregada.webp","A Empregada"],["filmes/mario.webp","Super Mario Bros"],["filmes/Justiceiro.webp","O Justiceiro"],["filmes/Zootopia.webp","Zootopia 2"],["filmes/HomemAranha.webp","Homem-Aranha"],["filmes/Panico.webp","Pânico 7"],["filmes/Avatar.webp","Avatar"],["https://i.imgur.com/rRegFZg.jpg","Capitão América"],["https://i.imgur.com/JLyEuz8.jpeg","Divertida Mente 2"],["filmes/Bailarina.webp","Bailarina"],["https://i.imgur.com/VJExMnA.jpeg","Deadpool & Wolverine"],["filmes/ComoMagica.webp","Como Num Passe de Mágica"],["filmes/Sonic3.webp","Sonic 3: O Filme"]];
 const series=[["Series/DemolidorRenascido.webp","Demolidor: Renascido"],["Series/Thelastosus.webp","The Last of Us"],["Series/SpiderNoir.webp","Spider-Noir"],["Series/Berlim.webp","Berlim"],["Series/dead.webp","Dead"],["Series/BrekingBad.webp","Breaking Bad"],["Series/Strangers.webp","Stranger Things"],["Series/Onepiece.webp","One Piece"],["Series/OuterBanks.webp","Outer Banks"],["Series/Euphoria.webp","Euphoria"],["Series/PeakyBlinders.webp","Peaky Blinders"],["Series/Lost.webp","Lost"],["Series/BlackMirror.webp","Black Mirror"],["https://i.imgur.com/5b1BVWV.jpeg","A Casa do Dragão"],["https://i.imgur.com/zuHXxen_d.jpeg?maxwidth=520&shape=thumb&fidelity=high","O Pinguim"],["https://i.imgur.com/7CJxXI6_d.png?maxwidth=520&shape=thumb&fidelity=high","La Casa de Papel"]];
 function fill(id,list){
- const el=document.getElementById(id);
- el.innerHTML=list.map(([s,t],i)=>`<div class="p"><img src="${s.startsWith("http")?s:A+s}" alt="${t}" width="190" height="285" loading="lazy" decoding="async"><span>${t}</span></div>`).join("");
+ const t=document.querySelector("#"+id+" .track");
+ const mk=(clone)=>list.map(([s,n])=>`<div class="p" data-t="${n}"${clone?' aria-hidden="true"':''}><img src="${s.startsWith("http")?s:A+s}" alt="${clone?"":n}" width="178" height="267" loading="lazy" decoding="async"></div>`).join("");
+ t.innerHTML=mk(0)+mk(1); /* 2ª cópia só visual, escondida de leitores de tela */
 }
 fill("filmes",filmes);fill("series",series);
 </script>
+<noscript><p style="text-align:center;padding:1rem">Ative o JavaScript para ver o catálogo. Para falar conosco: <a href="https://wa.me/5541995764429">WhatsApp</a>.</p></noscript>
 </body>
 </html>
