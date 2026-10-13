@@ -107,6 +107,11 @@ h1{font-size:clamp(2.4rem,5.3vw,4.3rem);line-height:1.04;letter-spacing:-.04em;f
 .track{display:flex;gap:16px;width:max-content;animation:mqL var(--d,70s) linear infinite;will-change:transform}
 .mq.rev .track{animation-name:mqR}
 .mq:hover .track,.mq:focus-within .track,.cat.paused .track{animation-play-state:paused}
+.mq{touch-action:pan-y;cursor:grab;-webkit-user-select:none;user-select:none}.mq.drag{cursor:grabbing}.mq:focus-visible{outline-offset:-3px}
+.p img{pointer-events:none;-webkit-user-drag:none}
+.ctrls{display:flex;gap:.5rem;align-items:center}
+.arr{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.05);color:#fff;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+.arr:hover{background:var(--red2);border-color:var(--red);transform:scale(1.06)}.arr svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 @keyframes mqL{to{transform:translateX(calc(-50% - 8px))}}
 @keyframes mqR{from{transform:translateX(calc(-50% - 8px))}to{transform:translateX(0)}}
 .p{flex:0 0 clamp(138px,17vw,190px);aspect-ratio:2/3;border-radius:14px;overflow:hidden;position:relative;background:var(--card);border:1px solid var(--line);box-shadow:0 10px 24px rgba(0,0,0,.5);transition:transform .4s var(--ease),box-shadow .4s,border-color .4s}
@@ -121,7 +126,7 @@ h1{font-size:clamp(2.4rem,5.3vw,4.3rem);line-height:1.04;letter-spacing:-.04em;f
 @media(prefers-reduced-motion:reduce){
  .track,.col,.tv,.badge,.hero-bg,.scroll,.eyebrow::before{animation:none!important}
  .mq{overflow-x:auto;-webkit-mask:none;mask:none}.track{width:max-content}.mq .p[aria-hidden=true]{display:none}
- .pause{display:none}html{scroll-behavior:auto}*{transition:none!important}.rv{opacity:1!important;transform:none!important}}
+ .pause,.arr{display:none}.mq{touch-action:auto;cursor:auto}html{scroll-behavior:auto}*{transition:none!important}.rv{opacity:1!important;transform:none!important}}
 /* GRIDS */
 .grid{display:grid;gap:1.2rem;margin-top:2.6rem}
 .g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g6{grid-template-columns:repeat(6,1fr)}
@@ -136,22 +141,53 @@ h1{font-size:clamp(2.4rem,5.3vw,4.3rem);line-height:1.04;letter-spacing:-.04em;f
 .dev{text-align:center;font-weight:600;font-size:.95rem;padding:1.6rem .5rem}.dev svg{width:36px;height:36px;color:var(--red);margin:0 auto .7rem;filter:drop-shadow(0 0 8px rgba(255,26,26,.5))}
 .alt{background:linear-gradient(180deg,#0d1319,var(--bg));border-block:1px solid var(--line)}
 .head-c{text-align:center}.head-c .sub{margin-inline:auto}
-/* PLANOS */
-#planos{background:radial-gradient(55% 45% at 50% 45%,rgba(255,0,0,.17),transparent),var(--bg)}
-.plan{display:flex;flex-direction:column;position:relative;padding:2rem 1.7rem}
-.plan h3{margin:0;font-size:1.3rem;color:#fff;font-weight:800;letter-spacing:.02em;text-transform:uppercase;font-size:1rem;letter-spacing:.12em}
-.price{font-size:clamp(2.6rem,4vw,3.2rem);font-weight:800;letter-spacing:-.045em;line-height:1.1;margin:.9rem 0 .1rem;color:#fff}
-.per{color:var(--mu);font-size:.9rem;min-height:2.7em}
-.save{display:inline-block;margin-top:.8rem;padding:.35rem .8rem;border-radius:9px;background:rgba(255,26,26,.14);border:1px solid rgba(255,26,26,.3);color:#ffa0a0;font-size:.82rem;font-weight:700;align-self:flex-start}
+/* PLANOS — estilo ingresso */
+#planos{background:radial-gradient(60% 38% at 50% 0,rgba(255,0,0,.18),transparent),var(--bg)}
+.plans{align-items:stretch;gap:1.3rem;grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:1060px){.plans{grid-template-columns:repeat(2,minmax(0,1fr))}.plan .price{font-size:3rem}}
+@media(max-width:600px){.plans{grid-template-columns:minmax(0,1fr)}}
+.plan{padding:0;display:flex;flex-direction:column;position:relative;isolation:isolate;background:linear-gradient(180deg,#171d23,var(--card2));font-variant-numeric:tabular-nums}
+.plan::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:0;opacity:0;transition:opacity .35s;background:radial-gradient(380px circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.09),transparent 62%)}
+.plan:hover::after{opacity:1}
+.plan>*{position:relative;z-index:1}
+.pl-top{padding:2.1rem 1.45rem 1.2rem}
+.plan h3{margin:0;font-size:.95rem;color:var(--mu);font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.plan .price{font-size:clamp(2rem,2.7vw,2.8rem);font-weight:800;letter-spacing:-.045em;line-height:1.1;margin:.8rem 0 .2rem;color:#fff;white-space:nowrap}
+.plan .per{color:var(--mu);font-size:.9rem;min-height:2.7em}
+.save{display:inline-block;white-space:nowrap;margin-top:.7rem;padding:.35rem .8rem;border-radius:9px;background:rgba(255,26,26,.14);border:1px solid rgba(255,26,26,.3);color:#ffa0a0;font-size:.82rem;font-weight:700}
 .save.none{background:rgba(255,255,255,.06);border-color:var(--line);color:var(--mu)}
-.plan ul{list-style:none;padding:0;margin:1.5rem 0 1.8rem;display:grid;gap:.7rem;color:#d3dae6;font-size:.95rem;flex:1;border-top:1px solid var(--line);padding-top:1.4rem}
+.meter{margin-top:1.2rem}
+.meter small{display:block;font-size:.72rem;color:var(--mu);margin-bottom:.4rem;letter-spacing:.04em}
+.meter span{display:block;height:6px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden}
+.meter i{display:block;height:100%;width:var(--w);border-radius:inherit;background:linear-gradient(90deg,var(--red3),var(--red));box-shadow:0 0 12px var(--glow)}
+html.js .meter i{width:0;transition:width 1.3s var(--ease) .25s}
+html.js .plan.on .meter i{width:var(--w)}
+.perf{position:relative;height:24px;overflow:hidden}
+.perf::before{content:"";position:absolute;left:1.5rem;right:1.5rem;top:11px;border-top:2px dashed rgba(255,255,255,.18)}
+.perf::after{content:"";position:absolute;inset:0;background:radial-gradient(circle 12px at 0 50%,var(--bg) 11.5px,transparent 12px),radial-gradient(circle 12px at 100% 50%,var(--bg) 11.5px,transparent 12px)}
+.pl-bot{padding:1.4rem 1.45rem 1.8rem;display:flex;flex-direction:column;flex:1}
+.plan ul{list-style:none;padding:0;margin:0 0 1.7rem;display:grid;gap:.7rem;color:#d3dae6;font-size:.95rem;flex:1}
 .plan li{display:flex;gap:.7rem;align-items:flex-start}
 .plan li::before{content:"✓";color:#fff;font-weight:900;flex:none;width:20px;height:20px;border-radius:50%;background:var(--red2);font-size:.7rem;display:grid;place-items:center;margin-top:.15rem}
 .plan .btn{width:100%}
-.plan.hot{background:linear-gradient(180deg,#2a0d10,var(--card2) 70%);border:2px solid var(--red);box-shadow:0 0 50px rgba(255,26,26,.32),0 20px 60px rgba(0,0,0,.55);transform:translateY(-10px)}
-.plan.hot:hover{transform:translateY(-16px)}
-.tag{position:absolute;top:-15px;left:50%;translate:-50% 0;background:linear-gradient(135deg,var(--red2),#ff3c3c);color:#fff;font-size:.72rem;font-weight:900;padding:.35rem 1.1rem;border-radius:999px;white-space:nowrap;text-transform:uppercase;letter-spacing:.06em;box-shadow:0 6px 18px var(--glow)}
-@media(max-width:1060px){.plan.hot,.plan.hot:hover{transform:none}.plan.hot{margin-top:.6rem}}
+.plan.hot{background:linear-gradient(165deg,#ff3434 0%,var(--red2) 42%,var(--red3) 100%);border:0;color:#fff;transform:translateY(-14px);box-shadow:0 0 70px rgba(255,26,26,.5),0 28px 60px rgba(0,0,0,.6)}
+.plan.hot:hover{transform:translateY(-20px)}
+.plan.hot::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:0;background:linear-gradient(115deg,transparent 38%,rgba(255,255,255,.2) 50%,transparent 62%);background-size:260% 100%;animation:sweep 5.5s ease-in-out infinite}
+@keyframes sweep{0%{background-position:130% 0}60%,100%{background-position:-60% 0}}
+.plan.hot h3{color:rgba(255,255,255,.85)}
+.plan.hot .price{text-shadow:0 4px 24px rgba(0,0,0,.35)}
+.plan.hot .per,.plan.hot li{color:rgba(255,255,255,.9)}
+.plan.hot .save{background:rgba(0,0,0,.3);border-color:rgba(255,255,255,.28);color:#fff}
+.plan.hot li::before{background:#fff;color:var(--red3)}
+.plan.hot .perf::before{border-top-color:rgba(255,255,255,.5)}
+.plan.hot .meter small{color:rgba(255,255,255,.85)}
+.plan.hot .meter span{background:rgba(0,0,0,.3)}
+.plan.hot .meter i{background:#fff;box-shadow:none}
+.plan.hot .btn{background:var(--bg);color:#fff;box-shadow:0 12px 26px rgba(0,0,0,.5)}
+.plan.hot .btn:hover{background:#000}
+.tag{position:absolute;top:-15px;left:50%;translate:-50% 0;background:#fff;color:var(--red3);font-size:.72rem;font-weight:900;padding:.38rem 1.2rem;border-radius:999px;white-space:nowrap;text-transform:uppercase;letter-spacing:.07em;box-shadow:0 8px 20px rgba(0,0,0,.45);z-index:2}
+@media(max-width:1060px){.plan.hot,.plan.hot:hover{transform:none}.plan.hot{margin-top:.8rem}}
+@media(prefers-reduced-motion:reduce){.plan.hot::before{animation:none}}
 .fine{text-align:center;color:var(--mu);font-size:.82rem;margin-top:1.8rem;max-width:70ch;margin-inline:auto}
 .steps{counter-reset:s}
 .steps .card::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--red2),var(--red3));font-weight:900;box-shadow:0 0 22px rgba(255,0,0,.45)}
@@ -222,10 +258,10 @@ html.js .rv.in{opacity:1;transform:none}
 
 <section class="cat" id="conteudo">
  <div class="wrap"><div class="rowhead"><div><h2>Filmes</h2><p class="sub">Alguns títulos do catálogo. A lista é atualizada com frequência.</p></div>
-  <button class="pause" id="pause" type="button" aria-pressed="false" aria-label="Pausar a animação das capas"><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg><span id="pauseT">Pausar</span></button></div></div>
- <div class="mq" id="filmes" role="region" aria-label="Capas de filmes"><div class="track" style="--d:75s"></div></div>
- <div class="wrap" style="margin-top:3rem"><div class="rowhead"><h2>Séries</h2></div></div>
- <div class="mq rev" id="series" role="region" aria-label="Capas de séries"><div class="track" style="--d:85s"></div></div>
+  <div class="ctrls"><button class="arr" type="button" data-row="filmes" data-dir="-1" aria-label="Capas anteriores de filmes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><button class="arr" type="button" data-row="filmes" data-dir="1" aria-label="Próximas capas de filmes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button><button class="pause" id="pause" type="button" aria-pressed="false" aria-label="Pausar a animação das capas"><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg><span id="pauseT">Pausar</span></button></div></div></div>
+ <div class="mq" id="filmes" role="region" tabindex="0" aria-label="Capas de filmes. Arraste ou use as setas do teclado"><div class="track" style="--d:75s"></div></div>
+ <div class="wrap" style="margin-top:3rem"><div class="rowhead"><h2>Séries</h2><div class="ctrls"><button class="arr" type="button" data-row="series" data-dir="-1" aria-label="Capas anteriores de séries"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><button class="arr" type="button" data-row="series" data-dir="1" aria-label="Próximas capas de séries"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></div></div></div>
+ <div class="mq rev" id="series" role="region" tabindex="0" aria-label="Capas de séries. Arraste ou use as setas do teclado"><div class="track" style="--d:85s"></div></div>
  <div class="wrap"><p class="note">Capas ilustrativas. Os títulos disponíveis podem variar.</p>
   <div class="rowhead" style="margin-top:3.5rem"><h2>E canais ao vivo</h2></div>
   <div class="chips"><span class="chip">Esportes e futebol</span><span class="chip">Filmes</span><span class="chip">Séries</span><span class="chip">Infantil</span><span class="chip">Notícias</span><span class="chip">Documentários</span><span class="chip">Variedades</span></div></div>
@@ -256,19 +292,31 @@ html.js .rv.in{opacity:1;transform:none}
 <section id="planos"><div class="wrap">
  <div class="head-c"><h2>Escolha seu plano</h2>
  <p class="sub">Todos os planos têm o mesmo acesso. Mudam só o período e o valor por mês.</p></div>
- <div class="grid g4" style="margin-top:3rem;align-items:stretch">
-  <div class="card plan"><h3>Mensal</h3><p class="price">R$ 35,00</p><p class="per">por mês</p><span class="save none">Valor de referência</span>
-   <ul><li>Acesso completo aos canais</li><li>Filmes e séries atualizados</li><li>Qualidade HD e 4K</li><li>Suporte 24/7</li></ul>
-   <a class="btn btn-g" href="#" data-wa="Olá! Quero assinar o Plano Mensal!">Assinar mensal</a></div>
-  <div class="card plan"><h3>Trimestral</h3><p class="price">R$ 95,00</p><p class="per">3 meses · ≈ R$ 31,67 por mês</p><span class="save">Economize R$ 10,00 (9,52%)</span>
-   <ul><li>Acesso completo aos canais</li><li>Filmes e séries atualizados</li><li>Qualidade HD e 4K</li><li>Suporte 24/7</li></ul>
-   <a class="btn btn-g" href="#" data-wa="Olá! Quero assinar o Plano Trimestral!">Assinar trimestral</a></div>
-  <div class="card plan hot"><span class="tag">Mais vendido</span><h3>Semestral</h3><p class="price">R$ 180,00</p><p class="per">6 meses · R$ 30,00 por mês</p><span class="save">Economize R$ 30,00 (14,29%)</span>
-   <ul><li>Acesso completo aos canais</li><li>Filmes e séries atualizados</li><li>Qualidade HD e 4K</li><li>Suporte 24/7</li></ul>
-   <a class="btn btn-p" href="#" data-wa="Olá! Quero assinar o Plano Semestral!">Assinar semestral</a></div>
-  <div class="card plan"><h3>Anual</h3><p class="price">R$ 350,00</p><p class="per">12 meses · ≈ R$ 29,17 por mês</p><span class="save">Economize R$ 70,00 (16,67%)</span>
-   <ul><li>Acesso completo aos canais</li><li>Filmes e séries atualizados</li><li>Qualidade HD e 4K</li><li>Suporte 24/7</li></ul>
-   <a class="btn btn-g" href="#" data-wa="Olá! Quero assinar o Plano Anual!">Assinar anual</a></div>
+ <div class="grid g4 plans" style="margin-top:3rem">
+  <div class="card plan">
+   <div class="pl-top"><h3>Mensal</h3><p class="price">R$ 35,00</p><p class="per">por mês</p><span class="save none">Valor de referência</span>
+    <div class="meter" aria-hidden="true"><small>Custo mensal equivalente</small><span><i style="--w:100%"></i></span></div></div>
+   <div class="perf" aria-hidden="true"></div>
+   <div class="pl-bot"><ul><li>Acesso completo aos canais</li><li>Filmes e séries atualizados</li><li>Qualidade HD e 4K</li><li>Suporte 24/7</li></ul>
+   <a class="btn btn-g" href="#" data-wa="Olá! Quero assinar o Plano Mensal!">Assinar mensal</a></div></div>
+  <div class="card plan">
+   <div class="pl-top"><h3>Trimestral</h3><p class="price">R$ 95,00</p><p class="per">3 meses · ≈ R$ 31,67 por mês</p><span class="save">Economize R$ 10,00 (9,52%)</span>
+    <div class="meter" aria-hidden="true"><small>Custo mensal equivalente</small><span><i style="--w:90.5%"></i></span></div></div>
+   <div class="perf" aria-hidden="true"></div>
+   <div class="pl-bot"><ul><li>Acesso completo aos canais</li><li>Filmes e séries atualizados</li><li>Qualidade HD e 4K</li><li>Suporte 24/7</li></ul>
+   <a class="btn btn-g" href="#" data-wa="Olá! Quero assinar o Plano Trimestral!">Assinar trimestral</a></div></div>
+  <div class="card plan hot"><span class="tag">Mais vendido</span>
+   <div class="pl-top"><h3>Semestral</h3><p class="price">R$ 180,00</p><p class="per">6 meses · R$ 30,00 por mês</p><span class="save">Economize R$ 30,00 (14,29%)</span>
+    <div class="meter" aria-hidden="true"><small>Custo mensal equivalente</small><span><i style="--w:85.7%"></i></span></div></div>
+   <div class="perf" aria-hidden="true"></div>
+   <div class="pl-bot"><ul><li>Acesso completo aos canais</li><li>Filmes e séries atualizados</li><li>Qualidade HD e 4K</li><li>Suporte 24/7</li></ul>
+   <a class="btn btn-p" href="#" data-wa="Olá! Quero assinar o Plano Semestral!">Assinar semestral</a></div></div>
+  <div class="card plan">
+   <div class="pl-top"><h3>Anual</h3><p class="price">R$ 350,00</p><p class="per">12 meses · ≈ R$ 29,17 por mês</p><span class="save">Economize R$ 70,00 (16,67%)</span>
+    <div class="meter" aria-hidden="true"><small>Custo mensal equivalente</small><span><i style="--w:83.3%"></i></span></div></div>
+   <div class="perf" aria-hidden="true"></div>
+   <div class="pl-bot"><ul><li>Acesso completo aos canais</li><li>Filmes e séries atualizados</li><li>Qualidade HD e 4K</li><li>Suporte 24/7</li></ul>
+   <a class="btn btn-g" href="#" data-wa="Olá! Quero assinar o Plano Anual!">Assinar anual</a></div></div>
  </div>
  <p class="fine">Economia calculada em relação a pagar o plano mensal (R$ 35,00) durante o mesmo período. Em dúvida? Peça o teste grátis de 6h antes de assinar.</p>
 </div></section>
@@ -341,12 +389,61 @@ fill("filmes",filmes);fill("series",series);
  /* pausar/continuar carrosséis */
  const cat=document.getElementById("conteudo"),pb=document.getElementById("pause"),pt=document.getElementById("pauseT");
  if(pb)pb.onclick=()=>{const on=cat.classList.toggle("paused");pb.setAttribute("aria-pressed",on);pb.setAttribute("aria-label",on?"Continuar a animação das capas":"Pausar a animação das capas");pt.textContent=on?"Continuar":"Pausar"};
- /* entrada suave ao rolar */
- if("IntersectionObserver" in window&&!matchMedia("(prefers-reduced-motion:reduce)").matches){
-  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{rootMargin:"0px 0px -8% 0px",threshold:.08});
+ /* entrada suave ao rolar (as classes saem depois, para não travar o hover dos cards) */
+ const rm=matchMedia("(prefers-reduced-motion:reduce)").matches;
+ if("IntersectionObserver" in window&&!rm){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const el=e.target;el.classList.add("in");io.unobserve(el);setTimeout(()=>{el.classList.remove("rv","in");el.style.removeProperty("--dl")},1100+(parseFloat(el.style.getPropertyValue("--dl"))||0)*1000)}}),{rootMargin:"0px 0px -8% 0px",threshold:.08});
   document.querySelectorAll(".hero-copy>*,.rowhead,.mq,.chips,.head-c,.card,.faq details,.final").forEach(el=>{
    const sib=[...el.parentElement.children].indexOf(el);
    el.style.setProperty("--dl",Math.min(sib,6)*.07+"s");el.classList.add("rv");io.observe(el)});
+ }
+ /* planos: spotlight que segue o mouse, barra e preço animados */
+ document.querySelectorAll(".plan").forEach(p=>{
+  p.addEventListener("pointermove",e=>{const r=p.getBoundingClientRect();p.style.setProperty("--mx",e.clientX-r.left+"px");p.style.setProperty("--my",e.clientY-r.top+"px")});
+ });
+ const planEls=document.querySelectorAll(".plan");
+ if("IntersectionObserver" in window){
+  const po=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const p=e.target;po.unobserve(p);p.classList.add("on");
+   const pe=p.querySelector(".price");if(rm||!pe)return;const txt=pe.textContent,v=parseFloat(txt.replace(/[^0-9,]/g,"").replace(",","."));if(!(v>0))return;
+   const t0=performance.now(),D=1000;(function f(t){const k=Math.min(1,(t-t0)/D),n=v*(1-Math.pow(1-k,3));
+    pe.textContent=k<1?"R$ "+n.toFixed(2).replace(".",","):txt;if(k<1)requestAnimationFrame(f)})(t0)}),{threshold:.5});
+  planEls.forEach(p=>po.observe(p));
+ }else planEls.forEach(p=>p.classList.add("on"));
+ /* carrosséis: autoplay + arrastar com mouse/dedo, inércia, setas e teclado */
+ if(!rm){
+  const catEl=document.getElementById("conteudo"),canHover=matchMedia("(hover:hover)").matches;
+  const rowsAll=[...document.querySelectorAll(".mq")].map(mq=>{
+   const tr=mq.querySelector(".track"),rev=mq.classList.contains("rev"),dur=parseFloat(tr.style.getPropertyValue("--d"))||70;
+   tr.style.animation="none";
+   const R={mq,tr,rev,dur,x:0,half:0,v:0,g:null,drag:false,hover:false,focus:false,vis:false,id:null,sx:0,x0:0,lx:0,lt:0,gap:14};
+   R.measure=()=>{R.gap=parseFloat(getComputedStyle(tr).columnGap)||14;R.half=(tr.scrollWidth+R.gap)/2};
+   R.wrap=()=>{if(R.half)R.x=((R.x%R.half)+R.half)%R.half-R.half};
+   R.glide=dx=>{R.g={from:R.x,to:R.x+dx,t0:performance.now(),d:480};R.v=0};
+   R.step=()=>{const i=tr.firstElementChild;return i?(i.offsetWidth+R.gap)*3:600};
+   mq.addEventListener("pointerdown",e=>{if(e.pointerType==="mouse"&&e.button!==0)return;R.drag=true;R.g=null;R.v=0;R.sx=e.clientX;R.x0=R.x;R.lx=e.clientX;R.lt=performance.now();mq.classList.add("drag");try{mq.setPointerCapture(e.pointerId)}catch(_){}});
+   mq.addEventListener("pointermove",e=>{if(!R.drag)return;const now=performance.now(),dt=Math.max(1,now-R.lt);R.x=R.x0+(e.clientX-R.sx);R.v=.6*R.v+.4*((e.clientX-R.lx)/dt*1000);R.lx=e.clientX;R.lt=now});
+   const end=()=>{if(!R.drag)return;R.drag=false;mq.classList.remove("drag");if(performance.now()-R.lt>90)R.v=0;R.v=Math.max(-3200,Math.min(3200,R.v))};
+   mq.addEventListener("pointerup",end);mq.addEventListener("pointercancel",end);
+   mq.addEventListener("dragstart",e=>e.preventDefault());
+   mq.addEventListener("pointerenter",e=>{if(e.pointerType==="mouse")R.hover=true});mq.addEventListener("pointerleave",()=>{R.hover=false});
+   mq.addEventListener("focusin",()=>R.focus=true);mq.addEventListener("focusout",()=>R.focus=false);
+   mq.addEventListener("keydown",e=>{if(e.key==="ArrowRight"){e.preventDefault();R.glide(-R.step())}else if(e.key==="ArrowLeft"){e.preventDefault();R.glide(R.step())}});
+   return R});
+  document.querySelectorAll(".arr").forEach(bt=>bt.addEventListener("click",()=>{const R=rowsAll.find(r=>r.mq.id===bt.dataset.row);if(R)R.glide(-R.step()*(+bt.dataset.dir))}));
+  const ro=window.ResizeObserver?new ResizeObserver(()=>rowsAll.forEach(r=>{const first=!r.half;r.measure();if(first)r.x=r.rev?-r.half:0;r.wrap()})):null;
+  rowsAll.forEach(r=>{r.measure();r.x=r.rev?-r.half:0;ro&&ro.observe(r.tr)});addEventListener("resize",()=>rowsAll.forEach(r=>r.measure()));
+  const vio=new IntersectionObserver(es=>es.forEach(e=>{const R=rowsAll.find(r=>r.mq===e.target);R.vis=e.isIntersecting;go()}),{rootMargin:"120px"});
+  rowsAll.forEach(r=>vio.observe(r.mq));
+  let raf=0,last=0;
+  function go(){if(!raf&&rowsAll.some(r=>r.vis)){last=performance.now();raf=requestAnimationFrame(tick)}}
+  function tick(t){raf=0;const dt=Math.min(.05,(t-last)/1000);last=t;
+   const userPaused=catEl.classList.contains("paused");
+   rowsAll.forEach(R=>{if(!R.vis||!R.half)return;
+    if(R.g){const p=Math.min(1,(t-R.g.t0)/R.g.d);R.x=R.g.from+(R.g.to-R.g.from)*(1-Math.pow(1-p,3));if(p>=1)R.g=null}
+    else if(!R.drag){R.x+=R.v*dt;R.v*=Math.pow(.015,dt);if(Math.abs(R.v)<8)R.v=0;
+     if(!userPaused&&!(canHover&&R.hover)&&!R.focus)R.x+=(R.rev?1:-1)*(R.half/R.dur)*dt}
+    R.wrap();R.tr.style.transform="translate3d("+R.x.toFixed(2)+"px,0,0)"});
+   go()}
  }
 })();
 
