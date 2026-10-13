@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MelhorTV – Canais, filmes e séries em HD e 4K | Teste grátis de 6h</title>
 <meta name="description" content="MelhorTV: mais de 12.000 canais e 30.000 filmes e séries em HD e 4K. Planos a partir de R$ 35,00. Peça seu teste grátis de 6 horas pelo WhatsApp.">
-<meta name="theme-color" content="#0a0f14">
+<meta name="theme-color" content="#060d1f">
 <link rel="canonical" href="https://melhortv.netlify.app/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
@@ -18,12 +18,12 @@
 <link rel="apple-touch-icon" href="favicon2.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#0a0f14;--card:#14191e;--card2:#0f151b;--line:rgba(255,255,255,.08);--tx:#f8fafc;--mu:#aab4c3;--red:#ff1a1a;--red2:#f20000;--red3:#bd0202;--ok:#25d366;--r:18px}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth;scroll-padding-top:76px}
-body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
 :focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:6px}
 .wrap{width:min(1120px,100% - 2rem);margin-inline:auto}
@@ -47,20 +47,17 @@ nav a:hover{color:var(--red)}
 @media(max-width:860px){.burger{display:block}.hd-cta{display:none}
  nav{position:absolute;inset:68px 0 auto;background:rgba(10,15,20,.98);border-bottom:1px solid var(--line);display:none;padding:1rem}
  nav.open{display:block}nav ul{flex-direction:column;gap:0}nav a{display:block;padding:.95rem .5rem;font-size:1.05rem}}
-/* HERO */
-.hero{min-height:94vh;display:grid;place-items:center;text-align:center;padding:7rem 0 6rem;isolation:isolate;overflow:hidden;
- background:radial-gradient(circle at center,transparent 15%,rgba(0,0,0,.7)),linear-gradient(90deg,rgba(0,0,0,.6),rgba(0,0,0,.4),rgba(255,0,0,.12)),url(banner-premium.png) center/cover}
-.hero::before{content:"";position:absolute;width:70vmax;height:70vmax;left:50%;top:55%;translate:-50% -50%;background:radial-gradient(closest-side,rgba(255,0,0,.2),transparent);z-index:-1;animation:breathe 7s ease-in-out infinite alternate}
-.hero::after{content:"";position:absolute;inset:auto 0 0;height:180px;background:linear-gradient(transparent,var(--bg));z-index:-1}
-@keyframes breathe{to{opacity:.45;scale:1.12}}
-.card-hero{max-width:860px;padding:3.2rem 2rem;border-radius:32px;background:rgba(5,5,5,.55);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.08);box-shadow:0 0 60px rgba(255,0,0,.16),0 24px 70px rgba(0,0,0,.6);animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
-@keyframes rise{from{opacity:0;translate:0 24px}}
-h1{font-size:clamp(3.3rem,12vw,7rem);line-height:.95;letter-spacing:-.06em;font-weight:900}
-.tag-line{font-weight:700;letter-spacing:.02em;color:#ffd5d5;margin:1.2rem 0 .6rem;font-size:clamp(1rem,2.4vw,1.3rem)}
-.lead{color:rgba(255,255,255,.88);font-size:clamp(1.05rem,2.3vw,1.4rem);max-width:40ch;margin:0 auto 2rem}
-.cta-row{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center}
-.stats{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 2.2rem;margin-top:2.2rem;color:var(--mu);font-size:.9rem}
-.stats strong{display:block;color:#fff;font-size:1.3rem;line-height:1.2}
+/* HERO (versão da imagem) */
+.hero{min-height:92vh;display:grid;align-items:center;padding:7rem 0 4rem;position:relative;isolation:isolate;
+ background:linear-gradient(180deg,rgba(6,13,31,.55),#060d1f 96%),radial-gradient(60% 50% at 80% 10%,rgba(37,99,235,.35),transparent),url(banner-premium.png) center/cover}
+h1{font-size:clamp(2.4rem,6.5vw,4.6rem);line-height:1.04;letter-spacing:-.035em;font-weight:800;max-width:19ch}
+.lead{font-size:clamp(1.05rem,2vw,1.25rem);color:#c5d3ee;max-width:50ch;margin:1.3rem 0 2rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:.8rem}
+.btn-c{background:linear-gradient(135deg,#22d3ee,#2563eb);color:#031024;box-shadow:0 8px 24px rgba(34,211,238,.22)}
+.btn-c:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(34,211,238,.35)}
+header{background:rgba(6,13,31,.82)}
+.stats{display:flex;flex-wrap:wrap;gap:.6rem 2rem;margin-top:2.6rem;color:#9fb0cf;font-size:.95rem}
+.stats strong{color:#fff;font-size:1.25rem;display:block;line-height:1.2}
 /* CARROSSEL AUTOMATICO */
 .cat{background:radial-gradient(60% 40% at 50% 0,rgba(255,0,0,.1),transparent)}
 .mq{overflow:hidden;margin-top:1.6rem;-webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);padding:14px 0}
@@ -138,21 +135,20 @@ footer ul{display:flex;flex-wrap:wrap;gap:1.2rem;list-style:none;padding:0}foote
  <nav id="menu" aria-label="Principal"><ul>
   <li><a href="#conteudo">Conteúdo</a></li><li><a href="#vantagens">Vantagens</a></li><li><a href="#planos">Planos</a></li><li><a href="#como-funciona">Como funciona</a></li><li><a href="#faq">Dúvidas</a></li></ul></nav>
  <div style="display:flex;gap:.5rem;align-items:center">
-  <a class="btn btn-p sm hd-cta" href="#" data-wa="Olá! Quero fazer um teste IPTV">Teste grátis</a>
+  <a class="btn btn-c sm hd-cta" href="#" data-wa="Olá! Quero fazer um teste IPTV">Teste grátis</a>
   <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
  </div></div></header>
 
 <main id="topo">
-<section class="hero"><div class="wrap"><div class="card-hero">
- <h1>Melhor<b>TV</b></h1>
- <p class="tag-line">Canais • Filmes • Séries • Futebol</p>
- <p class="lead">+12.000 canais e +30.000 filmes e séries em HD e 4K, na TV, no celular ou no computador.</p>
+<section class="hero"><div class="wrap">
+ <h1>Canais, filmes e séries em HD e 4K no mesmo lugar.</h1>
+ <p class="lead">Mais de 12.000 canais e 30.000 filmes e séries para assistir na TV, no celular ou no computador. Peça seu teste de 6 horas, sem compromisso.</p>
  <div class="cta-row">
-  <a class="btn btn-p" href="#" data-wa="Olá! Quero fazer um teste IPTV">Faça um teste grátis de 6h!</a>
-  <a class="btn btn-g" href="#planos">Conhecer os planos</a>
+  <a class="btn btn-c" href="#" data-wa="Olá! Quero fazer um teste IPTV">Quero meu teste grátis de 6h</a>
+  <a class="btn btn-g" href="#planos">Ver planos</a>
  </div>
- <div class="stats"><div><strong>+12.000</strong>canais</div><div><strong>+30.000</strong>filmes e séries</div><div><strong>HD e 4K</strong>quando disponível</div></div>
-</div></div></section>
+ <div class="stats"><div><strong>+12.000</strong>canais</div><div><strong>+30.000</strong>filmes e séries</div><div><strong>HD e 4K</strong>quando disponível</div><div><strong>6 horas</strong>de teste grátis</div></div>
+</div></section>
 
 <section class="cat" id="conteudo">
  <div class="wrap"><h2>Filmes</h2><p class="sub">Alguns títulos do catálogo. A lista é atualizada com frequência.</p></div>
